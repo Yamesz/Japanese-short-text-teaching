@@ -1,0 +1,100 @@
+@import url('../../style.css');
+
+.lesson-header {
+  background: linear-gradient(135deg, #FFF0F3 0%, #FFFFFF 100%);
+  border-bottom: 2px solid var(--soft-pink);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--deep-sakura);
+  text-decoration: none;
+  font-weight: 700;
+  background: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.back-btn:hover {
+  background: var(--deep-sakura);
+  color: white;
+  transform: translateX(-4px);
+}
+
+.lesson-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .lesson-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image-viewer-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 133, 161, 0.2);
+  text-align: left;
+}
+
+.sentence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sentence-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  border-left: 5px solid var(--primary-pink);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.sentence-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.sentence-jp {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+  line-height: 1.8;
+}
+
+ruby rt {
+  font-size: 0.75rem;
+  color: var(--deep-sakura);
+  font-weight: normal;
+}
+
+.sentence-romaji {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.sentence-cn {
+  font-size: 1rem;
+  color: var(--matcha-green);
+  font-weight: 700;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
