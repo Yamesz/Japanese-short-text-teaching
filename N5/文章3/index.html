@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章3：にわのしごと | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以日文短文『にわのしごと（庭院的工作）』為教材，由さくら先生細緻拆解名詞、動詞寶庫、形容詞寶庫、動詞て形連詞與逆接助詞「〜が」。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">🌸</span>
+      <div>
+        <div class="brand-title">さくら先生の日本語教室</div>
+        <div class="brand-subtitle">文章3 獨立單元網頁</div>
+      </div>
+    </a>
+    <a href="../../index.html" class="back-btn"><i class="fa-solid fa-house"></i> 返回主頁入口</a>
+  </nav>
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章3：にわのしごと（庭院的工作 / 園藝）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：練習動詞て形連詞「〜て、...」、轉折句「〜が」、動詞寶庫與園藝生活動詞。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+    
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text (No Image, Direct Text) -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文
+            </h3>
+            <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
+              🔊 全篇朗讀
+            </button>
+          </div>
+
+          <!-- Original Japanese text box (Formatted like manuscript) -->
+          <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 2.2; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+              にわのしごと
+            </div>
+
+            <div>ごご、にわで　しごとを　します。</div>
+            <div>はなに　みずを　やります。</div>
+            <div>くさを　とります。</div>
+            <div>つちを　さわって、てが　よごれます。</div>
+            <div>すこし　つかれますが、たのしいです。</div>
+            <div>ちょうちょが　きて、はなに　とまります。</div>
+            <div>ゆうがた、うちに　はいって、てを　あらいます。</div>
+          </div>
+
+          <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+            <b>🌸 さくら先生導讀點撥：</b><br>
+            這篇短文記錄了在花園澆水、拔草、看蝴蝶飛來的日常。注意句子中動詞て形（さわって、きて、はいって）連接前後動作的用法喔！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence Breakdown -->
+      <div>
+        <h3 class="section-title" style="margin-top: 0;">
+          📖 逐句朗讀與解析 (漢字 + 假名注音 + 羅馬字 + 中文)
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>午後<rt>ごご</rt></ruby>、<ruby>庭<rt>にわ</rt></ruby>で　<ruby>仕事<rt>しごと</rt></ruby>を　します。
+            </div>
+            <div class="sentence-romaji">Go-go, ni-wa de shi-go-to o shi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：下午在庭院裡做園藝工作。</span>
+              <button class="audio-btn" onclick="speakJapanese('ごご、にわにしごとをします')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>花<rt>はな</rt></ruby>に　<ruby>水<rt>みず</rt></ruby>を　やります。
+            </div>
+            <div class="sentence-romaji">Ha-na ni mi-zu o ya-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：給花朵澆水。</span>
+              <button class="audio-btn" onclick="speakJapanese('はなにみずをやります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>草<rt>くさ</rt></ruby>を　<ruby>取<rt>と</rt></ruby>ります。
+            </div>
+            <div class="sentence-romaji">Ku-sa o to-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：拔草 / 除草。</span>
+              <button class="audio-btn" onclick="speakJapanese('くさをとります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>土<rt>つち</rt></ruby>を　<ruby>触<rt>さわ</rt></ruby>って、<ruby>手<rt>て</rt></ruby>が　<ruby>汚<rt>よご</rt></ruby>れます。
+            </div>
+            <div class="sentence-romaji">Tsu-chi o sa-wa-t-te, te ga yo-go-re-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：摸了泥土，手變髒了。</span>
+              <button class="audio-btn" onclick="speakJapanese('つちをさわって、てがよごれます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>微<rt>すこ</rt></ruby>し　<ruby>疲<rt>つか</rt></ruby>れますが、<ruby>楽<rt>たの</rt></ruby>しいです。
+            </div>
+            <div class="sentence-romaji">Su-ko-shi tsu-ka-re-ma-su ga, ta-no-shi-i de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：雖然有點累，但是很開心。</span>
+              <button class="audio-btn" onclick="speakJapanese('すこしつかれますが、たのしいです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 6 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              ちょうちょが　<ruby>来<rt>き</rt></ruby>て、<ruby>花<rt>はな</rt></ruby>に　<ruby>止<rt>と</rt></ruby>まります。
+            </div>
+            <div class="sentence-romaji">Cho-u-cho ga ki-te, ha-na ni to-ma-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：蝴蝶飛過來停在花朵上。</span>
+              <button class="audio-btn" onclick="speakJapanese('ちょうちょがきて、はなにとまります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 7 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>夕方<rt>ゆうがた</rt></ruby>、うちに　<ruby>入<rt>はい</rt></ruby>って、<ruby>手<rt>て</rt></ruby>を　<ruby>洗<rt>あら</rt></ruby>います。
+            </div>
+            <div class="sentence-romaji">Yu-u-ga-ta, u-chi ni ha-i-t-te, te o a-ra-i-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：傍晚進屋子洗手。</span>
+              <button class="audio-btn" onclick="speakJapanese('ゆうがた、うちにはいって、てをあらいます')">🔊</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 1: Verbs Vault (動詞寶庫) - Conditionally Visible -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫</h2>
+      
+      <div class="card-grid">
+
+        <!-- Verb 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">💧 やります（やる）</div>
+            <button class="audio-btn" onclick="speakJapanese('やります')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ya-ri-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：給（花草水/飼料）</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：花に水をやります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('はなにみずをやります')">🔊</button></div>
+            <div class="example-cn">（給花澆水。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：猫にエサをやります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ねこにエサをやります')">🔊</button></div>
+            <div class="example-cn">（餵貓吃飼料。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 2 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">👐 さわります（触る）</div>
+            <button class="audio-btn" onclick="speakJapanese('さわります')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：sa-wa-ri-ma-su | て形：さわって</div>
+          <div class="vocab-meaning">意思：觸摸</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：土を触って、手が汚れます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('つちをさわって、てがよごれます')">🔊</button></div>
+            <div class="example-cn">（摸了泥土，手髒了。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 3 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🦋 とまります（止まる）</div>
+            <button class="audio-btn" onclick="speakJapanese('とまります')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：to-ma-ri-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：停下、停留</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ちょうちょが花に止まります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ちょうちょがはなにとまります')">🔊</button></div>
+            <div class="example-cn">（蝴蝶停在花朵上。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：鳥が木に止まります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('とりがきにとまります')">🔊</button></div>
+            <div class="example-cn">（鳥停在樹上。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 4 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🧼 あらいます（洗う）</div>
+            <button class="audio-btn" onclick="speakJapanese('あらいます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：a-ra-i-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：洗滌、洗手</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：手を洗います。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('てをあらいます')">🔊</button></div>
+            <div class="example-cn">（洗手。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：ご飯の前に手を洗いましょう。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ごはんのまえにてをあらいましょう')">🔊</button></div>
+            <div class="example-cn">（吃飯前大家一起洗手吧。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) - Conditionally Visible -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫</h2>
+      
+      <div class="card-grid">
+
+        <!-- Adjective 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">🎉 たのしい（楽しい）</div>
+            <button class="audio-btn" onclick="speakJapanese('たのしい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ta-no-shi-i | い形容詞</div>
+          <div class="vocab-meaning">意思：快樂的、愉快的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：少し疲れますが、楽しいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('すこしつかれますがたのしいです')">🔊</button></div>
+            <div class="example-cn">（雖然有點累，但很開心。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Nouns & Vocab in Article 3 -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+      
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🏡 にわ（庭）</div>
+            <button class="audio-btn" onclick="speakJapanese('にわ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ni-wa | 名詞</div>
+          <div class="vocab-meaning">意思：庭院、花園</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：庭で仕事をします。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('にわにしごとをします')">🔊</button></div>
+            <div class="example-cn">（在庭院做園藝。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🌸 はな（花）</div>
+            <button class="audio-btn" onclick="speakJapanese('はな')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ha-na | 名詞</div>
+          <div class="vocab-meaning">意思：花朵</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：花に水をやります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('はなにみずをやります')">🔊</button></div>
+            <div class="example-cn">（給花澆水。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🦋 ちょうちょ（蝶々）</div>
+            <button class="audio-btn" onclick="speakJapanese('ちょうちょ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：cho-u-cho | 名詞</div>
+          <div class="vocab-meaning">意思：蝴蝶</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ちょうちょが飛んでいます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ちょうちょがとんでいます')">🔊</button></div>
+            <div class="example-cn">（蝴蝶在飛舞。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Grammar in Article 3 -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動詞て形 (動作連接與順序)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>動詞て形可用於連接兩個相繼發生的動作或因果關係。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：土を触って、手が汚れます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('つちをさわっててがよごれます')">🔊</button></div>
+            <div class="example-cn">（摸了泥土，結果手變髒了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：うちに帰って、手を洗います。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('うちにかえっててをあらいます')">🔊</button></div>
+            <div class="example-cn">（回到家後洗手。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 〜が (句中逆接轉折助詞：雖然...但是...)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>連接兩個對比或轉折的子句。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：少し疲れますが、楽しいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('すこしつかれますがたのしいです')">🔊</button></div>
+            <div class="example-cn">（雖然有點累，但是很開心。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：日本語は難しいですが、面白いです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('にほんごはむずかしいですがおもしろいです')">🔊</button></div>
+            <div class="example-cn">（日文雖然難，但很有趣。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 5: Lesson Quiz -->
+    <div style="margin-top: 3rem;">
+      <div class="sensei-note-box">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章3 隨堂小測驗</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-dark);">
+          題目：「すこし　つかれます＿＿＿、たのしいです。」空格中應該填入哪一個轉折助詞呢？
+        </p>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('が', 'が', '正解！『〜が』常用在表達「雖然...但是...」的轉折關係喔！')">A. が</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('から', 'が', '再試試看喔！')">B. から</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ね', 'が', '再試試看喔！')">C. ね</button>
+        </div>
+        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+      </div>
+    </div>
+
+    <!-- Culture snippet -->
+    <div class="culture-card" style="margin-top: 2rem;">
+      <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;"><i class="fa-solid fa-torii-gate"></i> 🌸 さくら先生的文化小知識：日本的花園與洗手習慣</h3>
+      <p style="color: var(--text-dark); line-height: 1.6;">
+        日本非常重視園藝 (ガーデニング)，許多住宅會有小花園或是陽台花盆。另外，外出回家或是做完庭院工作後，「手洗い・うがい（洗手與漱口）」是從小培養的重要衛生活動喔！
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章3 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="lesson.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const verbContainer = document.querySelector('#verb-vault-section .card-grid');
+      if (!verbContainer || verbContainer.children.length === 0) {
+        document.getElementById('verb-vault-section').style.display = 'none';
+      }
+      const adjContainer = document.querySelector('#adj-vault-section .card-grid');
+      if (!adjContainer || adjContainer.children.length === 0) {
+        document.getElementById('adj-vault-section').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

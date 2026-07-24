@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章6：ほん | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以日文短文『ほん（書本 / 閱讀）』為教材，由さくら先生細緻拆解名詞、動詞寶庫、形容詞過去式「〜かったです」。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">🌸</span>
+      <div>
+        <div class="brand-title">さくら先生の日本語教室</div>
+        <div class="brand-subtitle">文章6 獨立單元網頁</div>
+      </div>
+    </a>
+    <a href="../../index.html" class="back-btn"><i class="fa-solid fa-house"></i> 返回主頁入口</a>
+  </nav>
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章6：ほん（書本 / 閱讀樂趣）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：練習形容詞過去式「〜かったです」、動詞連用形「〜わすれて」與希望形「〜よみたいです」。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+    
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text (Direct Text) -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文
+            </h3>
+            <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
+              🔊 全篇朗讀
+            </button>
+          </div>
+
+          <!-- Original Japanese text box -->
+          <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; font-size: 1.2rem; line-height: 2.2; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="font-size: 1.5rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+              ほん
+            </div>
+
+            <div>きのう、ほんを　よみました。</div>
+            <div>ほんは　とても　おもしろかったです。</div>
+            <div>わたしは　いえで　よみました。</div>
+            <div>おちゃを　のみながら　よみました。</div>
+            <div>ほんには　たくさんの　えが　ありました。</div>
+            <div>じかんを　わすれて　よみました。</div>
+            <div>また　つづきを　よみたいです。</div>
+            <div>どくしょは　たのしいです。</div>
+          </div>
+
+          <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+            <b>🌸 さくら先生導讀點撥：</b><br>
+            這是一篇敘述看書體驗的溫馨短文！注意過去式形容詞「おもしろかったです」以及「時間を忘れて（忘記時間）」的沉浸表達！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence Breakdown -->
+      <div>
+        <h3 class="section-title" style="margin-top: 0;">
+          📖 逐句朗讀與解析 (漢字 + 假名注音 + 羅馬字 + 中文)
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>昨日<rt>きのう</rt></ruby>、<ruby>本<rt>ほん</rt></ruby>を　<ruby>讀<rt>よ</rt></ruby>みました。
+            </div>
+            <div class="sentence-romaji">Ki-no-u, ho-n o yo-mi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：昨天看了書。</span>
+              <button class="audio-btn" onclick="speakJapanese('きのう、ほんをよみました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>本<rt>ほん</rt></ruby>は　とても　<ruby>面白<rt>おもしろ</rt></ruby>かったです。
+            </div>
+            <div class="sentence-romaji">Ho-n wa to-te-mo o-mo-shi-ro-ka-t-ta de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：那本書非常有意思。</span>
+              <button class="audio-btn" onclick="speakJapanese('ほんはとてもおもしろかったです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              私<rt>わたし</rt>は　<ruby>家<rt>いえ</rt></ruby>で　<ruby>讀<rt>よ</rt></ruby>みました。
+            </div>
+            <div class="sentence-romaji">Wa-ta-shi wa i-e de yo-mi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：我在家裡看書。</span>
+              <button class="audio-btn" onclick="speakJapanese('わたしはいえでよみました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              お<ruby>茶<rt>ちゃ</rt></ruby>を　<ruby>飲<rt>の</rt></ruby>みながら　<ruby>讀<rt>よ</rt></ruby>みました。
+            </div>
+            <div class="sentence-romaji">O-cha o no-mi-na-ga-ra yo-mi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：一邊喝茶，一邊看書。</span>
+              <button class="audio-btn" onclick="speakJapanese('おちゃをのみながらよみました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>本<rt>ほん</rt></ruby>には　たくさんの　<ruby>繪<rt>え</rt></ruby>が　ありました。
+            </div>
+            <div class="sentence-romaji">Ho-n ni wa ta-ku-sa-n no e ga a-ri-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：書本裡有很多插圖。</span>
+              <button class="audio-btn" onclick="speakJapanese('ほんにはたくさんのえがありました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 6 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>時間<rt>じかん</rt></ruby>を　<ruby>忘<rt>わす</rt></ruby>れて　<ruby>讀<rt>よ</rt></ruby>みました。
+            </div>
+            <div class="sentence-romaji">Ji-ka-n o wa-su-re-te yo-mi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：看得忘了時間。</span>
+              <button class="audio-btn" onclick="speakJapanese('じかんをわすれてよみました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 7 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              また　<ruby>續<rt>つづ</rt></ruby>きを　<ruby>讀<rt>よ</rt></ruby>みたいです。
+            </div>
+            <div class="sentence-romaji">Ma-ta tsu-dzu-ki o yo-mi-ta-i de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：還想繼續看後續。</span>
+              <button class="audio-btn" onclick="speakJapanese('またつづきをよみたいです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 8 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>讀書<rt>どくしょ</rt></ruby>は　<ruby>楽<rt>たの</rt></ruby>しいです。
+            </div>
+            <div class="sentence-romaji">Do-ku-sho wa ta-no-shi-i de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：讀書真是一件快樂的事。</span>
+              <button class="audio-btn" onclick="speakJapanese('どくしょはたのしいです')">🔊</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 1: Verbs Vault -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫</h2>
+      
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">📖 よみました（読みました / 読む）</div>
+            <button class="audio-btn" onclick="speakJapanese('よみました')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：yo-mi-ma-shi-ta | 第一類動詞</div>
+          <div class="vocab-meaning">意思：讀、看（書）</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">⏳ わすれて（忘れて / 忘れる）</div>
+            <button class="audio-btn" onclick="speakJapanese('わすれて')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：wa-su-re-te | 第二類動詞て形</div>
+          <div class="vocab-meaning">意思：忘記</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">📚 よみたいです（読みたいです）</div>
+            <button class="audio-btn" onclick="speakJapanese('よみたいです')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：yo-mi-ta-i de-su | 希望形</div>
+          <div class="vocab-meaning">意思：想讀、想看</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Adjectives Vault -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫</h2>
+      
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">📚 おもしろかった（面白かった / 面白い）</div>
+            <button class="audio-btn" onclick="speakJapanese('おもしろかった')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：o-mo-shi-ro-ka-t-ta | い形容詞過去式</div>
+          <div class="vocab-meaning">意思：非常有意思（過去）</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Nouns -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+      
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">📖 どくしょ（読書）</div>
+            <button class="audio-btn" onclick="speakJapanese('どくしょ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：do-ku-sho | 名詞</div>
+          <div class="vocab-meaning">意思：讀書、閱讀</div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🖼️ え（絵）</div>
+            <button class="audio-btn" onclick="speakJapanese('え')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：e | 名詞</div>
+          <div class="vocab-meaning">意思：圖畫、插圖</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Grammar -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 い形容詞過去式：〜かったです</div>
+          <div class="grammar-usage">
+            <b>用法：</b>い形容詞去掉尾巴「い」＋ かったです。如「面白かった（曾經很有趣）」。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：本はとても面白かったです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ほんはとてもおもしろかったです')">🔊</button></div>
+            <div class="example-cn">（那本書非常有意思。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 5: Lesson Quiz -->
+    <div style="margin-top: 3rem;">
+      <div class="sensei-note-box">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章6 隨堂小測驗</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-dark);">
+          題目：「ほんは　とても　おもしろ＿＿＿です。」（過去時態應填入？）
+        </p>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('かった', 'かった', '正解！い形容詞過去式為『〜かったです』！')">A. かった</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('い', 'かった', '再試試看喔！')">B. い</button>
+        </div>
+        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章6 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="lesson.js"></script>
+</body>
+</html>

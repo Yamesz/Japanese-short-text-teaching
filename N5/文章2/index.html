@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章2：えいがのひ | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以日文短文『えいがのひ（電影之日）』為教材，由さくら先生細緻拆解名詞、動詞寶庫、形容詞寶庫、同時動作文法「〜ながら」與發音。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">🌸</span>
+      <div>
+        <div class="brand-title">さくら先生の日本語教室</div>
+        <div class="brand-subtitle">文章2 獨立單元網頁</div>
+      </div>
+    </a>
+    <a href="../../index.html" class="back-btn"><i class="fa-solid fa-house"></i> 返回主頁入口</a>
+  </nav>
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章2：えいがのひ（電影之日）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：練習目的句型「〜に行きます」、同時動作「〜ながら」、動詞寶庫與形容詞句型。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+    
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text (No Image, Direct Text) -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文
+            </h3>
+            <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
+              🔊 全篇朗讀
+            </button>
+          </div>
+
+          <!-- Original Japanese text box (Formatted like manuscript) -->
+          <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 2.2; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+              えいがのひ
+            </div>
+
+            <div>きょうは　えいがを　みに　いきます。</div>
+            <div>ともだちと　えきで　あいます。</div>
+            <div>いっしょに　でんしゃに　のります。</div>
+            <div>えいがかんで　チケットを　かいます。</div>
+            <div>ポップコーンを　たべながら　えいがを　みます。</div>
+            <div>えいがは　とても　おもしろいです。</div>
+            <div>ゆうがた、カフェで　コーヒーを　のみます。</div>
+            <div>えいがの　はなしを　します。</div>
+            <div>きょうは　たのしい　いちにちでした。</div>
+          </div>
+
+          <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+            <b>🌸 さくら先生導讀點撥：</b><br>
+            這篇短文記錄了和朋友約看電影的一天行程。包含了搭電車、買票、吃爆米花看電影、喝咖啡聊天的常用對話動詞！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence Breakdown -->
+      <div>
+        <h3 class="section-title" style="margin-top: 0;">
+          📖 逐句朗讀與解析 (漢字 + 假名注音 + 羅馬字 + 中文)
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>今日<rt>きょう</rt></ruby>は　<ruby>映画<rt>えいが</rt></ruby>を　<ruby>見<rt>み</rt></ruby>に　<ruby>行<rt>い</rt></ruby>きます。
+            </div>
+            <div class="sentence-romaji">Kyou wa e-i-ga o mi ni i-ki-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：今天去看電影。</span>
+              <button class="audio-btn" onclick="speakJapanese('きょうはえいがをみにいきます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>友達<rt>ともだち</rt></ruby>と　<ruby>駅<rt>えき</rt></ruby>で　<ruby>会<rt>あ</rt></ruby>います。
+            </div>
+            <div class="sentence-romaji">To-mo-da-chi to e-ki de a-i-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：和朋友在車站會面。</span>
+              <button class="audio-btn" onclick="speakJapanese('ともだちとえきであいます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>一緒<rt>いっしょ</rt></ruby>に　<ruby>電車<rt>でんしゃ</rt></ruby>に　<ruby>乗<rt>の</rt></ruby>ります。
+            </div>
+            <div class="sentence-romaji">I-s-sho ni de-n-sha ni no-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：一起搭乘電車。</span>
+              <button class="audio-btn" onclick="speakJapanese('いっしょにでんしゃにのります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>映画館<rt>えいがかん</rt></ruby>で　チケットを　<ruby>買<rt>か</rt></ruby>います。
+            </div>
+            <div class="sentence-romaji">E-i-ga-ka-n de chi-ke-t-to o ka-i-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：在電影院買電影票。</span>
+              <button class="audio-btn" onclick="speakJapanese('えいがかんでチケットをかいます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              ポップコーンを　<ruby>食<rt>た</rt></ruby>べながら　<ruby>映画<rt>えいが</rt></ruby>を　<ruby>見<rt>み</rt></ruby>ます。
+            </div>
+            <div class="sentence-romaji">Po-p-pu-ko-o-n o ta-be-na-ga-ra e-i-ga o mi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：一邊吃爆米花，一邊看電影。</span>
+              <button class="audio-btn" onclick="speakJapanese('ポップコーンをたべながらえいがをみます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 6 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>映画<rt>えいが</rt></ruby>は　とても　<ruby>面白<rt>おもしろ</rt></ruby>いです。
+            </div>
+            <div class="sentence-romaji">E-i-ga wa to-te-mo o-mo-shi-ro-i de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：電影非常有意思。</span>
+              <button class="audio-btn" onclick="speakJapanese('えいがはとてもおもしろいです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 7 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>夕方<rt>ゆうがた</rt></ruby>、カフェで　コーヒーを　<ruby>飲<rt>の</rt></ruby>みます。
+            </div>
+            <div class="sentence-romaji">Yu-u-ga-ta, ka-fe de ko-o-hi-i o no-mi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：傍晚在咖啡廳喝咖啡。</span>
+              <button class="audio-btn" onclick="speakJapanese('ゆうがたカフェでコーヒーをのみます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 8 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>映画<rt>えいが</rt></ruby>の　<ruby>話<rt>はなし</rt></ruby>を　します。
+            </div>
+            <div class="sentence-romaji">E-i-ga no ha-na-shi o shi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：聊聊電影的話題。</span>
+              <button class="audio-btn" onclick="speakJapanese('えいがのはなしをします')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 9 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>今日<rt>きょう</rt></ruby>は　<ruby>楽<rt>たの</rt></ruby>しい　<ruby>一日<rt>いちにち</rt></ruby>でした。
+            </div>
+            <div class="sentence-romaji">Kyou wa ta-no-shi-i i-chi-ni-chi de-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：今天是愉快充實的一天。</span>
+              <button class="audio-btn" onclick="speakJapanese('きょうはたのしいいちにちでした')">🔊</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 1: Verbs Vault (動詞寶庫) - Conditionally Visible -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫</h2>
+      
+      <div class="card-grid">
+
+        <!-- Verb 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🎬 いきます（行きます / 行く）</div>
+            <button class="audio-btn" onclick="speakJapanese('いきます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：i-ki-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：去</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：映画を見に行きます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えいがをみにいきます')">🔊</button></div>
+            <div class="example-cn">（去看電影。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：日本へ旅行に行きたいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('にほんへりょこうにいきたいです')">🔊</button></div>
+            <div class="example-cn">（想去日本旅行。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 2 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🤝 あいます（会います / 会う）</div>
+            <button class="audio-btn" onclick="speakJapanese('あいます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：a-i-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：見面、會面</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：駅で友達と会います。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えきでともだちとあいます')">🔊</button></div>
+            <div class="example-cn">（在車站和朋友見面。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：明日、先生に会いました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('せんせいにあいます')">🔊</button></div>
+            <div class="example-cn">（見老師。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 3 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🚃 のります（乗ります / 乗る）</div>
+            <button class="audio-btn" onclick="speakJapanese('のります')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：no-ri-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：搭乘（交通工具）</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：電車に乗ります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('でんしゃにのります')">🔊</button></div>
+            <div class="example-cn">（搭電車。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：バスに乗って学校へ行きます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('バスにのってがっこうへいきます')">🔊</button></div>
+            <div class="example-cn">（搭公車去學校。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 4 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🍿 みます（見ます / 見る）</div>
+            <button class="audio-btn" onclick="speakJapanese('みます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：mi-ma-su | 第二類動詞</div>
+          <div class="vocab-meaning">意思：看、觀看</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：映画を見ます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えいがをみます')">🔊</button></div>
+            <div class="example-cn">（看電影。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：テレビを見ながらご飯を食べます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('テレビをみながらごはんをたべます')">🔊</button></div>
+            <div class="example-cn">（一邊看電視一邊吃飯。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 5 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">☕ のみます（飲んだ / 飲む）</div>
+            <button class="audio-btn" onclick="speakJapanese('のみます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：no-mi-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：喝、飲用</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：カフェでコーヒーを飲みます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('カフェでコーヒーをのみます')">🔊</button></div>
+            <div class="example-cn">（在咖啡廳喝咖啡。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：お茶を飲みます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('おちゃをのみます')">🔊</button></div>
+            <div class="example-cn">（喝茶。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) - Conditionally Visible -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫</h2>
+      
+      <div class="card-grid">
+
+        <!-- Adjective 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">🍿 おもしろい（面白い）</div>
+            <button class="audio-btn" onclick="speakJapanese('おもしろい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：o-mo-shi-ro-i | い形容詞</div>
+          <div class="vocab-meaning">意思：有趣的、有意思的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：映画はとても面白いです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えいがはとてもおもしろいです')">🔊</button></div>
+            <div class="example-cn">（電影非常有意思。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：この本は面白いです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('このほんはおもしろいです')">🔊</button></div>
+            <div class="example-cn">（這本書很有趣。）</div>
+          </div>
+        </div>
+
+        <!-- Adjective 2 -->
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">🎉 たのしい（楽しい）</div>
+            <button class="audio-btn" onclick="speakJapanese('たのしい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ta-no-shi-i | い形容詞</div>
+          <div class="vocab-meaning">意思：快樂的、愉快的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：今日は楽しい一日でした。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('きょうはたのしいいちにちでした')">🔊</button></div>
+            <div class="example-cn">（今天是愉快的一天。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：友達とおしゃべりするのは楽しいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ともだちとおしゃべりするのはたのしいです')">🔊</button></div>
+            <div class="example-cn">（和朋友聊天很開心。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Nouns & Vocab in Article 2 -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+      
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🎬 えいが（映画）</div>
+            <button class="audio-btn" onclick="speakJapanese('えいが')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：e-i-ga | 名詞</div>
+          <div class="vocab-meaning">意思：電影</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：映画を見ます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えいがをみます')">🔊</button></div>
+            <div class="example-cn">（看電影。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🚉 えき（駅）</div>
+            <button class="audio-btn" onclick="speakJapanese('えき')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：e-ki | 名詞</div>
+          <div class="vocab-meaning">意思：車站</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：駅で会います。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えきであいます')">🔊</button></div>
+            <div class="example-cn">（在車站見面。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">☕ コーヒー</div>
+            <button class="audio-btn" onclick="speakJapanese('コーヒー')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ko-o-hi-i | 外來語名詞</div>
+          <div class="vocab-meaning">意思：咖啡</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：コーヒーを飲みます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('コーヒーをのみます')">🔊</button></div>
+            <div class="example-cn">（喝咖啡。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Grammar in Article 2 -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動詞連用形 ＋ に行きます (去某地的目的)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>動詞ます形去掉「ます」 ＋ に行きます，表示去做某事。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：映画を見に行きます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('えいがをみにいきます')">🔊</button></div>
+            <div class="example-cn">（去看電影。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：日本へ寿司を食べに行きます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('にほんへすしをたべにいきます')">🔊</button></div>
+            <div class="example-cn">（去日本吃壽司。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動詞連用形 ＋ ながら (同時進行兩個動作)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>動詞ます形去掉「ます」 ＋ ながら，表示「一邊...一邊...」。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ポップコーンを食べながら映画を見ます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ポップコーンをたべながらえいがをみます')">🔊</button></div>
+            <div class="example-cn">（一邊吃爆米花，一邊看電影。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：音楽を聞きながら勉強します。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('おんがくをききながらべんきょうします')">🔊</button></div>
+            <div class="example-cn">（一邊聽音樂，一邊讀書。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 5: Lesson Quiz -->
+    <div style="margin-top: 3rem;">
+      <div class="sensei-note-box">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章2 隨堂小測驗</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-dark);">
+          題目：「ポップコーンを　たべ＿＿＿　えいがを　みます。」空格中應該填入哪一個表現呢？
+        </p>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ながら', 'ながら', '正解！『動詞ます形 ＋ ながら』表示一邊做A一邊做B！')">A. ながら</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('て', 'ながら', '再試試看喔！')">B. て</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('から', 'ながら', '再試試看喔！')">C. から</button>
+        </div>
+        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+      </div>
+    </div>
+
+    <!-- Culture snippet -->
+    <div class="culture-card" style="margin-top: 2rem;">
+      <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;"><i class="fa-solid fa-torii-gate"></i> 🌸 さくら先生的文化小知識：日本的電影院習慣</h3>
+      <p style="color: var(--text-dark); line-height: 1.6;">
+        在日本看電影時，播放完畢工作人員名字跑動（片尾名單）時，大家通常會安靜地坐在座位上聽到最後一秒，不會提早站起來離場，這是對電影製作團隊非常尊重的一種禮貌喔！
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章2 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="lesson.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const verbContainer = document.querySelector('#verb-vault-section .card-grid');
+      if (!verbContainer || verbContainer.children.length === 0) {
+        document.getElementById('verb-vault-section').style.display = 'none';
+      }
+      const adjContainer = document.querySelector('#adj-vault-section .card-grid');
+      if (!adjContainer || adjContainer.children.length === 0) {
+        document.getElementById('adj-vault-section').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
