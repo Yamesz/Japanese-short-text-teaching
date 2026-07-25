@@ -18,6 +18,17 @@
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 28px;
+
+  /* Level Colors */
+  --n5-color: #E65C83;
+  --n5-bg: #FFF0F3;
+  --n5-border: rgba(230, 92, 131, 0.25);
+  --n4-color: #D97706;
+  --n4-bg: #FFFBEB;
+  --n4-border: rgba(217, 119, 6, 0.25);
+  --n3-color: #0284C7;
+  --n3-bg: #F0F9FF;
+  --n3-border: rgba(2, 132, 199, 0.25);
 }
 
 * {
@@ -206,91 +217,124 @@ body {
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.8rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
 .article-card {
-  background: #FFFFFF;
-  border-radius: 18px;
-  border: 1.5px solid rgba(255, 183, 197, 0.35);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
+  border: 1.5px solid transparent;
 }
 
 .article-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(230, 92, 131, 0.15);
-  border-color: var(--soft-pink);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
 
-.article-thumb {
-  height: 130px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  border-bottom: 1px dashed rgba(255, 183, 197, 0.4);
-  transition: transform 0.3s ease;
+/* Level-based card backgrounds */
+.article-card.n5 {
+  background: linear-gradient(160deg, #FFFFFF 60%, var(--n5-bg));
+  border-color: var(--n5-border);
 }
-
-.article-card:hover .article-thumb i {
-  transform: scale(1.15);
-  transition: transform 0.3s ease;
+.article-card.n4 {
+  background: linear-gradient(160deg, #FFFFFF 60%, var(--n4-bg));
+  border-color: var(--n4-border);
 }
-
-.article-thumb i {
-  transition: transform 0.3s ease;
+.article-card.n3 {
+  background: linear-gradient(160deg, #FFFFFF 60%, var(--n3-bg));
+  border-color: var(--n3-border);
 }
+.article-card.n5:hover { border-color: var(--n5-color); }
+.article-card.n4:hover { border-color: var(--n4-color); }
+.article-card.n3:hover { border-color: var(--n3-color); }
 
-.article-level {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  background: var(--primary-pink);
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-}
-
-.completion-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 2;
+/* Placeholder card style */
+.article-card.placeholder-card {
+  background: linear-gradient(160deg, #FFFFFF 60%, #F8FAFC);
+  border-color: rgba(0, 0, 0, 0.08);
+  border-style: dashed;
+  opacity: 0.8;
 }
 
 .article-content {
-  padding: 1.4rem 1.6rem;
+  padding: 1.6rem 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
   flex: 1;
 }
 
-.article-title {
-  font-size: 1.3rem;
-  color: var(--deep-sakura);
-  font-weight: 700;
-  line-height: 1.4;
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
-.article-sub {
-  font-size: 0.95rem;
-  color: #64748B;
+.article-level {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.article-card.n5 .article-level {
+  background: var(--n5-bg);
+  color: var(--n5-color);
+  border: 1px solid var(--n5-border);
+}
+.article-card.n4 .article-level {
+  background: var(--n4-bg);
+  color: var(--n4-color);
+  border: 1px solid var(--n4-border);
+}
+.article-card.n3 .article-level {
+  background: var(--n3-bg);
+  color: var(--n3-color);
+  border: 1px solid var(--n3-border);
+}
+
+.completion-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  display: none;
+}
+
+.article-card.completed .completion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.article-title {
+  font-size: 1.35rem;
+  font-weight: 700;
   line-height: 1.5;
 }
 
+.article-card.n5 .article-title { color: var(--n5-color); }
+.article-card.n4 .article-title { color: var(--n4-color); }
+.article-card.n3 .article-title { color: var(--n3-color); }
+.article-card.placeholder-card .article-title { color: var(--text-muted); }
+
+.article-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
 
 .article-tags {
   display: flex;
@@ -306,18 +350,6 @@ body {
   padding: 0.2rem 0.5rem;
   border-radius: 6px;
   font-weight: 500;
-}
-
-.article-footer {
-  margin-top: auto;
-  padding-top: 0.8rem;
-  border-top: 1px dashed rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--primary-pink);
-  font-weight: 700;
 }
 
 /* Feature Navigation Tabs */
@@ -930,25 +962,7 @@ footer {
   transition: width 0.5s ease;
 }
 
-.article-card .completion-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #10B981;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
-  z-index: 3;
-  display: none;
-}
-
-.article-card.completed .completion-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-}
+/* completion-badge styles are now in the main article-card section above */
 
 .mark-learned-btn {
   display: flex;
