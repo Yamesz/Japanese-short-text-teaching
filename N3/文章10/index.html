@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文章10：将来の夢 | さくら先生の日本語教室</title>
   <meta name="description" content="本單元以 N3 日文短文『将来の夢（未來的夢想）』為教材，由さくら先生細緻拆解句型『〜だけでなく』、『〜生かして』與『〜しながら（一邊...一邊...）』。">
+  <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="lesson.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body onload="initArticleLearnedState('article-10')">
 
   <!-- Top Navigation Bar -->
   <nav class="navbar">
@@ -317,12 +318,18 @@
       </div>
     </div>
 
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-10')">
+      ✅ 標記為已學習
+    </button>
+
   </main>
 
   <footer>
     <p>🌸 さくら先生の日本語教室 - 文章10 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
   </footer>
 
+  <script src="../../lesson-common.js"></script>
   <script src="lesson.js"></script>
 </body>
 </html>

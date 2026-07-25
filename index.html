@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>さくら先生の日本語教室 | 日文短文與全方位學習入口</title>
-  <meta name="description" content="專為繁體中文學習者打造的日語教學網站。由さくら先生帶領，收錄 N5 至 N4 日語短文與多媒體學習。">
+  <meta name="description" content="專為繁體中文學習者打造的日語教學網站。由さくら先生帶領，收錄 N5 至 N3 日語短文與多媒體學習。">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,6 +21,7 @@
         <div class="brand-subtitle">日文短文與互動學習入口</div>
       </div>
     </a>
+    <button class="hamburger-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="選單"><i class="fa-solid fa-bars"></i></button>
     <ul class="nav-links">
       <li><a href="#lessons" class="active"><i class="fa-solid fa-book-open"></i> 短文教材目錄</a></li>
       <li><a href="#features"><i class="fa-solid fa-layer-group"></i> 8大教學功能</a></li>
@@ -49,12 +50,32 @@
 
     <div id="lessons">
       <h2 class="section-title"><i class="fa-solid fa-folder-open" style="color: #FF85A1;"></i> 精選日文短文</h2>
+
+      <!-- Progress Bar Wrapper -->
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar-label">
+          <span>📊 學習進度</span>
+          <span id="progress-text">已學 0 / 11 篇</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Level Filter Buttons -->
+      <div class="level-filter-bar">
+        <button class="level-filter-btn active" data-filter="all">📚 全部</button>
+        <button class="level-filter-btn" data-filter="N5">N5 初級</button>
+        <button class="level-filter-btn" data-filter="N4">N4 進階</button>
+        <button class="level-filter-btn" data-filter="N3">N3 中級</button>
+      </div>
+
       <p style="color: #64748B; margin-bottom: 1.5rem; font-size: 1.05rem;">點擊下方資料夾網頁卡片，進入單元學習短文拆解、動詞寶庫與形容詞寶庫：</p>
 
       <div class="articles-grid">
 
         <!-- Article 1 Card -->
-        <a href="./N5/文章1/index.html" class="article-card">
+        <a href="./N5/文章1/index.html" class="article-card" data-level="N5" data-article-id="article-1">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #FFF0F3, #FFC0CB); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -62,6 +83,7 @@
               📜 ともだちのたんじょうび
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章1：ともだちのたんじょうび</div>
@@ -79,7 +101,7 @@
         </a>
 
         <!-- Article 2 Card -->
-        <a href="./N5/文章2/index.html" class="article-card">
+        <a href="./N5/文章2/index.html" class="article-card" data-level="N5" data-article-id="article-2">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #E8F0EC, #C8E6C9); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -87,6 +109,7 @@
               🎬 えいがのひ
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #6B9080;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章2：えいがのひ</div>
@@ -104,7 +127,7 @@
         </a>
 
         <!-- Article 3 Card -->
-        <a href="./N5/文章3/index.html" class="article-card">
+        <a href="./N5/文章3/index.html" class="article-card" data-level="N5" data-article-id="article-3">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -112,6 +135,7 @@
               🏡 にわのしごと
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #F59E0B;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章3：にわのしごと</div>
@@ -129,7 +153,7 @@
         </a>
 
         <!-- Article 4 Card -->
-        <a href="./N5/文章4/index.html" class="article-card">
+        <a href="./N5/文章4/index.html" class="article-card" data-level="N5" data-article-id="article-4">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #E0F7FA, #80DEEA); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -137,6 +161,7 @@
               ☕ うみのちかくのカフェ
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #0097A7;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章4：うみのちかくのカフェ</div>
@@ -154,7 +179,7 @@
         </a>
 
         <!-- Article 5 Card -->
-        <a href="./N5/文章5/index.html" class="article-card">
+        <a href="./N5/文章5/index.html" class="article-card" data-level="N5" data-article-id="article-5">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #F3E5F5, #CE93D8); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -162,6 +187,7 @@
               🌅 しゅうまつのあさ
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #8E24AA;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章5：しゅうまつのあさ</div>
@@ -179,7 +205,7 @@
         </a>
 
         <!-- Article 6 Card -->
-        <a href="./N5/文章6/index.html" class="article-card">
+        <a href="./N5/文章6/index.html" class="article-card" data-level="N5" data-article-id="article-6">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #E8EAF6, #9FA8DA); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -187,6 +213,7 @@
               📖 ほん
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #3F51B5;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章6：ほん</div>
@@ -204,7 +231,7 @@
         </a>
 
         <!-- Article 7 Card -->
-        <a href="./N5/文章7/index.html" class="article-card">
+        <a href="./N5/文章7/index.html" class="article-card" data-level="N5" data-article-id="article-7">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #FFEBEE, #FFCDD2); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -212,6 +239,7 @@
               🎆 まつり
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #D32F2F;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章7：まつり</div>
@@ -229,7 +257,7 @@
         </a>
 
         <!-- Article 8 Card -->
-        <a href="./N4/文章8/index.html" class="article-card">
+        <a href="./N4/文章8/index.html" class="article-card" data-level="N4" data-article-id="article-8">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #EFEBE9, #D7CCC8); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -237,6 +265,7 @@
               🏬 店（みせ）
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #6D4C41;">N4</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章8：店（みせ）</div>
@@ -254,7 +283,7 @@
         </a>
 
         <!-- Article 9 Card -->
-        <a href="./N3/文章9/index.html" class="article-card">
+        <a href="./N3/文章9/index.html" class="article-card" data-level="N3" data-article-id="article-9">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #E0F2FE, #BAE6FD); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -262,6 +291,7 @@
               🚉 駅（えき）
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #0284C7;">N3</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章9：駅（えき）</div>
@@ -279,7 +309,7 @@
         </a>
 
         <!-- Article 10 Card -->
-        <a href="./N3/文章10/index.html" class="article-card">
+        <a href="./N3/文章10/index.html" class="article-card" data-level="N3" data-article-id="article-10">
           <div class="article-thumb"
             style="background: linear-gradient(135deg, #F3E8FF, #E9D5FF); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div
@@ -287,6 +317,7 @@
               ✨ 将来の夢
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #9333EA;">N3</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章10：将来の夢（しょうらいのゆめ）</div>
@@ -303,13 +334,14 @@
           </div>
         </a>
 
-        <!-- Article Card Placeholder for future expansion -->
-        <a href="./N5/文章11/index.html" class="article-card">
+        <!-- Article 11 Card -->
+        <a href="./N5/文章11/index.html" class="article-card" data-level="N5" data-article-id="article-11">
           <div class="article-thumb" style="background: linear-gradient(135deg, #DCFCE7, #BBF7D0); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
             <div style="font-size: 1.3rem; font-weight: bold; color: #166534; text-align: center; font-family: 'Zen Maru Gothic', sans-serif;">
               🌳 公園（こうえん）
             </div>
             <span class="article-level" style="position:absolute; top:12px; left:12px; background: #16A34A;">N5</span>
+            <span class="completion-badge">✅ 已學習</span>
           </div>
           <div class="article-content">
             <div class="article-title">文章11：公園（こうえん）</div>

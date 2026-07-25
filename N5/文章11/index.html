@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文章11：公園 | さくら先生の日本語教室</title>
   <meta name="description" content="本單元以 N5 日文短文『公園（こうえん）』為教材，由さくら先生帶你認識公園散步、與朋友聊天等日常生活的基礎日語表達，包含動詞ます形過去式、助詞「へ」「と」「で」等重點文法。">
+  <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="lesson.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body onload="initArticleLearnedState('article-11')">
 
   <!-- Top Navigation Bar -->
   <nav class="navbar">
@@ -43,13 +44,24 @@
       <!-- Left Column: Short Passage Original Text -->
       <div>
         <div class="image-viewer-card" style="position: static; text-align: left;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
             <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
               📜 日語短文 (N5 經典)
             </h3>
-            <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
-              🔊 全篇朗讀
-            </button>
+            
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Speed Control Selector -->
+              <div class="speed-control">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.6" onclick="setSpeechRate(0.6, this)">🐢 慢速</button>
+                <button class="speed-btn active" data-rate="0.85" onclick="setSpeechRate(0.85, this)">🐇 普通</button>
+                <button class="speed-btn" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 正常</button>
+              </div>
+
+              <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
+                🔊 全篇朗讀
+              </button>
+            </div>
           </div>
 
           <!-- Original Japanese text box -->
@@ -86,7 +98,6 @@
 
         <div class="sentence-list">
 
-          <!-- Sentence 1 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>今日<rt>きょう</rt></ruby>、<ruby>公園<rt>こうえん</rt></ruby>へ　<ruby>行<rt>い</rt></ruby>きました。
@@ -98,7 +109,6 @@
             </div>
           </div>
 
-          <!-- Sentence 2 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>友<rt>とも</rt></ruby>だちと　いっしょに　<ruby>散歩<rt>さんぽ</rt></ruby>しました。
@@ -110,7 +120,6 @@
             </div>
           </div>
 
-          <!-- Sentence 3 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>犬<rt>いぬ</rt></ruby>が　たくさん　いました。
@@ -122,7 +131,6 @@
             </div>
           </div>
 
-          <!-- Sentence 4 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               ベンチで　<ruby>少<rt>すこ</rt></ruby>し　<ruby>休<rt>やす</rt></ruby>みました。
@@ -134,7 +142,6 @@
             </div>
           </div>
 
-          <!-- Sentence 5 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               ジュースを　<ruby>飲<rt>の</rt></ruby>みました。
@@ -146,7 +153,6 @@
             </div>
           </div>
 
-          <!-- Sentence 6 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>友<rt>とも</rt></ruby>だちと　たくさん　<ruby>話<rt>はな</rt></ruby>しました。
@@ -158,7 +164,6 @@
             </div>
           </div>
 
-          <!-- Sentence 7 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>子<rt>こ</rt></ruby>どもたちが　<ruby>元気<rt>げんき</rt></ruby>に　<ruby>遊<rt>あそ</rt></ruby>んでいました。
@@ -170,7 +175,6 @@
             </div>
           </div>
 
-          <!-- Sentence 8 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>天気<rt>てんき</rt></ruby>が　よかったです。
@@ -182,7 +186,6 @@
             </div>
           </div>
 
-          <!-- Sentence 9 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               <ruby>写真<rt>しゃしん</rt></ruby>を　<ruby>撮<rt>と</rt></ruby>りました。
@@ -194,7 +197,6 @@
             </div>
           </div>
 
-          <!-- Sentence 10 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               とても　<ruby>楽<rt>たの</rt></ruby>しかったです。
@@ -206,14 +208,13 @@
             </div>
           </div>
 
-          <!-- Sentence 11 -->
           <div class="sentence-card">
             <div class="sentence-jp">
               また　<ruby>公園<rt>こうえん</rt></ruby>へ　<ruby>行<rt>い</rt></ruby>きたいです。
             </div>
             <div class="sentence-romaji">Ma-ta ko-u-e-n e i-ki-ta-i de-su.</div>
             <div class="sentence-cn">
-              <span>中文：還想再去公園。</span>
+              <span>中文：還想再來公園。</span>
               <button class="audio-btn" onclick="speakJapanese('またこうえんへいきたいです')">🔊</button>
             </div>
           </div>
@@ -223,73 +224,74 @@
 
     </div>
 
-    <!-- Section 1: Verbs Vault -->
+    <!-- Section 1: Verbs Vault with Conjugation Table -->
     <div id="verb-vault-section" style="margin-top: 3rem;">
-      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫</h2>
+      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫 (附五大活用表)</h2>
       
       <div class="card-grid">
 
         <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
           <div class="vocab-header">
-            <div class="vocab-word">🚶 行きました（行く / いく）</div>
+            <div class="vocab-word">🚶 行きました（行く）</div>
             <button class="audio-btn" onclick="speakJapanese('いきました')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：i-ki-ma-shi-ta | 第一類動詞（過去式）</div>
+          <div class="vocab-romaji">讀音：i-ki-ma-shi-ta | 第一類動詞</div>
           <div class="vocab-meaning">意思：去了</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v1')">📊 展開活用變化表</button>
+          <div id="conjugation-v1" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>行く</td><td>行きます</td><td>行きました</td><td>行って</td><td>行かない</td></tr>
+            </table>
+          </div>
         </div>
 
         <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
           <div class="vocab-header">
-            <div class="vocab-word">🐕 散歩しました（散歩する / さんぽする）</div>
+            <div class="vocab-word">🐕 散歩しました（散歩する）</div>
             <button class="audio-btn" onclick="speakJapanese('さんぽしました')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：sa-n-po shi-ma-shi-ta | 第三類動詞（サ變・過去式）</div>
+          <div class="vocab-romaji">讀音：sa-n-po shi-ma-shi-ta | 第三類動詞 (サ變)</div>
           <div class="vocab-meaning">意思：散步了</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v2')">📊 展開活用變化表</button>
+          <div id="conjugation-v2" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>散歩する</td><td>散歩します</td><td>散歩しました</td><td>散歩して</td><td>散歩しない</td></tr>
+            </table>
+          </div>
         </div>
 
         <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
           <div class="vocab-header">
-            <div class="vocab-word">😴 休みました（休む / やすむ）</div>
+            <div class="vocab-word">😴 休みました（休む）</div>
             <button class="audio-btn" onclick="speakJapanese('やすみました')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：ya-su-mi-ma-shi-ta | 第一類動詞（過去式）</div>
+          <div class="vocab-romaji">讀音：ya-su-mi-ma-shi-ta | 第一類動詞</div>
           <div class="vocab-meaning">意思：休息了</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v3')">📊 展開活用變化表</button>
+          <div id="conjugation-v3" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>休む</td><td>休みます</td><td>休みました</td><td>休んで</td><td>休まない</td></tr>
+            </table>
+          </div>
         </div>
 
         <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
           <div class="vocab-header">
-            <div class="vocab-word">🥤 飲みました（飲む / のむ）</div>
+            <div class="vocab-word">🥤 飲みました（飲む）</div>
             <button class="audio-btn" onclick="speakJapanese('のみました')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：no-mi-ma-shi-ta | 第一類動詞（過去式）</div>
+          <div class="vocab-romaji">讀音：no-mi-ma-shi-ta | 第一類動詞</div>
           <div class="vocab-meaning">意思：喝了</div>
-        </div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">💬 話しました（話す / はなす）</div>
-            <button class="audio-btn" onclick="speakJapanese('はなしました')">🔊</button>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v4')">📊 展開活用變化表</button>
+          <div id="conjugation-v4" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>飲む</td><td>飲みます</td><td>飲みました</td><td>飲んで</td><td>飲まない</td></tr>
+            </table>
           </div>
-          <div class="vocab-romaji">讀音：ha-na-shi-ma-shi-ta | 第一類動詞（過去式）</div>
-          <div class="vocab-meaning">意思：聊天了、說話了</div>
-        </div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">🎠 遊んでいました（遊ぶ / あそぶ）</div>
-            <button class="audio-btn" onclick="speakJapanese('あそんでいました')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：a-so-n-de-i-ma-shi-ta | 第一類動詞（進行式過去）</div>
-          <div class="vocab-meaning">意思：正在玩耍著（過去進行式）</div>
-        </div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">📸 撮りました（撮る / とる）</div>
-            <button class="audio-btn" onclick="speakJapanese('とりました')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：to-ri-ma-shi-ta | 第一類動詞（過去式）</div>
-          <div class="vocab-meaning">意思：拍了（照片）</div>
         </div>
 
       </div>
@@ -303,29 +305,20 @@
 
         <div class="vocab-card" style="border-top: 4px solid #6B9080;">
           <div class="vocab-header">
-            <div class="vocab-word">😊 楽しかったです（楽しい / たのしい）</div>
+            <div class="vocab-word">😊 楽しかったです（楽しい）</div>
             <button class="audio-btn" onclick="speakJapanese('たのしかったです')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：ta-no-shi-ka-t-ta de-su | い形容詞（過去式）</div>
-          <div class="vocab-meaning">意思：很開心的（過去式）| 原形：楽しい（開心的）</div>
+          <div class="vocab-romaji">讀音：ta-no-shi-ka-t-ta de-su | い形容詞過去式</div>
+          <div class="vocab-meaning">意思：很開心的（過去式）</div>
         </div>
 
         <div class="vocab-card" style="border-top: 4px solid #6B9080;">
           <div class="vocab-header">
-            <div class="vocab-word">☀️ よかったです（いい / よい）</div>
+            <div class="vocab-word">☀️ よかったです（いい）</div>
             <button class="audio-btn" onclick="speakJapanese('よかったです')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：yo-ka-t-ta de-su | い形容詞（不規則過去式）</div>
-          <div class="vocab-meaning">意思：很好的（過去式）| 原形：いい（好的）→ 過去式特殊變化為「よかった」</div>
-        </div>
-
-        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
-          <div class="vocab-header">
-            <div class="vocab-word">💪 元気（げんきな）</div>
-            <button class="audio-btn" onclick="speakJapanese('げんきな')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：ge-n-ki | な形容詞</div>
-          <div class="vocab-meaning">意思：精神的、有活力的、健康的</div>
+          <div class="vocab-romaji">讀音：yo-ka-t-ta de-su | い形容詞不規則過去式</div>
+          <div class="vocab-meaning">意思：很好的（過去式）| いい → よかった</div>
         </div>
 
       </div>
@@ -336,13 +329,11 @@
       <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
       
       <div class="card-grid">
-
         <div class="vocab-card">
           <div class="vocab-header">
             <div class="vocab-word">🌳 こうえん（公園）</div>
             <button class="audio-btn" onclick="speakJapanese('こうえん')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：ko-u-e-n | 名詞</div>
           <div class="vocab-meaning">意思：公園</div>
         </div>
 
@@ -351,17 +342,7 @@
             <div class="vocab-word">👫 ともだち（友達）</div>
             <button class="audio-btn" onclick="speakJapanese('ともだち')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：to-mo-da-chi | 名詞</div>
           <div class="vocab-meaning">意思：朋友</div>
-        </div>
-
-        <div class="vocab-card">
-          <div class="vocab-header">
-            <div class="vocab-word">🐶 いぬ（犬）</div>
-            <button class="audio-btn" onclick="speakJapanese('いぬ')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：i-nu | 名詞</div>
-          <div class="vocab-meaning">意思：狗</div>
         </div>
 
         <div class="vocab-card">
@@ -369,17 +350,7 @@
             <div class="vocab-word">🪑 ベンチ</div>
             <button class="audio-btn" onclick="speakJapanese('ベンチ')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：be-n-chi | 名詞（外來語）</div>
-          <div class="vocab-meaning">意思：長椅、長凳 (bench)</div>
-        </div>
-
-        <div class="vocab-card">
-          <div class="vocab-header">
-            <div class="vocab-word">🧃 ジュース</div>
-            <button class="audio-btn" onclick="speakJapanese('ジュース')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：ju-u-su | 名詞（外來語）</div>
-          <div class="vocab-meaning">意思：果汁、飲料 (juice)</div>
+          <div class="vocab-meaning">意思：長椅</div>
         </div>
 
         <div class="vocab-card">
@@ -387,10 +358,8 @@
             <div class="vocab-word">📸 しゃしん（写真）</div>
             <button class="audio-btn" onclick="speakJapanese('しゃしん')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：sha-shi-n | 名詞</div>
           <div class="vocab-meaning">意思：照片</div>
         </div>
-
       </div>
     </div>
 
@@ -399,44 +368,27 @@
       <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
 
       <div class="card-grid">
-
         <div class="grammar-card">
           <div class="grammar-pattern">📝 動詞ます形 → 過去式「〜ました」</div>
           <div class="grammar-usage">
-            <b>用法：</b>將動詞的ます形改為「〜ました」，即可表達過去已經完成的動作。
+            <b>用法：</b>將動詞的ます形改為「〜ました」，表達過去完成的事。
           </div>
           <div class="example-box">
             <div class="example-jp">例句①：公園へ行きました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('こうえんへいきました')">🔊</button></div>
             <div class="example-cn">（去了公園。）</div>
-            <div class="example-jp">例句②：ジュースを飲みました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ジュースをのみました')">🔊</button></div>
-            <div class="example-cn">（喝了果汁。）</div>
           </div>
         </div>
 
         <div class="grammar-card">
           <div class="grammar-pattern">📝 助詞「へ」— 移動方向</div>
           <div class="grammar-usage">
-            <b>用法：</b>「場所 ＋ へ ＋ 移動動詞」表示移動的方向或目的地。「へ」讀作「え (e)」。
+            <b>用法：</b>「場所 ＋ へ ＋ 移動動詞」，「へ」發音為「え」。
           </div>
           <div class="example-box">
             <div class="example-jp">例句①：公園へ行きました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('こうえんへいきました')">🔊</button></div>
             <div class="example-cn">（去了公園。）</div>
-            <div class="example-jp">例句②：また公園へ行きたいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('またこうえんへいきたいです')">🔊</button></div>
-            <div class="example-cn">（還想再去公園。）</div>
           </div>
         </div>
-
-        <div class="grammar-card">
-          <div class="grammar-pattern">📝 助詞「で」— 動作的場所</div>
-          <div class="grammar-usage">
-            <b>用法：</b>「場所 ＋ で ＋ 動詞」表示動作進行的地點。
-          </div>
-          <div class="example-box">
-            <div class="example-jp">例句①：ベンチで休みました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ベンチでやすみました')">🔊</button></div>
-            <div class="example-cn">（在長椅上休息了。）</div>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -447,26 +399,60 @@
           🌸 さくら先生的文化小知識：日本人與公園散步文化
         </h3>
         <p style="color: #4A5568; line-height: 1.8; margin-bottom: 0.5rem;">
-          在日本，公園是市民最重要的休憩場所之一。春天到公園賞櫻（お花見 / おはなみ）、秋天欣賞紅葉，冬天散步曬太陽，都是非常普遍的日常活動。許多日本人也喜歡帶著愛犬到公園散步，或是在ベンチ（長椅）上悠閒地喝咖啡、讀書。公園也是小孩子遊玩的天堂，「子どもたちが元気に遊んでいる」是很常見的溫馨日本風景喔！
+          在日本，公園是市民最重要的休憩場所之一。春天賞櫻、秋天賞楓，在ベンチ（長椅）上悠閒喝飲料、帶愛犬散步都是日本溫馨日常風景喔！
         </p>
       </div>
     </div>
 
-    <!-- Section 6: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章11 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「今日、公園＿＿行きました。」（表達「去了公園」時，空格處應填入什麼助詞？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('へ', 'へ', '正解！移動方向用助詞「へ」（讀作「え」），表示「朝向某個地方移動」！')">A. へ</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('で', 'へ', '')">B. で</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('に', 'へ', '')">C. に</button>
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章11 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「今日、公園＿＿行きました。」（表達「去了公園」的方向，應填入何助詞？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！移動方向用助詞「へ」（讀作「え」）！')">A. へ (e)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「で」是用於動作進行的場所喔！方向要用「へ」！')">B. で (de)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「を」是用於受詞的助詞喔！方向要用「へ」！')">C. を (o)</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：動詞「休む（やすむ / 休息）」的過去式「休みました」屬於第幾類動詞？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！休む (やすむ) 語尾為む，屬於第一類 (五段) 動詞！')">A. 第一類動詞</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '休む語尾是む，不是第二類喔！是第一類動詞！')">B. 第二類動詞</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '第三類動詞只有 する 和 来る 喔！休む是第一類動詞！')">C. 第三類動詞</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：「天気が＿＿＿です。」（表達「過去天氣很好」，劃線處應填何者？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '「いい」是現在式喔！過去式不規則變化為「よかった」！')">A. いい</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '正解！「いい/よい」的過去式是不規則變化『よかった』！')">B. よかった</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, '沒有「いいかった」這種語法喔！過去式是「よかった」！')">C. いいかった</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
+
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-11')">
+      ✅ 標記為已學習
+    </button>
 
   </main>
 
@@ -474,6 +460,7 @@
     <p>🌸 さくら先生の日本語教室 - 文章11 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
   </footer>
 
+  <script src="../../lesson-common.js"></script>
   <script src="lesson.js"></script>
 </body>
 </html>

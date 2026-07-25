@@ -56,7 +56,61 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize AI Assistant
   initAssistant();
+
+  // Initialize Progress Tracking & Level Filter
+  initProgressAndFilters();
 });
+
+// ===== Progress Tracking & Level Filter System =====
+function initProgressAndFilters() {
+  updateProgressUI();
+
+  // Filter Buttons
+  const filterBtns = document.querySelectorAll('.level-filter-btn');
+  const cards = document.querySelectorAll('.article-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const level = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const cardLevel = card.getAttribute('data-level');
+        if (level === 'all' || cardLevel === level || !cardLevel) {
+          card.classList.remove('hidden-by-filter');
+        } else {
+          card.classList.add('hidden-by-filter');
+        }
+      });
+    });
+  });
+}
+
+function updateProgressUI() {
+  const learned = JSON.parse(localStorage.getItem('sakura_learned_articles') || '[]');
+  const totalArticles = 11;
+
+  const cards = document.querySelectorAll('.article-card[data-article-id]');
+  cards.forEach(card => {
+    const id = card.getAttribute('data-article-id');
+    if (learned.includes(id)) {
+      card.classList.add('completed');
+    } else {
+      card.classList.remove('completed');
+    }
+  });
+
+  const count = learned.length;
+  const percent = Math.min(100, Math.round((count / totalArticles) * 100));
+
+  const textEl = document.getElementById('progress-text');
+  const fillEl = document.getElementById('progress-fill');
+
+  if (textEl) textEl.textContent = `已學 ${count} / ${totalArticles} 篇 (${percent}%)`;
+  if (fillEl) fillEl.style.width = `${percent}%`;
+}
 
 // 3. Quiz System
 const quizData = [
