@@ -326,32 +326,53 @@
       </div>
     </div>
 
-    <!-- Section 5: Culture Note -->
-    <div style="margin-top: 3rem;">
-      <div style="background: linear-gradient(135deg, #FFF9F3 0%, #FFF0F5 100%); border: 2px solid #FFC0CB; border-radius: 16px; padding: 1.8rem; box-shadow: var(--shadow-sm);">
-        <h3 style="color: var(--deep-sakura); margin-top: 0; font-size: 1.3rem;">
-          🌸 さくら先生的文化小知識：日本人的「自立（じりつ）」與社會責任
-        </h3>
-        <p style="color: #4A5568; line-height: 1.8; margin-bottom: 0.5rem;">
-          在傳統日本社會與現代青年心態中，「経済的自立（經濟獨立）」被視為成年人的重要里程碑。不僅要能夠養活自己，更講求「社会貢献（對社會有所貢獻）」，將自己所學的知識（知識）與經驗（経験）回饋周遭，這正是這篇短文所傳達的成熟價值觀！
-        </p>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章10 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「家族の責任を＿＿＿、自分の道を築きます。」（表達「一邊履行責任，一邊開創道路」，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！『動詞ます形(去ます) ＋ ながら』表示同時兼顧與進行兩件事！')">A. 果たしながら</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '接「ながら」需要去掉ます喔！')">B. 果たす</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「果たして」是て形，無法表示同時進行的狀態喔！')">C. 果たして</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：文中「経済的に自立（じりつ）し」的「自立」是什麼意思？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！「自立（じりつ）」意指獨立自主、不依賴他人！')">A. 經濟上獨立 (能靠自己生活)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '旅行是「旅行する」喔！')">B. 自由自在地旅行</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '創立公司是「起業する」喔！')">C. 創立新的公司</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：根據文章，主人公未來的夢想（将来の夢）是什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「知識や経験を生かして、人に良い影響を与えられる人になることです」。')">A. 活用所學給予人們良好影響並開創屬於自己的道路</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中沒有提及物質財富喔！')">B. 成為世界首富並購買豪宅</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中提到會「家族の責任を果たしながら（履行對家庭的責任）」喔！')">C. 離開家人獨自去國外生活</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 
-    <!-- Section 6: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章10 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「家族の責任を＿＿＿、自分の道を築きます。」（表達「一邊履行責任、一邊開創道路」應填入何者？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('果たしながら', '果たしながら', '正解！『動詞ます形 ＋ ながら』表示同時進行雙重動作！')">A. 果たしながら</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('果たす', '果たしながら', '再試試看喔！接『ながら』需要去掉ます喔！')">B. 果たす</button>
-        </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
-      </div>
-    </div>
+    
 
     <!-- Mark as Learned Button -->
     <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-10')">

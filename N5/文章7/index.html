@@ -313,18 +313,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章7 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「ひとが　たくさん　＿＿＿。」（表達人很多過去式應填？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('いました', 'いました', '正解！有生命的活物存在過去式用『いました』！')">A. いました</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ありました', 'いました', '再試試看喔！')">B. りました</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章7 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「人が　たくさん　＿＿＿。」（表達昨天祭典有很多人，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！人（有生命活物）的過去存在要用「いました」！')">A. いました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「ありました」是用於無生命物品或植物喔！')">B. ありました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「います」是現在式，昨天的祭典要用過去式「いました」！')">C. います</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：主人公在祭典上吃了哪一種日本屋台小吃？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！文中提到「私は焼きそばを食べました」。')">A. 焼きそば (日式炒麵)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '文中沒有提到章魚燒喔！')">B. たこ焼き (章魚燒)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '文中沒有提到拉麵喔！')">C. ラーメン (拉麵)</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：祭典的晚上（夜）觀賞了什麼美麗景觀？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「夜には花火を見ました。とても綺麗でした」。')">A. 花火 (煙火)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中沒有提到電影喔！')">B. 映画 (電影)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中沒有提到楓葉喔！')">C. 紅葉 (楓葉)</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

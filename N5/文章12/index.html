@@ -530,21 +530,54 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章12 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「やさいを　きっ＿＿＿、なべに　いれます。」（表達「切好蔬菜後放入鍋中」的連貫動作，劃線處應填何者？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('て', 'て', '正解！動詞「切る」的て形為「切って」，用於連接連貫動作！')">A. て</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ます', 'て', '「ます」是句尾終止形，不能直接連貫下一個動作喔！')">B. ます</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ない', 'て', '「ない」是否定形，不是表示動作順序喔！')">C. ない</button>
+    
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章12 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「野菜を　切（き）＿＿＿、鍋に　入れます。」（把蔬菜切好後放入鍋中，動詞「切る」的て形應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！動詞「切る」的て形為「切って」，用於連貫動作！')">A. って</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「切ります」是句尾終止形，不能直接連貫動作喔！')">B. ります</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「切らない」是否定形喔！')">C. らない</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：文中的「いい　においが　します」是什麼意思？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！「いいにおいがします」表示聞到迷人的香氣（好香喔）！')">A. 散發出迷人的香氣 (好香喔)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '「いい音がします」才是聲音很大聲喔！')">B. 聲音很大聲</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「いい天気です」才是天氣非常好喔！')">C. 天氣非常好</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：吃完飯之後（ごはんのあと），主人公做了什麼事？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「ごはんのあと、皿を洗います」。')">A. 皿を洗います (洗盤子)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中沒有提到看電視喔！')">B. テレビを見ます</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中沒有提到去買東西喔！')">C. 買い物に行きます</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
+
+    
 
     <!-- Culture snippet -->
     <div class="culture-card" style="margin-top: 2rem;">

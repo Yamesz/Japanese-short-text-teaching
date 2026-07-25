@@ -291,18 +291,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章8 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「また　いきたい＿＿＿　おもいます。」（引用思考內容應填哪個助詞？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('と', 'と', '正解！引導思考/意見時使用助詞『と』！')">A. と</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('を', 'と', '再試試看喔！')">B. を</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章8 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「また　時間があるときに　行きたい＿＿＿　思います。」（表達思考與個人想法時，應填何助詞？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！引導思考、意見或想法內容時使用助詞『と』！')">A. と</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「を」是用於受詞喔！')">B. を</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「に」用於對象或目的地喔！')">C. に</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「店の中は　明る（あかる）＿＿＿、とてもきれいでした。」（形容店內明亮且乾淨，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！い形容詞的連接形(て形)為去い ＋ くて ➔ 明るくて！')">A. くて</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '「で」是用於な形容詞或名詞的連接形喔！')">B. で</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「かった」是過去式，連接下個形容詞要用「〜くて」！')">C. かった</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：主人公在這家新店裡買了什麼東西？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「私はパンと飲み物を買いました」。')">A. パンと飲み物 (麵包和飲料)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中沒有提到衣服和鞋子喔！')">B. 服と靴 (衣服和鞋子)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中沒有提到書本和文具喔！')">C. 本と文房具 (書本和文具)</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

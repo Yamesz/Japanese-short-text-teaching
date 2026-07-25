@@ -312,18 +312,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章6 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「ほんは　とても　おもしろ＿＿＿です。」（過去時態應填入？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('かった', 'かった', '正解！い形容詞過去式為『〜かったです』！')">A. かった</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('い', 'かった', '再試試看喔！')">B. い</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章6 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「本は　とても　面白（おもしろ）＿＿＿です。」（表達過去這本書很有趣，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！い形容詞過去式變化為「去い ＋ かった」➔ 面白かったです！')">A. かった</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「面白いです」是現在/未來式喔！昨天的書要用過去式！')">B. い</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, 'い形容詞過去式不能直接加「でした」，要變「〜かったです」喔！')">C. でした</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「お茶を　飲（の）み＿＿＿　本を　讀みました。」（一邊喝茶一邊看書，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！「動詞ます形 ＋ ながら」表示一邊做A一邊做B！')">A. ながら</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '「て」是用於動作先後連接喔！')">B. て</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「前に」需要接辭書形喔！')">C. 前に</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：根據文章，這本書裡面有什麼特色？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「本にはたくさんの絵がありました」。')">A. たくさんの絵（許多插圖）</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中沒有提到難懂的漢字喔！')">B. 難しい漢字（困難的漢字）</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中沒有提到英文喔！')">C. 英語の文章（英文文章）</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

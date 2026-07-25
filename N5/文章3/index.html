@@ -393,19 +393,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章3 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「すこし　つかれます＿＿＿、たのしいです。」空格中應該填入哪一個轉折助詞呢？
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('が', 'が', '正解！『〜が』常用在表達「雖然...但是...」的轉折關係喔！')">A. が</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('から', 'が', '再試試看喔！')">B. から</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ね', 'が', '再試試看喔！')">C. ね</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章3 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「すこし　つかれます＿＿＿、たのしいです。」（表達「雖然有點累，但是很開心」，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！『〜が』用於連接表示轉折關係的句子（雖然...但是...）！')">A. が</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「から」是用於表示原因（因為...）喔！')">B. から</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「と」用於和誰一起或條件句喔！')">C. と</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：下列哪一個動詞表示「給花澆水」的「澆（水）」？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！「花に水をやります」表示給花澆水！')">A. やります</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '「買います」是買東西喔！')">B. 買います</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「洗います」是清洗喔！')">C. 洗います</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：根據文章，傍晚進家門（うちに入って）之後做了什麼事？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 2, '給花澆水是下午在庭院做的事喔！')">A. 花に水をやりました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 2, '除草也是在庭院做的事喔！')">B. 草を取りました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 2, '正解！文中提到「夕方、うちに帰って、手を洗います」。')">C. 手を洗いました</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

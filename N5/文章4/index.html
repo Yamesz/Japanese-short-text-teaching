@@ -364,19 +364,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章4 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「また　ともだちと　いっしょに　ここに　＿＿＿たいです。」空格中應填入？
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('き', 'き', '正解！『来ます』去ます＋たいです ➔ 来たいです（想來）！')">A. き (来)</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('い', 'き', '再試試看喔！')">B. い (行)</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('み', 'き', '再試試看喔！')">C. み (見)</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章4 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「また　ともだちと　いっしょに　ここに　＿＿＿たいです。」（表達「想再來這裡」，劃線處應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！『来ます』去ます ＋ たいです ➔ 来たいです（想來）！')">A. き (来)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「行きたいです」是想去，文中是在當地說「想再來（来たいです）」喔！')">B. い (行)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「見たいです」是想看喔！')">C. み (見)</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「海の　砂浜＿＿＿　散步しました。」（在沙灘上移動散步，應填何助詞？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！助詞「を」常用於表經過、移動的場所（如「砂浜を散歩します」）！')">A. を</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '散步等場所移動常用「を」標示路徑喔！')">B. に</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「が」用於主詞標示喔！')">C. が</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：從咖啡廳的窗戶（窓から）可以看到什麼景物？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '文中沒有看到山和電車喔！')">A. 山と電車</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '正解！文中提到「窓から青い海と飛行機が見えました」。')">B. 青い海と飛行機</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, '文中沒有提到花和狗喔！')">C. 花と犬</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

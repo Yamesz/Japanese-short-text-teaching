@@ -267,40 +267,6 @@
         </div>
 
         <div class="vocab-card" style="border-top: 4px solid #6B9080;">
-          <div class="vocab-header">
-            <div class="vocab-word">🤝 身近（みぢか）</div>
-            <button class="audio-btn" onclick="speakJapanese('みぢか')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：mi-dji-ka | な形容詞</div>
-          <div class="vocab-meaning">意思：切身的、身邊常見/親近的</div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Section 3: Nouns -->
-    <div style="margin-top: 3rem;">
-      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
-      
-      <div class="card-grid">
-
-        <div class="vocab-card">
-          <div class="vocab-header">
-            <div class="vocab-word">🚉 えき（駅）</div>
-            <button class="audio-btn" onclick="speakJapanese('えき')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：e-ki | 名詞</div>
-          <div class="vocab-meaning">意思：車站 / 火車站</div>
-        </div>
-
-        <div class="vocab-card">
-          <div class="vocab-header">
-            <div class="vocab-word">⏳ よゆう（余裕）</div>
-            <button class="audio-btn" onclick="speakJapanese('よゆう')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：yo-yu-u | 名詞</div>
-          <div class="vocab-meaning">意思：充裕、餘裕（時間或心境上的從容）</div>
-        </div>
 
         <div class="vocab-card">
           <div class="vocab-header">
@@ -345,32 +311,53 @@
       </div>
     </div>
 
-    <!-- Section 5: Culture Note -->
-    <div style="margin-top: 3rem;">
-      <div style="background: linear-gradient(135deg, #FFF9F3 0%, #FFF0F5 100%); border: 2px solid #FFC0CB; border-radius: 16px; padding: 1.8rem; box-shadow: var(--shadow-sm);">
-        <h3 style="color: var(--deep-sakura); margin-top: 0; font-size: 1.3rem;">
-          🌸 さくら先生的文化小知識：日本車站與「駅ナカ (Ekinaka)」文化
-        </h3>
-        <p style="color: #4A5568; line-height: 1.8; margin-bottom: 0.5rem;">
-          在日本，車站（駅）不只是單純搭車的轉運站，更發展出成熟的「駅ナカ（Ekinaka，站內商場）」文化！許多大型車站閘門內外設有便利商店、麵包店、咖啡廳乃至拉麵店與伴手禮名店。對於通勤族（通勤・通学）來說，車站是每天不可或缺的生活動線樞紐喔！
-        </p>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章9 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「時間に余裕を持って家を＿＿＿ようにしています。」（表達「努力養成習慣」，劃線處應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！『動詞辭書形 ＋ ようにしています』表示努力養成某習慣！')">A. 出る</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「ようにしています」前面要接動詞原形(辭書形)喔！')">B. 出て</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '不能接過去式「出た」喔！')">C. 出た</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：文中的「混雑（こんざつ）しています」是什麼意思？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！「混雑しています」表示非常擁擠、人潮眾多！')">A. 非常擁擠 (人潮混雜)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('quiz', 1, 0, '安靜是「静か（しずか）」喔！')">B. 非常安靜</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '廣闊是「広い（ひろい）」喔！')">C. 非常廣闊</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：為什麼主人公習慣留有充裕的時間（時間に余裕を持って）出門？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「朝の駅は通勤や通学をする人でとても混雑しています。そのため...」。')">A. 朝の駅は通勤・通学の人で混雑しているから</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中是指搭電車與車站擁擠喔！')">B. バスがよく遅れるから</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中沒有提到要打工喔！')">C. 駅でアルバイトをするから</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 
-    <!-- Section 6: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章9 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「時間に余裕を持って家を＿＿＿ようにしています。」（表達「盡量養成提早出門習慣」時，劃線處應填何者？）
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('出る', '出る', '正解！『動詞辭書形 ＋ ようにしています』表示努力養成某習慣！')">A. 出る</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('出て', '出る', '再試試看喔！應該要接動詞辭書形喔！')">B. 出て</button>
-        </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
-      </div>
-    </div>
+    
 
     <!-- Mark as Learned Button -->
     <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-9')">

@@ -471,19 +471,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章2 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「ポップコーンを　たべ＿＿＿　えいがを　みます。」空格中應該填入哪一個表現呢？
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ながら', 'ながら', '正解！『動詞ます形 ＋ ながら』表示一邊做A一邊做B！')">A. ながら</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('て', 'ながら', '再試試看喔！')">B. て</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('から', 'ながら', '再試試看喔！')">C. から</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章2 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「ポップコーンを　たべ＿＿＿　えいがを　みます。」（一邊吃爆米花一邊看電影，應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！『動詞ます形(去ます) ＋ ながら』表示同時進行兩個動作！')">A. ながら</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「て」是用於動作先後順序喔！')">B. て</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「から」是用於表示原因或起點喔！')">C. から</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「友達と　駅＿＿＿　会います。」（在車站會面，地點應填何助詞？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 1, '「に」接「会います」時常用於標示對象（友達に会います）喔！地點要用「で」！')">A. に</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 1, '正解！動作發生的地點使用助詞「で」！')">B. で</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 1, '「を」用於動作受詞喔！')">C. を</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：主人公和朋友在傍晚（夕方）做了什麼事？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '去電影院買票是之前的行程喔！')">A. 映画館でチケットを買いました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '正解！文中提到「夕方、カフェでコーヒーを飲みます」。')">B. カフェでコーヒーを飲みました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, '文章中沒有提到去公園喔！')">C. 公園で散歩しました</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

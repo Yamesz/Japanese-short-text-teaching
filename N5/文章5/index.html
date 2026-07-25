@@ -340,18 +340,49 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章5 隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「てんきが　よけ＿＿＿、ちかくの　こうえんまで　さんぽに　いきます。」空格中應填入假定助詞？
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('れば', 'れば', '正解！『良い』去い＋ければ ➔ 良ければ！')">A. れば</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('たら', 'れば', '再試試看喔！')">B. たら</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章5 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「天氣が　良（よ）＿＿＿、近くの公園まで散步に行きます。」（表達「如果天氣好的話」，劃線處應填？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！「いい/よい」的假定形變化為「良ければ（如果好的話）」！')">A. ければ</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '雖然「よかったら」也可以，但形容詞假定形標準變化是「去い + ければ」喔！')">B. たら</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「よくて」是連接形（て形），不是條件假定喔！')">C. くて</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：下列何者是文中表示「通常、大抵上」的副詞？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！「たいてい」表示通常、大抵上的習慣！')">A. たいてい</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '「ぜんぜん」是完全（後接否定）喔！')">B. ぜんぜん</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「ときどき」是偶爾喔！')">C. ときどき</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：主人公在吃早餐前（朝食の前）會做什麼事？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '去公園散步是天氣好的話會去的事喔！')">A. 公園へ散歩に行きます</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '正解！文中明確提到「朝食の前に、熱いコーヒーを飲みながら本を読みます」。')">B. 熱いコーヒーを飲みながら本を読みます</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, '文中沒有提到掃除喔！')">C. 部屋の掃除をします</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
 

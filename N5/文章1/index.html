@@ -565,22 +565,53 @@
       </div>
     </div>
 
-    <!-- Section 5: Lesson Quiz -->
-    <div style="margin-top: 3rem;">
-      <div class="sensei-note-box">
-        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章1
-          隨堂小測驗</h3>
-        <p style="margin-bottom: 1rem; color: var(--text-dark);">
-          題目：「ごご、ゲーム＿＿＿あそびます。」空格中應該填入哪一個助詞呢？
-        </p>
-        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('に', 'で', '題目測試')">A. に</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('で', 'で', '用『で』表示進行遊戲活動的工具與媒介喔！')">B. で</button>
-          <button class="quiz-opt-btn" onclick="checkLessonAnswer('を', 'で', '題目測試')">C. を</button>
+    
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章1 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「生日」的日文讀音是什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！「誕生日」讀作「たんじょうび」喔！')">A. たんじょうび</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「ほんとうび」不是正確的單字喔！')">B. ほんとうび</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「まいにち」是每天的意思喔！')">C. まいにち</button>
         </div>
-        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「ごご、ゲーム＿＿＿あそびます。」空格中應該填入哪一個助詞？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 1, '「に」通常表示時間或對象喔！')">A. に</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 1, '正解！用『で』表示進行活動的工具與媒介！')">B. で</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 1, '「を」通常接動作的直接受詞喔！')">C. を</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：文章中主人公在中午（昼）和大家一起做了什麼事？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '買禮物是早上的行程喔！')">A. プレゼントを買いました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '正解！文中提到「昼、みんなでケーキを食べます」。')">B. ケーキを食べました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, '回家是傍晚的事喔！')">C. うちに帰りました</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
       </div>
     </div>
+
+    
 
     <!-- Culture snippet -->
     <div class="culture-card" style="margin-top: 2rem;">
