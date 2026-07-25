@@ -154,3 +154,12 @@ function updateQuizSummary() {
     }
   }
 }
+
+// Toggle conjugation table visibility
+function toggleConjugation(id) {
+  const el = document.getElementById("conjugation-" + id);
+  if (el) {
+    el.classList.toggle("active");
+  }
+}
+
