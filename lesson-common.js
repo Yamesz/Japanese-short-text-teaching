@@ -1,6 +1,6 @@
 // Shared logic for Sakura Sensei Lesson Pages
 
-let currentSpeechRate = 0.85;
+let currentSpeechRate = 1.0;
 
 // TTS with dynamic speech rate
 function speakJapanese(text) {
@@ -71,7 +71,7 @@ function initArticleLearnedState(articleId) {
   }
 
   // Restore speech rate
-  const savedRate = parseFloat(localStorage.getItem('sakura_speech_rate') || '0.85');
+  const savedRate = parseFloat(localStorage.getItem('sakura_speech_rate') || '1.0');
   currentSpeechRate = savedRate;
   const speedBtns = document.querySelectorAll('.speed-btn');
   speedBtns.forEach(b => {
@@ -82,6 +82,18 @@ function initArticleLearnedState(articleId) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('mark-learned-btn');
+  if (btn) {
+    const match = btn.getAttribute('onclick')?.match(/toggleArticleLearned\(['"]([^'"]+)['"]\)/);
+    const articleId = match ? match[1] : btn.getAttribute('data-article-id');
+    if (articleId) {
+      initArticleLearnedState(articleId);
+    }
+  }
+});
+
 
 // Multi-Question Quiz Engine
 let quizScores = {};

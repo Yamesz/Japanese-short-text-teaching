@@ -90,9 +90,9 @@ function initProgressAndFilters() {
 
 function updateProgressUI() {
   const learned = JSON.parse(localStorage.getItem('sakura_learned_articles') || '[]');
-  const totalArticles = 11;
-
   const cards = document.querySelectorAll('.article-card[data-article-id]');
+  const totalArticles = cards.length || 11;
+
   cards.forEach(card => {
     const id = card.getAttribute('data-article-id');
     if (learned.includes(id)) {
@@ -102,15 +102,19 @@ function updateProgressUI() {
     }
   });
 
-  const count = learned.length;
-  const percent = Math.min(100, Math.round((count / totalArticles) * 100));
+  const validLearnedCount = cards.length > 0
+    ? Array.from(cards).filter(card => learned.includes(card.getAttribute('data-article-id'))).length
+    : learned.length;
+
+  const percent = Math.min(100, Math.round((validLearnedCount / totalArticles) * 100));
 
   const textEl = document.getElementById('progress-text');
   const fillEl = document.getElementById('progress-fill');
 
-  if (textEl) textEl.textContent = `已學 ${count} / ${totalArticles} 篇 (${percent}%)`;
+  if (textEl) textEl.textContent = `已學 ${validLearnedCount} / ${totalArticles} 篇 (${percent}%)`;
   if (fillEl) fillEl.style.width = `${percent}%`;
 }
+
 
 // 3. Quiz System
 const quizData = [

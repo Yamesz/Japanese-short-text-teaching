@@ -1,21 +1,6 @@
 // Lesson script for 文章6
 
-function speakJapanese(text) {
-  if (!('speechSynthesis' in window)) {
-    alert('您的瀏覽器不支援語音功能');
-    return;
-  }
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'ja-JP';
-  utterance.rate = 0.85;
-  
-  const voices = window.speechSynthesis.getVoices();
-  const jaVoice = voices.find(v => v.lang.includes('ja'));
-  if (jaVoice) utterance.voice = jaVoice;
 
-  window.speechSynthesis.speak(utterance);
-}
 
 function playFullArticleAudio() {
   const fullText = "きのう、ほんをよみました。ほんはとてもおもしろかったです。わたしはいえでよみました。おちゃをのみながらよみました。ほんにはたくさんのえがありました。じかんをわすれてよみました。またつづきをよみたいです。どくしょはたのしいです。";

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章12：よるのキッチン | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以 N5 日文短文『よるのキッチン（夜晚的廚房）』為教材，由さくら先生帶你認識廚房做飯、洗碗與喝茶等日常日語表達，包含場所助詞「で」、動詞「て形」連貫動作、時間順序「そのあと」與氣味感官句型。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body onload="initArticleLearnedState('article-12')">
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">🌸</span>
+      <div>
+        <div class="brand-title">さくら先生の日本語教室</div>
+        <div class="brand-subtitle">文章12 獨立單元網頁</div>
+      </div>
+    </a>
+    <a href="../../index.html" class="back-btn"><i class="fa-solid fa-house"></i> 返回主頁入口</a>
+  </nav>
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章12：よるのキッチン（夜晚的廚房）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：練習描繪晚餐料理過程、場所助詞「で」、動作連貫「て形」、時間順序「そのあと」與感官表達。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文
+            </h3>
+
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Speed Control Selector -->
+              <div class="speed-control">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢速 0.8x</button>
+                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
+                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快速 1.2x</button>
+              </div>
+
+              <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;"
+                onclick="playFullArticleAudio()">
+                🔊 全篇朗讀
+              </button>
+            </div>
+          </div>
+
+          <!-- Original Japanese text box (Formatted like manuscript) -->
+          <div
+            style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 2.2; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);">
+            <div
+              style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+              よるのキッチン
+            </div>
+
+            <div>よる、キッチンで　ばんごはんを　つくります。</div>
+            <div>やさいを　きって、なべに　いれます。</div>
+            <div>ごはんを　つくります。</div>
+            <div>いい　においが　します。</div>
+            <div>かぞくと　いっしょに　たべます。</div>
+            <div>ごはんのあと、さらを　あらいます。</div>
+            <div>そのあと、おちゃを　のみます。</div>
+            <div>ゆっくり　した　よるです。</div>
+          </div>
+
+          <div
+            style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+            <b>🌸 さくら先生導讀點撥：</b><br>
+            這是一篇溫馨輕快的日常短文！描述夜晚在廚房做晚餐、與家人共進晚餐後洗碗喝茶的溫暖時光。請參考右側的逐句拆解與下方新增的<b>【動詞寶庫】</b>與<b>【形容詞寶庫】</b>喔！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence Breakdown -->
+      <div>
+        <h3 class="section-title" style="margin-top: 0;">
+          📖 逐句朗讀與解析 (漢字 + 假名注音 + 羅馬字 + 中文)
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>夜<rt>よる</rt></ruby>、キッチンで　<ruby>晩<rt>ばん</rt></ruby>ごはんを　<ruby>作<rt>つく</rt></ruby>ります。
+            </div>
+            <div class="sentence-romaji">Yo-ru, ki-t-chi-n de ba-n-go-ha-n o tsu-ku-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：晚上，在廚房做晚餐。</span>
+              <button class="audio-btn" onclick="speakJapanese('よる、キッチンでばんごはんをつくります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>野菜<rt>やさい</rt></ruby>を　<ruby>切<rt>き</rt></ruby>って、<ruby>鍋<rt>なべ</rt></ruby>に　<ruby>入<rt>い</rt></ruby>れます。
+            </div>
+            <div class="sentence-romaji">Ya-sa-i o ki-t-te, na-be ni i-re-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：把蔬菜切好後放入鍋子裡。</span>
+              <button class="audio-btn" onclick="speakJapanese('やさいをきって、なべにいれます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              ごはんを　<ruby>作<rt>つく</rt></ruby>ります。
+            </div>
+            <div class="sentence-romaji">Go-ha-n o tsu-ku-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：製作飯菜。</span>
+              <button class="audio-btn" onclick="speakJapanese('ごはんをつくります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              いい　においが　します。
+            </div>
+            <div class="sentence-romaji">I-i ni-o-i ga shi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：散發出迷人的香氣（好香喔）。</span>
+              <button class="audio-btn" onclick="speakJapanese('いいにおいがします')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>家族<rt>かぞく</rt></ruby>と　いっしょに　<ruby>食<rt>た</rt></ruby>べます。
+            </div>
+            <div class="sentence-romaji">Ka-zo-ku to i-s-sho ni ta-be-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：和家人一起享用。</span>
+              <button class="audio-btn" onclick="speakJapanese('かぞくいっしょにたべます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 6 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              ごはんのあと、<ruby>皿<rt>さら</rt></ruby>を　<ruby>洗<rt>あら</rt></ruby>います。
+            </div>
+            <div class="sentence-romaji">Go-ha-n no a-to, sa-ra o a-ra-i-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：用餐完畢之後洗盤子。</span>
+              <button class="audio-btn" onclick="speakJapanese('ごはんのあと、さらをあらいます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 7 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              そのあと、お<ruby>茶<rt>ちゃ</rt></ruby>を　<ruby>飲<rt>の</rt></ruby>みます。
+            </div>
+            <div class="sentence-romaji">So-no a-to, o-cha o no-mi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：在那之後喝熱茶。</span>
+              <button class="audio-btn" onclick="speakJapanese('そのあと、おちゃをのみます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 8 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              ゆっくり　した　<ruby>夜<rt>よる</rt></ruby>です。
+            </div>
+            <div class="sentence-romaji">Yu-k-ku-ri shi-ta yo-ru de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：這是一個悠閒舒適的夜晚。</span>
+              <button class="audio-btn" onclick="speakJapanese('ゆっくりしたよるです')">🔊</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 1: Verbs Vault (動詞寶庫) -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫 (本篇登場的動作動詞)</h2>
+
+      <div class="card-grid">
+
+        <!-- Verb 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🍳 つくります（作ります / 作る）</div>
+            <button class="audio-btn" onclick="speakJapanese('つくります')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：tsu-ku-ri-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：製作、做(菜)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：夜、キッチンで晩ごはんを作ります。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('よる、キッチンでばんごはんをつくります')">🔊</button></div>
+            <div class="example-cn">（晚上在廚房做晚餐。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：美味しい料理を作りたいです。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('おいしいりょうりをつくりたいです')">🔊</button></div>
+            <div class="example-cn">（想做美味的料理。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 2 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🔪 きって（切る / 切ります）</div>
+            <button class="audio-btn" onclick="speakJapanese('きります')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ki-t-te | 第一類動詞（て形）</div>
+          <div class="vocab-meaning">意思：切好(蔬菜)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：野菜を切って、鍋に入れます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('やさいをきって、なべにいれます')">🔊</button></div>
+            <div class="example-cn">（把蔬菜切好後放入鍋子裡。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 3 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🍲 いれます（入れます / 入れる）</div>
+            <button class="audio-btn" onclick="speakJapanese('いれます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：i-re-ma-su | 第二類動詞</div>
+          <div class="vocab-meaning">意思：放入、加入</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：鍋に野菜を入れます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('なべにやさいをいれます')">🔊</button></div>
+            <div class="example-cn">（把蔬菜放入鍋中。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 4 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🧽 あらいます（洗います / 洗う）</div>
+            <button class="audio-btn" onclick="speakJapanese('あらいます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：a-ra-i-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：洗滌、洗盤子</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ごはんのあと、皿を洗います。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ごはんのあと、さらをあらいます')">🔊</button></div>
+            <div class="example-cn">（用餐後洗盤子。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 5 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🍵 のみます（飲ます / 飲む）</div>
+            <button class="audio-btn" onclick="speakJapanese('のみます')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：no-mi-ma-su | 第一類動詞</div>
+          <div class="vocab-meaning">意思：喝(茶/水)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：そのあと、お茶を飲みます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('そのあと、おちゃをのみます')">🔊</button></div>
+            <div class="example-cn">（在那之後喝熱茶。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (本篇登場的狀態形容詞)</h2>
+
+      <div class="card-grid">
+
+        <!-- Adjective 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ いい（よい）</div>
+            <button class="audio-btn" onclick="speakJapanese('いい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：i-i | い形容詞</div>
+          <div class="vocab-meaning">意思：好的、好聞的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：いいにおいがします。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('いいにおいがします')">🔊</button></div>
+            <div class="example-cn">（散發出好聞的香氣。）</div>
+          </div>
+        </div>
+
+        <!-- Adjective 2 -->
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">🌙 ゆっくりした</div>
+            <button class="audio-btn" onclick="speakJapanese('ゆっくりした')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：yu-k-ku-ri shi-ta | 悠閒的表現</div>
+          <div class="vocab-meaning">意思：悠閒舒適的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ゆっくりした夜です。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ゆっくりしたよるです')">🔊</button></div>
+            <div class="example-cn">（這是一個悠閒的夜晚。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Vocabulary (Nouns/General) -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🍳 キッチン</div>
+            <button class="audio-btn" onclick="speakJapanese('キッチン')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ki-t-chi-n</div>
+          <div class="vocab-meaning">意思：廚房 (Kitchen)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：キッチンで料理をします。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('キッチンでりょうりをします')">🔊</button></div>
+            <div class="example-cn">（在廚房做菜。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🍚 晩ごはん（ばんごはん）</div>
+            <button class="audio-btn" onclick="speakJapanese('ばんごはん')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ba-n-go-ha-n</div>
+          <div class="vocab-meaning">意思：晚餐</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：家族と晩ごはんを食べます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('かぞくとばんごはんをたべます')">🔊</button></div>
+            <div class="example-cn">（和家人吃晚餐。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🥦 野菜（やさい）</div>
+            <button class="audio-btn" onclick="speakJapanese('やさい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ya-sa-i</div>
+          <div class="vocab-meaning">意思：蔬菜</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：野菜を切ります。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('やさいをきります')">🔊</button></div>
+            <div class="example-cn">（切蔬菜。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🍲 鍋（なべ）</div>
+            <button class="audio-btn" onclick="speakJapanese('なべ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：na-be</div>
+          <div class="vocab-meaning">意思：鍋子</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：鍋に水と野菜を入れます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('なべにみずとやさいをいれます')">🔊</button></div>
+            <div class="example-cn">（在鍋子裡倒入水與蔬菜。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🍽️ 皿（さら）</div>
+            <button class="audio-btn" onclick="speakJapanese('さら')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：sa-ra</div>
+          <div class="vocab-meaning">意思：盤子、碗盤</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ごはんのあと、皿を洗います。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ごはんのあとさらをあらいます')">🔊</button></div>
+            <div class="example-cn">（用餐後洗盤子。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🍵 お茶（おちゃ）</div>
+            <button class="audio-btn" onclick="speakJapanese('おちゃ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：o-cha</div>
+          <div class="vocab-meaning">意思：茶、日本綠茶</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：食後にお茶を飲みます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('しょくごにおちゃをのみます')">🔊</button></div>
+            <div class="example-cn">（飯後喝茶。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Grammar Classroom -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 場所 ＋ で (動作進行的場所)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>助詞「で」標示動作發生的場所。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：キッチンで晩ごはんを作ります。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('キッチンでばんごはんをつくります')">🔊</button></div>
+            <div class="example-cn">（在廚房做晚餐。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動詞て形 ＋ 動詞 (動作連貫順序)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>「て形」用來連接前後兩個動作，表示先做前一件事再做後一件事。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：野菜を切って、鍋に入れます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('やさいをきってなべにいれます')">🔊</button></div>
+            <div class="example-cn">（把蔬菜切好後放入鍋中。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 そのあと (在那之後)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>用於接續前句，表示前一個動作完成後發生的下一個動作。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ごはんのあと、皿を洗います。そのあと、お茶を飲みます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ごはんのあとさらをあらいますそのあとおちゃをのみます')">🔊</button></div>
+            <div class="example-cn">（飯後洗盤子，那之後喝茶。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 〜が します (感官香氣表達)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>「においが します」表示感覺器官感受到某種氣味或香氣。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：いいにおいがします。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('いいにおいがします')">🔊</button></div>
+            <div class="example-cn">（散發出好聞的香味。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 5: Lesson Quiz -->
+    <div style="margin-top: 3rem;">
+      <div class="sensei-note-box">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-question"></i> 文章12 隨堂小測驗</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-dark);">
+          題目：「やさいを　きっ＿＿＿、なべに　いれます。」（表達「切好蔬菜後放入鍋中」的連貫動作，劃線處應填何者？）
+        </p>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('て', 'て', '正解！動詞「切る」的て形為「切って」，用於連接連貫動作！')">A. て</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ます', 'て', '「ます」是句尾終止形，不能直接連貫下一個動作喔！')">B. ます</button>
+          <button class="quiz-opt-btn" onclick="checkLessonAnswer('ない', 'て', '「ない」是否定形，不是表示動作順序喔！')">C. ない</button>
+        </div>
+        <div id="lesson-quiz-feedback" class="quiz-feedback" style="margin-top: 1rem;"></div>
+      </div>
+    </div>
+
+    <!-- Culture snippet -->
+    <div class="culture-card" style="margin-top: 2rem;">
+      <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;"><i class="fa-solid fa-torii-gate"></i> 🌸
+        さくら先生的文化小知識：日本家庭的晚餐與「お茶」文化</h3>
+      <p style="color: var(--text-dark); line-height: 1.6;">
+        在日本，晚餐（晩ごはん）往往是全家人聚在一起聊聊天、放鬆一天疲憊的重要時光。用餐完畢後，大家習慣主動把碗盤拿到廚房洗滌（皿を洗います），接著泡上一杯熱騰騰的日式綠茶（お茶）邊喝邊休息。這種溫暖舒適的步調，就是日本日常生活中最迷人的「ゆっくりした夜」喔！
+      </p>
+    </div>
+
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-12')">
+      ✅ 標記為已學習
+    </button>
+
+  </main>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章12 獨立單元網頁 &copy; 2026. <a href="../../index.html"
+        style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="../../lesson-common.js"></script>
+  <script src="lesson.js"></script>
+  <script>
+    // Dynamic visibility check script
+    document.addEventListener('DOMContentLoaded', () => {
+      const verbContainer = document.querySelector('#verb-vault-section .card-grid');
+      if (!verbContainer || verbContainer.children.length === 0) {
+        document.getElementById('verb-vault-section').style.display = 'none';
+      }
+
+      const adjContainer = document.querySelector('#adj-vault-section .card-grid');
+      if (!adjContainer || adjContainer.children.length === 0) {
+        document.getElementById('adj-vault-section').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

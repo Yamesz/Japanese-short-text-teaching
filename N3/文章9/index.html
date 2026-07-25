@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="lesson.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body onload="initArticleLearnedState('article-9')">
 
   <!-- Top Navigation Bar -->
   <nav class="navbar">
@@ -43,13 +43,24 @@
       <!-- Left Column: Short Passage Original Text -->
       <div>
         <div class="image-viewer-card" style="position: static; text-align: left;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
             <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
               📜 日語短文 (N3 經典)
             </h3>
-            <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
-              🔊 全篇朗讀
-            </button>
+            
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Speed Control Selector -->
+              <div class="speed-control">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢速 0.8x</button>
+                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
+                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快速 1.2x</button>
+              </div>
+
+              <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
+                🔊 全篇朗讀
+              </button>
+            </div>
           </div>
 
           <!-- Original Japanese text box -->
@@ -337,12 +348,18 @@
       </div>
     </div>
 
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-9')">
+      ✅ 標記為已學習
+    </button>
+
   </main>
 
   <footer>
     <p>🌸 さくら先生の日本語教室 - 文章9 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
   </footer>
 
+  <script src="../../lesson-common.js"></script>
   <script src="lesson.js"></script>
 </body>
 </html>
