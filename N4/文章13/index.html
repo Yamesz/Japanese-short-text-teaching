@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章13：たいへんなあさ | さくら先生の日本語教室</title>
+  <meta name="description"
+    content="本單元以 N4 日文短文『たいへんなあさ（大災難的早晨與遲延證明書）』為教材，由さくら先生細緻拆解名詞、動詞寶庫、形容詞寶庫、遺憾句型「〜てしまう」、歸咎句型「〜のせいで」與避難句型「〜ずにすむ」。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body onload="initArticleLearnedState('article-13')">
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">🌸</span>
+      <div>
+        <div class="brand-title">さくら先生の日本語教室</div>
+        <div class="brand-subtitle">文章13 獨立單元網頁 (N4)</div>
+      </div>
+    </a>
+    <a href="../../index.html" class="back-btn"><i class="fa-solid fa-house"></i> 返回主頁入口</a>
+  </nav>
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章13：たいへんなあさ（大災難的早晨 / 幸運的遲到證明書）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：練習 N4 遺憾文法「〜てしまう」、原因歸咎「〜のせいで」、否定連用避難「〜ずにすむ」與日本電車遲延證明書文化。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文 (N4 生活職場)
+            </h3>
+
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Speed Control Selector -->
+              <div class="speed-control">
+                <span
+                  style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢速 0.8x</button>
+                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
+                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快速 1.2x</button>
+              </div>
+
+              <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;"
+                onclick="playFullArticleAudio()">
+                🔊 全篇朗讀
+              </button>
+            </div>
+          </div>
+
+          <div
+            style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 12px; padding: 1.5rem; line-height: 2.2; font-size: 1.15rem; color: #2D3748; font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;">
+            <p style="margin-top:0;">
+              けさは　たいへんな　あさでした。<br>
+              めざましどけいが　ならなくて　ねぼうしてしまい、いそいで　えきへ　いきましたが、でんしゃに　おくれまし た。<br>
+              でも、えきに　つくと　ひとだかりが　できていました。<br>
+              じこの　せいで　でんしゃが　おくれました。<br>
+              じぶんの　みすで　ちこくする　はずでしたが、うんよく（？）ちえんしょうめいしょを　もらえて、かいしゃには　ちこくせずに　すみました。
+            </p>
+          </div>
+
+          <div
+            style="margin-top: 1.5rem; background: var(--light-sakura); padding: 1rem; border-radius: 8px; font-size: 0.95rem; color: var(--text-dark);">
+            💡 <b>さくら先生導讀：</b>這是一篇描述早上睡過頭、急忙趕路卻反轉免於遲到的生活生動短文！請點擊右側的逐句拆解，學習「〜てしまう」、「〜のせいで」與「〜ずにすむ」等極其實用的 N4 句型喔！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence by Sentence Breakdown -->
+      <div>
+        <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin-top: 0; margin-bottom: 1rem;">
+          📖 逐句朗讀與拆解解析
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>今朝<rt>けさ</rt></ruby>は　<ruby>大變<rt>たいへん</rt></ruby>な　<ruby>朝<rt>あさ</rt></ruby>でした。
+            </div>
+            <div class="sentence-romaji">Ke sa wa ta i he n na a sa de shi ta.</div>
+            <div class="sentence-cn">
+              <span>今天早上是一個手忙腳亂的大災難早晨。</span>
+              <button class="audio-btn" onclick="speakJapanese('けさはたいへんなあさでした')">🔊 朗讀</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>目覺<rt>めざ</rt>まし時計<rt>どけい</rt></ruby>が　<ruby>鳴<rt>な</rt></ruby>らなくて　<ruby>寢坊<rt>ねぼう</rt>
+              </ruby>してしまい、<ruby>急<rt>いそ</rt></ruby>いで　<ruby>驛<rt>えき</rt></ruby>へ　<ruby>行<rt>い</rt>
+              </ruby>きましたが、<ruby>電車<rt>でんしゃ</rt></ruby>に　<ruby>遲<rt>おく</rt></ruby>れました。
+            </div>
+            <div class="sentence-romaji">Me za ma shi do ke i ga na ra na ku te ne bo u shi te shi ma i, i so i de e ki
+              he i ki ma shi ta ga, de n sha ni o ku re ma shi ta.</div>
+            <div class="sentence-cn">
+              <span>鬧鐘沒有響結果睡過頭，急忙趕去車站卻沒趕上電車。</span>
+              <button class="audio-btn" onclick="speakJapanese('めざましどけいがならなくてねぼうしてしまい、いそいでえきへいきましたが、でんしゃにおくれました')">🔊
+                朗讀</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              でも、<ruby>驛<rt>えき</rt></ruby>に　<ruby>着<rt>つ</rt></ruby>くと　<ruby>人集<rt>ひとだか</rt></ruby>りが　できていました。
+            </div>
+            <div class="sentence-romaji">De mo, e ki ni tsu ku to hi to da ka ri ga de ki te i ma shi ta.</div>
+            <div class="sentence-cn">
+              <span>不過，一到達車站就發現擠滿了圍觀的人潮。</span>
+              <button class="audio-btn" onclick="speakJapanese('でも、えきにつくとひとだかりができていました')">🔊 朗讀</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>事故<rt>じこ</rt></ruby>の　せいで　<ruby>電車<rt>でんしゃ</rt></ruby>が　<ruby>遲<rt>おく</rt></ruby>れました。
+            </div>
+            <div class="sentence-romaji">Ji ko no se i de de n sha ga o ku re ma shi ta.</div>
+            <div class="sentence-cn">
+              <span>因為事故的緣故電車延誤了。</span>
+              <button class="audio-btn" onclick="speakJapanese('じこのせいででんしゃがおくれました')">🔊 朗讀</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>自分<rt>じぶん</rt></ruby>の　ミスで　<ruby>遲刻<rt>ちこく</rt></ruby>する　はずでしたが、<ruby>運<rt>うん</rt>良<rt>よ</rt>
+              </ruby>く（？）<ruby>遲延證明書<rt>ちえんしょうめいしょ</rt></ruby>を　もらえて、<ruby>會社<rt>かいしゃ</rt></ruby>には　<ruby>遲刻<rt>ちこく
+                </rt></ruby>せずに　すみました。
+            </div>
+            <div class="sentence-romaji">Ji bu n no mi su de chi ko ku su ru ha zu de shi ta ga, u n yo ku (?) chi e n
+              sho u me i sho wo mo ra e te, ka i sha ni wa chi ko ku se zu ni su mi ma shi ta.</div>
+            <div class="sentence-cn">
+              <span>本來應是自己的失誤遲到，幸運的是領到了遲延證明書免於公司遲到。</span>
+              <button class="audio-btn"
+                onclick="speakJapanese('じぶんのミスでちこくするはずでしたが、うんよくちえんしょうめいしょをもらえて、かいしゃにはちこくせずにすみました')">🔊 朗讀</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 1: Verbs Vault (動詞寶庫) -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫 (本篇登場的動作動詞)</h2>
+
+      <div class="card-grid">
+
+        <!-- Verb 1 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🔔 ならなくて（鳴る / なる）</div>
+            <button class="audio-btn" onclick="speakJapanese('なる')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：na-ru | 第一類動詞</div>
+          <div class="vocab-meaning">意思：響起、鳴發</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v13_1')">📊 展開活用變化表</button>
+          <div id="conjugation-v13_1" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr>
+                <th>辭書形</th>
+                <th>ます形</th>
+                <th>過去式</th>
+                <th>て形</th>
+                <th>ない形</th>
+              </tr>
+              <tr>
+                <td>鳴る</td>
+                <td>鳴ります</td>
+                <td>鳴った</td>
+                <td>鳴って</td>
+                <td>鳴らない</td>
+              </tr>
+            </table>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：目覚まし時計が鳴らなくて寝坊しました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('めざましどけいがならなくてねぼうしました')">🔊</button></div>
+            <div class="example-cn">（鬧鐘沒有響睡過頭了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：電話が鳴っています。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('でんわがなっています')">🔊</button></div>
+            <div class="example-cn">（電話正在響。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句③：チャイムが鳴って授業が終わります。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('チャイムがなってじゅぎょうがおわります')">🔊</button></div>
+            <div class="example-cn">（鈴聲響起課結束了。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 2 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">⏰ ねぼうしてしまい（寝坊する）</div>
+            <button class="audio-btn" onclick="speakJapanese('ねぼうする')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ne-bo-u-su-ru | 第三類動詞 (サ變)</div>
+          <div class="vocab-meaning">意思：睡過頭、起晚了</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v13_2')">📊 展開活用變化表</button>
+          <div id="conjugation-v13_2" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr>
+                <th>辭書形</th>
+                <th>ます形</th>
+                <th>過去式</th>
+                <th>て形</th>
+                <th>ない形</th>
+              </tr>
+              <tr>
+                <td>寝坊する</td>
+                <td>寝坊します</td>
+                <td>寝坊した</td>
+                <td>寝坊して</td>
+                <td>寝坊しない</td>
+              </tr>
+            </table>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：目覚ましが鳴らなくて寝坊してしまいました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('めざましがならなくてねぼうしてしまいました')">🔊</button></div>
+            <div class="example-cn">（鬧鐘沒響不小心睡過頭了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：休日に寝坊して午後起きました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('きゅうじつにねぼうしてごごおきました')">🔊</button></div>
+            <div class="example-cn">（假日睡過頭下午才起床。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句③：寝坊しないように早く寝ます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ねぼうしないようにはやくねます')">🔊</button></div>
+            <div class="example-cn">（為了不睡過頭提早睡覺。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 3 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🚃 おくれました（遅れる / おくれる）</div>
+            <button class="audio-btn" onclick="speakJapanese('おくれる')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：o-ku-re-ru | 第二類動詞</div>
+          <div class="vocab-meaning">意思：遲到、延誤、趕不上</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v13_3')">📊 展開活用變化表</button>
+          <div id="conjugation-v13_3" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr>
+                <th>辭書形</th>
+                <th>ます形</th>
+                <th>過去式</th>
+                <th>て形</th>
+                <th>ない形</th>
+              </tr>
+              <tr>
+                <td>遅れる</td>
+                <td>遅れます</td>
+                <td>遅れた</td>
+                <td>遅れて</td>
+                <td>遅れない</td>
+              </tr>
+            </table>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：事故のせいで電車が遅れました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('じこのせいででんしゃがおくれました')">🔊</button></div>
+            <div class="example-cn">（因為事故電車延誤了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：約束の時間に遅れました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('やくそくのじかんにおくれました')">🔊</button></div>
+            <div class="example-cn">（約定的時間遲到了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句③：バスに遅れないように急ぎます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('バスにおくれないようにいそぎます')">🔊</button></div>
+            <div class="example-cn">（為了不搭不上公車急忙趕路。）</div>
+          </div>
+        </div>
+
+        <!-- Verb 4 -->
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header">
+            <div class="vocab-word">🍀 すみました（済む / すむ）</div>
+            <button class="audio-btn" onclick="speakJapanese('すむ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：su-mu | 第一類動詞</div>
+          <div class="vocab-meaning">意思：解決、了結、免於負面結果</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v13_4')">📊 展開活用變化表</button>
+          <div id="conjugation-v13_4" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr>
+                <th>辭書形</th>
+                <th>ます形</th>
+                <th>過去式</th>
+                <th>て形</th>
+                <th>ない形</th>
+              </tr>
+              <tr>
+                <td>済む</td>
+                <td>済みます</td>
+                <td>済んだ</td>
+                <td>済んで</td>
+                <td>済まない</td>
+              </tr>
+            </table>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：遅延証明書のおかげで遅刻せずにすみました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ちえんしょうめいしょのおかげでちこくせずにすみました')">🔊</button></div>
+            <div class="example-cn">（多虧了遲延證明書免於遲到。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：軽傷で済んで良かったです。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('けいしょうですんでよかったです')">🔊</button></div>
+            <div class="example-cn">（幸好只受了輕傷就解決了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句③：謝るだけで済む問題ではありません。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('あやまるだけですむもんだいではありません')">🔊</button></div>
+            <div class="example-cn">（不是只靠道歉就能解決的問題。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (本篇登場的狀態形容詞)</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">💦 たいへんな（大変な）</div>
+            <button class="audio-btn" onclick="speakJapanese('たいへん')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ta-i-he-n | な形容詞</div>
+          <div class="vocab-meaning">意思：辛苦的、災難手忙腳亂的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：今朝は大変な朝でした。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('けさはたいへんなあさでした')">🔊</button></div>
+            <div class="example-cn">（今天早上是個手忙腳亂的大災難早晨。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：毎日の仕事は大変ですが楽しいです。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('まいにちのしごとはたいへんですがたのしいです')">🔊</button></div>
+            <div class="example-cn">（每天的工作雖然辛苦但是很開心。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ うんよく（運良く）</div>
+            <button class="audio-btn" onclick="speakJapanese('うんよく')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：u-n-yo-ku | 副詞修飾 (運が良い)</div>
+          <div class="vocab-meaning">意思：幸運地、運氣好地</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：運良く遅延証明書をもらえました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('うんよくちえんしょうめいしょをもらえました')">🔊</button></div>
+            <div class="example-cn">（幸運地領到了遲延證明書。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：運良く雨が降る前に家に着きました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('うんよくあめがふるまえにうちにつきました')">🔊</button></div>
+            <div class="example-cn">（幸運地在下雨前到了家。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Nouns & Vocabulary (名詞與精選單字) -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">⏰ めざましどけい（目覚まし時計）</div>
+            <button class="audio-btn" onclick="speakJapanese('めざましどけい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：me-za-ma-shi-do-ke-i | 名詞</div>
+          <div class="vocab-meaning">意思：鬧鐘</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：目覚まし時計を７時にセットします。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('めざましどけいをしちじにセットします')">🔊</button></div>
+            <div class="example-cn">（把鬧鐘設定在7點。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：目覚まし時計の音で起きます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('めざましどけいのおとでおきます')">🔊</button></div>
+            <div class="example-cn">（被鬧鐘的聲音叫醒。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">👥 ひとだかり（人集まり）</div>
+            <button class="audio-btn" onclick="speakJapanese('ひとだかり')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：hi-to-da-ka-ri | 名詞</div>
+          <div class="vocab-meaning">意思：圍觀的人群、人潮</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：駅に着くと人集まりができていました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('えきにつくとひとだかりができていました')">🔊</button></div>
+            <div class="example-cn">（一到車站就發現圍滿了人潮。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：事故の現場に人集まりができました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('じこのげんばにひとだかりができました')">🔊</button></div>
+            <div class="example-cn">（事故現場聚集了圍觀的人群。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">📄 ちえんしょうめいしょ（遅延証明書）</div>
+            <button class="audio-btn" onclick="speakJapanese('ちえんしょうめいしょ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：chi-e-n-sho-u-me-i-sho | 名詞</div>
+          <div class="vocab-meaning">意思：電車遲延證明書</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：駅で遅延証明書をもらいました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('えきでちえんしょうめいしょをもらいました')">🔊</button></div>
+            <div class="example-cn">（在車站領取了遲延證明書。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：遅延証明書を会社に提出します。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ちえんしょうめいしょをかいしゃにていしゅつします')">🔊</button></div>
+            <div class="example-cn">（把遲延證明書提交給公司。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">⚠️ ミス</div>
+            <button class="audio-btn" onclick="speakJapanese('ミス')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：mi-su | 外來語名詞</div>
+          <div class="vocab-meaning">意思：失誤、錯誤 (Mistake)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：自分のミスで遅刻しそうになりました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('じぶんのミスでちこくしそうになりました')">🔊</button></div>
+            <div class="example-cn">（因為自己的失誤差點遲到。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：仕事で小さなミスをしました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('しごとでちいさなミスをしました')">🔊</button></div>
+            <div class="example-cn">（在工作上記了一次小失誤。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Particles Classroom (助詞教室) -->
+    <div id="particle-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-puzzle-piece" style="color: #4A5568;"></i> 🧩 助詞寶庫 / 助詞教室
+        (本篇登場的核心助詞)</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #4A5568;">
+          <div class="vocab-header">
+            <div class="vocab-word">📍 ～へ（方向與目的地）</div>
+            <button class="audio-btn" onclick="speakJapanese('へ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：e | 格助詞</div>
+          <div class="vocab-meaning">功能：標示移動動作的目标方向與目的地</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：急いで駅へ行きました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('いそいでえきへいきました')">🔊</button></div>
+            <div class="example-cn">（急忙趕去車站。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：来月、日本へ旅行に行きます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('らいげつにほんへりょこうにいきます')">🔊</button></div>
+            <div class="example-cn">（下個月要前往日本旅行。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A5568;">
+          <div class="vocab-header">
+            <div class="vocab-word">🎯 ～に（目的地/附著點）</div>
+            <button class="audio-btn" onclick="speakJapanese('に')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ni | 格助詞</div>
+          <div class="vocab-meaning">功能：標示動作抵達的目標點或歸著對象</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：電車に遅れました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('でんしゃにおくれました')">🔊</button></div>
+            <div class="example-cn">（沒趕上電車/遲於電車時間。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：駅に着くと人集まりがありました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('えきにつくとひとだかりがありました')">🔊</button></div>
+            <div class="example-cn">（一到達車站發現聚集了人潮。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A5568;">
+          <div class="vocab-header">
+            <div class="vocab-word">⚡ ～と（發現與新狀況演變）</div>
+            <button class="audio-btn" onclick="speakJapanese('と')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：to | 接續助詞</div>
+          <div class="vocab-meaning">功能：表達「一做前項動作，緊接著發現新情況」</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：駅に着くと、人集まりができていました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('えきにつくとひとだかりができていました')">🔊</button></div>
+            <div class="example-cn">（一到了車站，就發現擠滿了人潮。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：窓を開けると、きれいな雪が降っていました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('まどをあけるときれいなゆきがふっていました')">🔊</button></div>
+            <div class="example-cn">（一打開窗戶，發現下著美麗的雪。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A5568;">
+          <div class="vocab-header">
+            <div class="vocab-word">🚂 ～が（現象/自動詞的主語標示）</div>
+            <button class="audio-btn" onclick="speakJapanese('が')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ga | 格助詞</div>
+          <div class="vocab-meaning">功能：標示動作或現象的真正主體（主語），常用於自動詞狀態</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：事故のせいで電車が遅れました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('じこのせいででんしゃがおくれました')">🔊</button></div>
+            <div class="example-cn">（因為事故的緣故電車延誤了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：目覚まし時計が鳴らなくて寝坊しました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('めざましどけいがならなくてねぼうしました')">🔊</button></div>
+            <div class="example-cn">（鬧鐘沒有響睡過頭了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句③：外は綺麗な雨が降っています。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('そとはきれいなあめがふっています')">🔊</button></div>
+            <div class="example-cn">（外面正下著美麗的雨。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 5: Grammar Notes (精選文法教室) -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動詞て形 ＋ しまう / しまいました (遺憾/非預期結果)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>表示發生了非預期的疏失、遺憾或無法挽回的不良結果（不小心睡過頭、不小心弄丟等）。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：寝坊してしまいました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ねぼうしてしまいました')">🔊</button></div>
+            <div class="example-cn">（不小心睡過頭了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：大切なお皿を割ってしまいました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('たいせつなおさらをわってしまいました')">🔊</button></div>
+            <div class="example-cn">（不小心把珍貴的盤子摔破了。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 名詞 ＋ のせいで (因為...緣故 / 歸咎負面原因)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>用於引出導致不良後果的原因，隱含抱怨或歸咎的語氣。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：事故のせいで電車が遅れました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('じこのせいででんしゃがおくれました')">🔊</button></div>
+            <div class="example-cn">（因為事故的緣故電車延誤了。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：雨のせいでイベントが中止になりました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('あめのせいでイベントがちゅうしになりました')">🔊</button></div>
+            <div class="example-cn">（因為下雨的緣故活動取消了。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動詞未然形 ＋ ずにすむ (免於.../不必做就解決了)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>相當於「〜ないで済む」，表示不必承受預期中不良或麻煩的後果便順利渡過。注意：する ➔ せずに。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：遅延証明書をもらえて、会社には遅刻せずにすみました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ちえんしょうめいしょをもらえてかいしゃにはちこくせずにすみました')">🔊</button></div>
+            <div class="example-cn">（領到了遲延證明書，順利免於公司遲到。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：薬を飲んで、手術せずにすみました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('くすりをのんでしゅじゅつせずにすみました')">🔊</button></div>
+            <div class="example-cn">（吃了藥後免於做手術。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 6: Culture Note (文化小知識) -->
+    <div style="margin-top: 3rem;">
+      <div
+        style="background: linear-gradient(135deg, #FFF9F3 0%, #FFF0F5 100%); border: 2px solid #FFC0CB; border-radius: 16px; padding: 1.8rem; box-shadow: var(--shadow-sm);">
+        <h3 style="color: var(--deep-sakura); margin-top: 0; font-size: 1.3rem;">
+          🌸 さくら先生的文化小知識：日本車站的「遅延証明書（ちえんしょうめいしょ）」
+        </h3>
+        <p style="color: #4A5568; line-height: 1.8; margin-bottom: 0.5rem;">
+          在日本，電車若是因為人身事故、惡劣天氣等不可抗力因素延誤（通常為 5
+          分鐘以上），車站檢票口或鐵道公司官網會發放<b>「遅延証明書（遲延證明書）」</b>。上班族或學生將這張證明提交給公司或學校，便能作為正當理由，免除被算作個人無故遲到的處分喔！
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 7: Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章13 隨堂小測驗 (全 3 題)
+      </h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「じこの＿＿＿ででんしゃがおくれました。」（表達「因事故導致負面後果」，應填何者？）</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！『名詞 ＋ のせいで』表示導致負面後果的原因！')">A.
+            せいで</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「おかげで」是用於正面好的原因（多虧了...）喔！')">B.
+            おかげで</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「ために」常用於目的或中性原因，抱怨負面結果要用「のせいで」！')">C.
+            ために</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：動詞「する」改為「せずにすむ（免於做...）」的否定連用形變化，何者正確？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正解！動詞「する」的未然形變化為「せずに（すむ）」！')">A.
+            せずにすみました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '「する」的否定變化是「せずに」，不是「しずに」喔！')">B.
+            しずにすみました</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '沒有「すらずに」這種變化喔！')">C. すらずにすみました</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：根據文章內容，主人公今天早上最後為什麼沒有被公司算作遲到？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn"
+            onclick="checkQuizQuestion('q3', 0, 0, '正解！文中提到「運良く遅延証明書をもらえて、会社には遅刻せずにすみました」。')">A. 運良獲得電車遲延證明書
+            (遅延証明書)</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '文中提到他其實睡過頭了！')">B. 他按時在8點到了公司</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '文中主人公是上班族要趕去公司（会社）喔！')">C.
+            老師幫他請假了</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
+      </div>
+    </div>
+
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-13')">
+      ✅ 標記為已學習
+    </button>
+
+  </main>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章13 獨立單元網頁 &copy; 2026. <a href="../../index.html"
+        style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="../../lesson-common.js"></script>
+  <script src="lesson.js"></script>
+</body>
+
+</html>
