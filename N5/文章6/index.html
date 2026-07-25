@@ -195,80 +195,45 @@
 
     </div>
 
-    <!-- Section 1: Verbs Vault -->
+        <!-- Section 1: Verbs Vault (動詞寶庫) -->
     <div id="verb-vault-section" style="margin-top: 3rem;">
-      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫</h2>
-      
-      <div class="card-grid">
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">📖 よみました（読みました / 読む）</div>
-            <button class="audio-btn" onclick="speakJapanese('よみました')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：yo-mi-ma-shi-ta | 第一類動詞</div>
-          <div class="vocab-meaning">意思：讀、看（書）</div>
-        
-          <button class="conjugation-toggle" onclick="toggleConjugation('v3')">📊 展開活用變化表</button>
-          <div id="conjugation-v3" class="conjugation-table-wrapper">
-            <table class="conjugation-table">
-              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
-              <tr><td>読む</td><td>読みます</td><td>読みました</td><td>読んで</td><td>読まない</td></tr>
-            </table>
-          </div>
-</div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">⏳ わすれて（忘れて / 忘れる）</div>
-            <button class="audio-btn" onclick="speakJapanese('わすれて')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：wa-su-re-te | 第二類動詞て形</div>
-          <div class="vocab-meaning">意思：忘記</div>
-        
-          <button class="conjugation-toggle" onclick="toggleConjugation('v4')">📊 展開活用變化表</button>
-          <div id="conjugation-v4" class="conjugation-table-wrapper">
-            <table class="conjugation-table">
-              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
-              <tr><td>忘れる</td><td>忘れます</td><td>忘れました</td><td>忘れて</td><td>忘れない</td></tr>
-            </table>
-          </div>
-</div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">📚 よみたいです（読みたいです）</div>
-            <button class="audio-btn" onclick="speakJapanese('よみたいです')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：yo-mi-ta-i de-su | 希望形</div>
-          <div class="vocab-meaning">意思：想讀、想看</div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Section 2: Adjectives Vault -->
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) -->
     <div id="adj-vault-section" style="margin-top: 3rem;">
-      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫</h2>
-      
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (本篇登場的狀態形容詞)</h2>
+
       <div class="card-grid">
 
         <div class="vocab-card" style="border-top: 4px solid #6B9080;">
           <div class="vocab-header">
             <div class="vocab-word">📚 おもしろかった（面白かった / 面白い）</div>
-            <button class="audio-btn" onclick="speakJapanese('おもしろかった')">🔊</button>
+            <button class="audio-btn" onclick="speakJapanese('おもしろい')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：o-mo-shi-ro-ka-t-ta | い形容詞過去式</div>
-          <div class="vocab-meaning">意思：非常有意思（過去）</div>
+          <div class="vocab-romaji">讀音：o-mo-shi-ro-i | い形容詞</div>
+          <div class="vocab-meaning">意思：有趣的、有意思的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：本はとても面白かったです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ほんはとてもおもしろかったです')">🔊</button></div>
+            <div class="example-cn">（那本書非常有意思。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：面白い小説を読みました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('おもしろいしょうせつをよみました')">🔊</button></div>
+            <div class="example-cn">（看了很有趣的小說。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句③：読書は面白くて楽しいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('どくしょはおもしろくてたのしいです')">🔊</button></div>
+            <div class="example-cn">（讀書既有趣又愉快。）</div>
+          </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Section 3: Nouns -->
+    
+
+    
+    <!-- Section 3: Nouns & Vocabulary (名詞與精選單字) -->
     <div style="margin-top: 3rem;">
       <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
-      
+
       <div class="card-grid">
 
         <div class="vocab-card">
@@ -276,8 +241,16 @@
             <div class="vocab-word">📖 どくしょ（読書）</div>
             <button class="audio-btn" onclick="speakJapanese('どくしょ')">🔊</button>
           </div>
-          <div class="vocab-romaji">讀音：do-ku-sho | 名詞</div>
+          <div class="vocab-romaji">讀音：do-ku-sho | 名詞 / サ變</div>
           <div class="vocab-meaning">意思：讀書、閱讀</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：家でゆっくり読書をします。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('うちでゆっくりどくしょをします')">🔊</button></div>
+            <div class="example-cn">（在家悠閒看書。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：読書は知識を深める楽しい時間です。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('どくしょはちしきをふかめるたのしいじかんです')">🔊</button></div>
+            <div class="example-cn">（看書是增進知識的愉快時光。）</div>
+          </div>
         </div>
 
         <div class="vocab-card">
@@ -287,10 +260,65 @@
           </div>
           <div class="vocab-romaji">讀音：e | 名詞</div>
           <div class="vocab-meaning">意思：圖畫、插圖</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：本にはたくさんの絵がありました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ほんにはたくさんのえがありました')">🔊</button></div>
+            <div class="example-cn">（書本裡有許多插圖。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：綺麗な絵を見るのが好きです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('きれいなえをみるのがすきです')">🔊</button></div>
+            <div class="example-cn">（喜歡欣賞美麗的畫作。）</div>
+          </div>
         </div>
 
       </div>
     </div>
+
+    
+
+    <!-- Section 3: Nouns & Vocabulary (名詞與精選單字) -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">📖 どくしょ（読書）</div>
+            <button class="audio-btn" onclick="speakJapanese('どくしょ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：do-ku-sho | 名詞 / サ變</div>
+          <div class="vocab-meaning">意思：讀書、閱讀</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：家でゆっくり読書をします。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('うちでゆっくりどくしょをします')">🔊</button></div>
+            <div class="example-cn">（在家悠閒看書。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：読書は知識を深める楽しい時間です。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('どくしょはちしきをふかめるたのしいじかんです')">🔊</button></div>
+            <div class="example-cn">（看書是增進知識的愉快時光。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🖼️ え（絵）</div>
+            <button class="audio-btn" onclick="speakJapanese('え')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：e | 名詞</div>
+          <div class="vocab-meaning">意思：圖畫、插圖</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：本にはたくさんの絵がありました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ほんにはたくさんのえがありました')">🔊</button></div>
+            <div class="example-cn">（書本裡有許多插圖。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：綺麗な絵を見るのが好きです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('きれいなえをみるのがすきです')">🔊</button></div>
+            <div class="example-cn">（喜歡欣賞美麗的畫作。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
 
     <!-- Section 4: Grammar -->
     <div style="margin-top: 3rem;">

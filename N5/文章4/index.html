@@ -196,74 +196,13 @@
 
     </div>
 
+        
     <!-- Section 1: Verbs Vault (動詞寶庫) -->
     <div id="verb-vault-section" style="margin-top: 3rem;">
-      <h2 class="section-title"><i class="fa-solid fa-running" style="color: #FF85A1;"></i> 🏃 動詞寶庫</h2>
-      
-      <div class="card-grid">
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">🌊 みえました（見えました / 見える）</div>
-            <button class="audio-btn" onclick="speakJapanese('みえました')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：mi-e-ma-shi-ta | 可能/自然動詞</div>
-          <div class="vocab-meaning">意思：看得見、映入眼簾</div>
-          
-          <button class="conjugation-toggle" onclick="toggleConjugation('v7')">📊 展開活用變化表</button>
-          <div id="conjugation-v7" class="conjugation-table-wrapper">
-            <table class="conjugation-table">
-              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
-              <tr><td>見える</td><td>見えます</td><td>見えました</td><td>見えて</td><td>見えない</td></tr>
-            </table>
-          </div>
-<div class="example-box">
-            <div class="example-jp">例句①：窓から青い海が見えました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('まどからあおいうみがみえました')">🔊</button></div>
-            <div class="example-cn">（從窗戶可以看到藍色的海。）</div>
-          </div>
-        </div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">🚶 さんぽしました（散歩しました / 散歩する）</div>
-            <button class="audio-btn" onclick="speakJapanese('さんぽしました')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：sa-n-po shi-ma-shi-ta | 第三類動詞</div>
-          <div class="vocab-meaning">意思：散步</div>
-          
-          <button class="conjugation-toggle" onclick="toggleConjugation('v8')">📊 展開活用變化表</button>
-          <div id="conjugation-v8" class="conjugation-table-wrapper">
-            <table class="conjugation-table">
-              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
-              <tr><td>散歩する</td><td>散歩します</td><td>散歩しました</td><td>散歩して</td><td>散歩しない</td></tr>
-            </table>
-          </div>
-<div class="example-box">
-            <div class="example-jp">例句①：砂浜を散歩しました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('すなはまをさんぽしました')">🔊</button></div>
-            <div class="example-cn">（在沙灘散步。）</div>
-          </div>
-        </div>
-
-        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
-          <div class="vocab-header">
-            <div class="vocab-word">✨ きたいです（来たいです / 来る）</div>
-            <button class="audio-btn" onclick="speakJapanese('きたいです')">🔊</button>
-          </div>
-          <div class="vocab-romaji">讀音：ki-ta-i de-su | 希望形</div>
-          <div class="vocab-meaning">意思：想來</div>
-          <div class="example-box">
-            <div class="example-jp">例句①：またここに来たいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('またここにきたいです')">🔊</button></div>
-            <div class="example-cn">（還想再來這裡。）</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Section 2: Adjectives Vault (形容詞寶庫) -->
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) - Conditionally Visible -->
     <div id="adj-vault-section" style="margin-top: 3rem;">
-      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫</h2>
-      
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (本篇登場的狀態形容詞)</h2>
+
       <div class="card-grid">
 
         <div class="vocab-card" style="border-top: 4px solid #6B9080;">
@@ -274,8 +213,12 @@
           <div class="vocab-romaji">讀音：a-o-i | い形容詞</div>
           <div class="vocab-meaning">意思：藍色的</div>
           <div class="example-box">
-            <div class="example-jp">例句①：青い海がきれいです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('あおいうみがきれいです')">🔊</button></div>
-            <div class="example-cn">（藍色的海很漂亮。）</div>
+            <div class="example-jp">例句①：窓から青い海が見えました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('まどからあおいうみがみえました')">🔊</button></div>
+            <div class="example-cn">（從窗戶看得見藍色的海洋。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：青い空が綺麗です。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('あおいそらがきれいです')">🔊</button></div>
+            <div class="example-cn">（藍色的天空非常美麗。）</div>
           </div>
         </div>
 
@@ -285,10 +228,14 @@
             <button class="audio-btn" onclick="speakJapanese('つめたい')">🔊</button>
           </div>
           <div class="vocab-romaji">讀音：tsu-me-ta-i | い形容詞</div>
-          <div class="vocab-meaning">意思：冰涼的</div>
+          <div class="vocab-meaning">意思：冰涼的、冷卻的</div>
           <div class="example-box">
-            <div class="example-jp">例句①：冷たいアイスクリームを食べます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('つめたいアイスクリームをたべます')">🔊</button></div>
-            <div class="example-cn">（吃冰涼的冰淇淋。）</div>
+            <div class="example-jp">例句①：冷たいアイスクリームを食べました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('つめたいアイスクリームをたべました')">🔊</button></div>
+            <div class="example-cn">（吃了冰涼的冰淇淋。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：冷たいお茶を飲みます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('つめたいおちゃをのみます')">🔊</button></div>
+            <div class="example-cn">（喝冰涼的茶。）</div>
           </div>
         </div>
 
@@ -300,18 +247,25 @@
           <div class="vocab-romaji">讀音：ki-re-i | な形容詞</div>
           <div class="vocab-meaning">意思：美麗的、乾淨的</div>
           <div class="example-box">
-            <div class="example-jp">例句①：夕日がとてもきれいでした。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ゆうひがとてもきれいでした')">🔊</button></div>
+            <div class="example-jp">例句①：夕日がとても綺麗でした。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ゆうひがとてもきれいでした')">🔊</button></div>
             <div class="example-cn">（夕陽非常美麗。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：きれいな花が咲いています。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('きれいなはながさいています')">🔊</button></div>
+            <div class="example-cn">（開著美麗的花朵。）</div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Section 3: Nouns -->
+    
+
+    
+    <!-- Section 3: Nouns & Vocabulary (名詞與精選單字) -->
     <div style="margin-top: 3rem;">
       <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
-      
+
       <div class="card-grid">
 
         <div class="vocab-card">
@@ -321,6 +275,14 @@
           </div>
           <div class="vocab-romaji">讀音：hi-ko-u-ki | 名詞</div>
           <div class="vocab-meaning">意思：飛機</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：窓から青い海と飛行機が見えました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('まどからあおいうみとひこうきがみえました')">🔊</button></div>
+            <div class="example-cn">（從窗戶看得見藍海與飛機。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：空を飛ぶ飛行機を眺めます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('そらをとぶひこうきをながめます')">🔊</button></div>
+            <div class="example-cn">（眺望在天空飛翔的飛機。）</div>
+          </div>
         </div>
 
         <div class="vocab-card">
@@ -330,6 +292,14 @@
           </div>
           <div class="vocab-romaji">讀音：su-na-ha-ma | 名詞</div>
           <div class="vocab-meaning">意思：海灘、沙灘</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：夕方、海の砂浜を散歩しました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ゆうがたうみのすなはまをさんぽしました')">🔊</button></div>
+            <div class="example-cn">（傍晚在海邊沙灘散步。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：砂浜で友達と遊びました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('すなはまでともだちとあそびました')">🔊</button></div>
+            <div class="example-cn">（在沙灘上和朋友玩耍。）</div>
+          </div>
         </div>
 
         <div class="vocab-card">
@@ -338,11 +308,83 @@
             <button class="audio-btn" onclick="speakJapanese('ゆうひ')">🔊</button>
           </div>
           <div class="vocab-romaji">讀音：yu-u-hi | 名詞</div>
-          <div class="vocab-meaning">意思：夕陽</div>
+          <div class="vocab-meaning">意思：夕陽、落日</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：海に沈む夕日がとても綺麗でした。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('うみにしずむゆうひがとてもきれいでした')">🔊</button></div>
+            <div class="example-cn">（落入海中的夕陽非常美麗。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：夕日を見ながらお話をしました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ゆうひをみながらおはなしをしました')">🔊</button></div>
+            <div class="example-cn">（邊看夕陽邊聊天。）</div>
+          </div>
         </div>
 
       </div>
     </div>
+
+    
+
+    <!-- Section 3: Nouns & Vocabulary (名詞與精選單字) -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book"></i> 🌸 名詞與精選單字</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">✈️ ひこうき（飛行機）</div>
+            <button class="audio-btn" onclick="speakJapanese('ひこうき')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：hi-ko-u-ki | 名詞</div>
+          <div class="vocab-meaning">意思：飛機</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：窓から青い海と飛行機が見えました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('まどからあおいうみとひこうきがみえました')">🔊</button></div>
+            <div class="example-cn">（從窗戶看得見藍海與飛機。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：空を飛ぶ飛行機を眺めます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('そらをとぶひこうきをながめます')">🔊</button></div>
+            <div class="example-cn">（眺望在天空飛翔的飛機。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🏖️ すなはま（砂浜）</div>
+            <button class="audio-btn" onclick="speakJapanese('すなはま')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：su-na-ha-ma | 名詞</div>
+          <div class="vocab-meaning">意思：海灘、沙灘</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：夕方、海の砂浜を散歩しました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ゆうがたうみのすなはまをさんぽしました')">🔊</button></div>
+            <div class="example-cn">（傍晚在海邊沙灘散步。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：砂浜で友達と遊びました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('すなはまでともだちとあそびました')">🔊</button></div>
+            <div class="example-cn">（在沙灘上和朋友玩耍。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card">
+          <div class="vocab-header">
+            <div class="vocab-word">🌅 ゆうひ（夕日）</div>
+            <button class="audio-btn" onclick="speakJapanese('ゆうひ')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：yu-u-hi | 名詞</div>
+          <div class="vocab-meaning">意思：夕陽、落日</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：海に沈む夕日がとても綺麗でした。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('うみにしずむゆうひがとてもきれいでした')">🔊</button></div>
+            <div class="example-cn">（落入海中的夕陽非常美麗。）</div>
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句②：夕日を見ながらお話をしました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ゆうひをみながらおはなしをしました')">🔊</button></div>
+            <div class="example-cn">（邊看夕陽邊聊天。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
 
     <!-- Section 4: Grammar -->
     <div style="margin-top: 3rem;">
