@@ -43,39 +43,86 @@
       <!-- Left Column: Short Passage Original Text -->
       <div>
         <div class="image-viewer-card" style="position: static; text-align: left;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <!-- Title Row -->
+          <div class="short-text-title-row">
             <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
               📜 日語短文 (N3 經典)
             </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-              <!-- Speed Control Selector -->
-              <div class="speed-control">
-                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
-                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢速 0.8x</button>
-                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
-                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快速 1.2x</button>
-              </div>
+            <!-- Bilingual Toggle -->
+            <div class="lang-toggle-wrapper">
+              <span class="lang-toggle-label">🌐 中日雙語</span>
+              <label class="lang-toggle">
+                <input type="checkbox" id="bilingual-toggle" onchange="toggleTranslation(this)">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
 
-              <button class="action-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;" onclick="playFullArticleAudio()">
+          <!-- Controls Row: Speed + Play/Stop -->
+          <div class="short-text-controls-row">
+            <!-- Speed Control Selector -->
+            <div class="speed-control">
+              <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+              <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢速 0.8x</button>
+              <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
+              <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快速 1.2x</button>
+            </div>
+
+            <div class="karaoke-controls">
+              <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">
                 🔊 全篇朗讀
+              </button>
+              <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>
+                ⏹ 停止
               </button>
             </div>
           </div>
 
-          <!-- Original Japanese text box -->
-          <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; font-size: 1.2rem; line-height: 2.2; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);">
-            <div style="font-size: 1.5rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+          <!-- Status Indicator -->
+          <div class="karaoke-status idle">
+            <span class="status-dot"></span>
+            <span class="status-text">準備就緒</span>
+          </div>
+
+          <!-- Pause Notice -->
+          <div class="pause-notice">
+            ⚠️ 若暫停無效，請按「⏹ 停止」後重新播放
+          </div>
+
+          <!-- Original Japanese text box with Karaoke Lines -->
+          <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03); margin-top: 0.5rem;">
+            <div style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
               駅（えき）
             </div>
 
-            <div>わたしは　まいにち　えきを　りようして　がっこうへ　かよっています。</div>
-            <div>あさの　えきは　つうきんや　つうがくを　するひとで　とても　こんざつしています。</div>
-            <div>そのため、じかんに　よゆうを　もって　いえを　でるようにしています。</div>
-            <div>えきには　さまざまな　みせがあり、でんしゃを　まつあいだに　かいものを　することもできます。</div>
-            <div>せんじつ、あたらしくできた　みせに　たちよって　のみものを　かいました。</div>
-            <div>えきは　たんなる　いどうの　ばしょではなく、おおくのひとが　いきかう　せいかつにいんいちぶだと　かんじます。</div>
-            <div>まいにち　りようしているので、とても　みぢかな　そんざいです。</div>
+            <div class="karaoke-line" data-sentence-index="0">
+              <span class="karaoke-jp">わたしは　まいにち　えきを　りようして　がっこうへ　かよっています。</span>
+              <div class="karaoke-cn">我每天利用車站通學上學。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="1">
+              <span class="karaoke-jp">あさの　えきは　つうきんや　つうがくを　するひとで　とても　こんざつしています。</span>
+              <div class="karaoke-cn">早晨的車站因為通勤和通學的人潮而非常擁擠。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="2">
+              <span class="karaoke-jp">そのため、じかんに　よゆうを　もって　いえを　でるようにしています。</span>
+              <div class="karaoke-cn">因此，我習慣留有充裕的時間才出門。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="3">
+              <span class="karaoke-jp">えきには　さまざまな　みせがあり、でんしゃを　まつあいだに　かいものを　することもできます。</span>
+              <div class="karaoke-cn">車站裡有各式各樣的店家，在等電車的空檔也能買東西。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="4">
+              <span class="karaoke-jp">せんじつ、あたらしくできた　みせに　たちよって　のみものを　かいました。</span>
+              <div class="karaoke-cn">前幾天，我順路去了新開的店買了飲料。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="5">
+              <span class="karaoke-jp">えきは　たんなる　いどうの　ばしょではなく、おおくのひとが　いきかう　せいかつの　いちぶだと　かんじます。</span>
+              <div class="karaoke-cn">我覺得車站不只是單純移動的場所，更是許多人往來穿梭的生活一部分。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="6">
+              <span class="karaoke-jp">まいにち　りようしているので、とても　みぢかな　そんざいです。</span>
+              <div class="karaoke-cn">因為每天都在使用，所以是非常切身且熟悉的存在。</div>
+            </div>
           </div>
 
           <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
@@ -373,6 +420,11 @@
     </button>
 
   </main>
+
+  <!-- Karaoke Progress Bar (fixed at bottom of viewport) -->
+  <div class="karaoke-progress-container">
+    <div class="karaoke-progress-bar"></div>
+  </div>
 
   <footer>
     <p>🌸 さくら先生の日本語教室 - 文章9 獨立單元網頁 &copy; 2026. <a href="../../index.html" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>

@@ -1,18 +1,18 @@
 // ================================================
-// 🎵 文章2 Lesson Script — Karaoke Player Engine
+// 🎵 文章5 Lesson Script — Karaoke Player Engine
 // ================================================
 
 // --- Sentence Data ---
 const SENTENCES = [
-  { jp: 'きょうはえいがをみにいきます。',             cn: '今天去看電影。' },
-  { jp: 'ともだちとえきであいます。',                 cn: '和朋友在車站會面。' },
-  { jp: 'いっしょにでんしゃにのります。',             cn: '一起搭乘電車。' },
-  { jp: 'えいがかんでチケットをかいます。',           cn: '在電影院買電影票。' },
-  { jp: 'ポップコーンをたべながらえいがをみます。',   cn: '一邊吃爆米花，一邊看電影。' },
-  { jp: 'えいがはとてもおもしろいです。',             cn: '電影非常有意思。' },
-  { jp: 'ゆうがた、カフェでコーヒーをのみます。',     cn: '傍晚在咖啡廳喝咖啡。' },
-  { jp: 'えいがのはなしをします。',                   cn: '聊聊電影的話題。' },
-  { jp: 'きょうはたのしいいちにちでした。',           cn: '今天是愉快充實的一天。' }
+  { jp: 'きょうは　えいがを　みに　いきます。', cn: '今天去看電影。' },
+  { jp: 'ともだちと　えきで　あいます。', cn: '和朋友在車站會面。' },
+  { jp: 'いっしょに　でんしゃに　のります。', cn: '一起搭乘電車。' },
+  { jp: 'えいがかんで　チケットを　かいます。', cn: '在電影院買電影票。' },
+  { jp: 'ポップコーンを　たべながら　えいがを　みます。', cn: '一邊吃爆米花，一邊看電影。' },
+  { jp: 'えいがは　とても　おもしろいです。', cn: '電影非常有意思。' },
+  { jp: 'ゆうがた、カフェで　コーヒーを　のみます。', cn: '傍晚在咖啡廳喝咖啡。' },
+  { jp: 'えいがの　はなしを　します。', cn: '聊聊電影的話題。' },
+  { jp: 'きょうは　たのしい　いちにちでした。', cn: '今天是愉快充實的一天。' }
 ];
 
 // --- KaraokePlayer Class ---
@@ -38,7 +38,7 @@ class KaraokePlayer {
     const rate = typeof currentSpeechRate !== 'undefined' ? currentSpeechRate : 1.0;
 
     this.sentences.forEach((s, i) => {
-      const u = new SpeechSynthesisUtterance(s.jp);
+      const u = new SpeechSynthesisUtterance(s.jp.replace(/　/g, ' '));
       u.lang = 'ja-JP';
       u.rate = rate;
 
@@ -63,6 +63,7 @@ class KaraokePlayer {
       };
 
       u.onerror = (ev) => {
+        // On error (e.g. interrupted), stop gracefully
         if (ev.error !== 'interrupted') {
           console.warn('Speech error:', ev.error);
         }
@@ -246,11 +247,13 @@ class KaraokePlayer {
     this._setStatus('idle', '朗讀完成！🎉');
     this._showPauseNotice(false);
 
+    // Keep progress bar full for a moment, then fade
     if (this.progressBar) {
       this.progressBar.style.width = '100%';
     }
     setTimeout(() => {
       this._showProgress(false);
+      // Remove done states after a brief pause
       setTimeout(() => {
         this.clearHighlights();
       }, 800);
@@ -265,11 +268,14 @@ let karaokePlayer = null;
 document.addEventListener('DOMContentLoaded', () => {
   karaokePlayer = new KaraokePlayer(SENTENCES);
 
+  // Ensure voices are loaded (some browsers load asynchronously)
   if (window.speechSynthesis.getVoices().length === 0) {
     window.speechSynthesis.addEventListener('voiceschanged', () => {
+      // Voices loaded, player will pick them up on next play()
     }, { once: true });
   }
 
+  // Initialize stop button disabled state
   const stopBtn = document.getElementById('karaoke-stop-btn');
   if (stopBtn) stopBtn.disabled = true;
 });
@@ -296,6 +302,7 @@ function toggleTranslation(checkbox) {
   const allCn = document.querySelectorAll('.karaoke-cn');
   if (checkbox.checked) {
     allCn.forEach((el, i) => {
+      // Stagger the animation for a cascade effect
       setTimeout(() => {
         el.classList.add('show');
       }, i * 40);
@@ -308,6 +315,3 @@ function toggleTranslation(checkbox) {
     });
   }
 }
-
-
-
