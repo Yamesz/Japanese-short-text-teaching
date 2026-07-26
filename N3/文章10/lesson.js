@@ -38,10 +38,15 @@ class KaraokePlayer {
       u.lang = 'ja-JP';
       u.rate = rate;
 
-      // Try to find a Japanese voice
-      const voices = window.speechSynthesis.getVoices();
-      const jaVoice = voices.find(v => v.lang.includes('ja'));
-      if (jaVoice) u.voice = jaVoice;
+      // Use preferred Japanese voice
+      if (typeof getPreferredJapaneseVoice === 'function') {
+        const preferredVoice = getPreferredJapaneseVoice();
+        if (preferredVoice) u.voice = preferredVoice;
+      } else {
+        const voices = window.speechSynthesis.getVoices();
+        const jaVoice = voices.find(v => v.lang.includes('ja'));
+        if (jaVoice) u.voice = jaVoice;
+      }
 
       u.onstart = () => {
         this.currentIndex = i;
