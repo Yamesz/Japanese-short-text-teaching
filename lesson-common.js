@@ -13,14 +13,7 @@ function speakJapanese(text) {
   utterance.lang = 'ja-JP';
   utterance.rate = currentSpeechRate;
 
-  if (typeof getPreferredJapaneseVoice === 'function') {
-    const preferredVoice = getPreferredJapaneseVoice();
-    if (preferredVoice) utterance.voice = preferredVoice;
-  } else {
-    const voices = window.speechSynthesis.getVoices();
-    const jaVoice = voices.find(v => v.lang.includes('ja'));
-    if (jaVoice) utterance.voice = jaVoice;
-  }
+  applyVoiceAndPitch(utterance);
 
   window.speechSynthesis.speak(utterance);
 }
@@ -173,12 +166,12 @@ function toggleConjugation(id) {
 
 
 // === Voice Selection Logic ===
-const SAKURA_MALE_KEYWORDS = ['ichiro', 'otoya', 'keita', 'daichi', 'male'];
-const SAKURA_FEMALE_KEYWORDS = ['ayumi', 'kyoko', 'nanami', 'haruka', 'mei', 'sakura', 'female'];
+const SAKURA_MALE_KEYWORDS = ['ichiro', 'otoya', 'keita', 'daichi', 'takumi', 'naoki', 'kenji', 'male', 'man', 'jab', 'jad', 'jaf', '男性', '男'];
+const SAKURA_FEMALE_KEYWORDS = ['ayumi', 'kyoko', 'nanami', 'haruka', 'mei', 'sakura', 'female', 'woman', 'jaa', 'jac', 'jae', '女性', '女'];
 
 function getJapaneseVoicesByGender() {
   const voices = window.speechSynthesis.getVoices();
-  const jaVoices = voices.filter(v => v.lang.includes('ja'));
+  const jaVoices = voices.filter(v => v.lang.includes('ja') || v.lang.includes('JA'));
   
   const maleVoices = [];
   const femaleVoices = [];
@@ -195,7 +188,6 @@ function getJapaneseVoicesByGender() {
     }
   });
   
-  // Combine unknown with female by default
   return {
     male: maleVoices,
     female: [...femaleVoices, ...unknownVoices]
@@ -214,6 +206,36 @@ function getPreferredJapaneseVoice() {
     return voices.male[0];
   }
   return null;
+}
+
+function applyVoiceAndPitch(utterance) {
+  const gender = localStorage.getItem('sakura_voice_gender') || 'female';
+  const voices = getJapaneseVoicesByGender();
+  
+  if (gender === 'male') {
+    if (voices.male.length > 0) {
+      utterance.voice = voices.male[0];
+      utterance.pitch = 1.0;
+    } else {
+      if (voices.female.length > 0) {
+        utterance.voice = voices.female[0];
+      } else {
+        const allVoices = window.speechSynthesis.getVoices();
+        const jaVoice = allVoices.find(v => v.lang.includes('ja') || v.lang.includes('JA'));
+        if (jaVoice) utterance.voice = jaVoice;
+      }
+      utterance.pitch = 0.75; // Lower pitch to simulate male voice if native male voice package isn't installed
+    }
+  } else {
+    if (voices.female.length > 0) {
+      utterance.voice = voices.female[0];
+    } else {
+      const allVoices = window.speechSynthesis.getVoices();
+      const jaVoice = allVoices.find(v => v.lang.includes('ja') || v.lang.includes('JA'));
+      if (jaVoice) utterance.voice = jaVoice;
+    }
+    utterance.pitch = 1.0;
+  }
 }
 
 function initVoiceSelector() {
@@ -261,23 +283,9 @@ function initVoiceSelector() {
     const gender = localStorage.getItem('sakura_voice_gender') || 'female';
     femaleBtn.classList.toggle('active', gender === 'female');
     maleBtn.classList.toggle('active', gender === 'male');
-    
-    const voices = getJapaneseVoicesByGender();
-    if (voices.male.length === 0) {
-      maleBtn.style.opacity = '0.5';
-      maleBtn.title = '您的設備目前沒有安裝日文男聲語音';
-    } else {
-      maleBtn.style.opacity = '1';
-      maleBtn.title = '';
-    }
   }
   
   function setGender(g) {
-    const voices = getJapaneseVoicesByGender();
-    if (g === 'male' && voices.male.length === 0) {
-      alert('您的設備（或瀏覽器）目前沒有安裝日文男聲語音哦！預設將使用女聲。');
-      return;
-    }
     localStorage.setItem('sakura_voice_gender', g);
     updateUI();
   }
