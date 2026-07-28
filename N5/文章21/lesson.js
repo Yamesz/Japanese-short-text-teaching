@@ -94,6 +94,11 @@ class KaraokePlayer {
     utterance.lang = 'ja-JP';
     utterance.rate = window.currentSpeechRate || 1.0;
 
+    if (typeof getPreferredJapaneseVoice === 'function') {
+      const preferredVoice = getPreferredJapaneseVoice();
+      if (preferredVoice) utterance.voice = preferredVoice;
+    }
+
     utterance.onstart = () => {
       this._highlightLine(this.currentIndex);
       this._updateProgress(this.currentIndex);
