@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章18：Katakana Challenge! | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以 N4 日文短文『Katakana Challenge!（片假名挑戰）』為教材，由さくら先生帶你認識職場中常見的外來語（片假名）以及「～ことができます」、「～てもらいました」等核心文法。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body onload="initArticleLearnedState('article-18')">
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章18：Katakana Challenge!（片假名挑戰）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：學習職場外來語（片假名）、可能表現「～ことができます」、授受表現「～てもらいました」與「～ながら」等 N4 核心文法。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <!-- Title Row -->
+          <div class="short-text-title-row">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文
+            </h3>
+            <!-- Bilingual Toggle -->
+            <div class="lang-toggle-wrapper">
+              <span class="lang-toggle-label">🌐 中日雙語</span>
+              <label class="lang-toggle">
+                <input type="checkbox" id="bilingual-toggle" onchange="toggleTranslation(this)">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Controls Row: Speed + Play/Stop -->
+          <div class="short-text-controls-row">
+            <!-- Speed Control Selector -->
+            <div class="speed-control">
+              <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+              <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢速 0.8x</button>
+              <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
+              <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快速 1.2x</button>
+            </div>
+
+            <div class="karaoke-controls">
+              <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">
+                🔊 全篇朗讀
+              </button>
+              <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>
+                ⏹ 停止
+              </button>
+            </div>
+          </div>
+
+          <!-- Status Indicator -->
+          <div class="karaoke-status idle">
+            <span class="status-dot"></span>
+            <span class="status-text">準備就緒</span>
+          </div>
+
+          <!-- Pause Notice -->
+          <div class="pause-notice">
+            ⚠️ 若暫停無效，請按「⏹ 停止」後重新播放
+          </div>
+
+          <!-- Original Japanese text box -->
+          <div
+            style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03); margin-top: 0.5rem;">
+            <div
+              style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+              Katakana Challenge!
+            </div>
+
+            <div class="karaoke-line" data-sentence-index="0">
+              <span class="karaoke-jp">きょう、ワタシは　トウキョウの　ビジネスセンターへ　いきました。</span>
+              <div class="karaoke-cn">今天，我去了東京的商業中心。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="1">
+              <span class="karaoke-jp">コノ　エリアは　モダンで、タカイ　ビルが　たくさん　あります。</span>
+              <div class="karaoke-cn">這個地區很現代，有很多高樓大廈。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="2">
+              <span class="karaoke-jp">アサ、オフィスに　とうちゃくして、コンピューターを　つかって　データを　チェックしました。</span>
+              <div class="karaoke-cn">早上抵達辦公室，使用了電腦並確認資料。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="3">
+              <span class="karaoke-jp">プロジェクトの　スケジュールは　とても　タイトでしたが、チームで　コミュニケーションを　とって　スムーズに　すすめることが　できました。</span>
+              <div class="karaoke-cn">專案的時程非常緊湊，但透過團隊溝通，得以順利進行。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="4">
+              <span class="karaoke-jp">ヒルには、レストランで　パスタと　コーヒーを　オーダーしました。</span>
+              <div class="karaoke-cn">中午在餐廳點了義大利麵和咖啡。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="5">
+              <span class="karaoke-jp">サービスは　とても　プロフェッショナルで、フードも　おいしかったです。</span>
+              <div class="karaoke-cn">服務非常專業，食物也很好吃。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="6">
+              <span class="karaoke-jp">ゴゴは　クライアントと　ミーティングが　ありました。</span>
+              <div class="karaoke-cn">下午和客戶有會議。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="7">
+              <span class="karaoke-jp">プレゼンテーションを　して、フィードバックを　もらいました。</span>
+              <div class="karaoke-cn">進行了簡報，並獲得了回饋。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="8">
+              <span class="karaoke-jp">とても　ポジティブな　コメントが　おおくて、じしんに　なりました。</span>
+              <div class="karaoke-cn">有很多非常正面的評價，讓我增加了自信。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="9">
+              <span class="karaoke-jp">ユウガタ、オフィスを　でて、カフェで　リラックス　しました。</span>
+              <div class="karaoke-cn">傍晚離開辦公室，在咖啡廳放鬆了一下。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="10">
+              <span class="karaoke-jp">おんがくを　ききながら、きょうの　ワークを　ふりかえりました。</span>
+              <div class="karaoke-cn">一邊聽音樂，一邊回顧了今天的工作。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="11">
+              <span class="karaoke-jp">きょうは　とても　いそがしい　いちにちでしたが、とても　じゅうじつした　いい　いちにちでした。</span>
+              <div class="karaoke-cn">今天雖然是非常忙碌的一天，但也是十分充實美好的一天。</div>
+            </div>
+          </div>
+
+          <div
+            style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+            <b>🌸 さくら先生導讀點撥：</b><br>
+            這是一篇名為「Katakana Challenge（片假名挑戰）」的短文！現代日本職場中，外來語（片假名）的使用非常普遍。這篇文章刻意將許多日文漢字和外來語都用片假名呈現，讓大家練習閱讀。你認得出多少個職場常用的外來語呢？加油！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence Breakdown -->
+      <div>
+        <h3 class="section-title" style="margin-top: 0;">
+          📖 逐句朗讀與解析 (漢字 + 假名注音 + 羅馬字 + 中文)
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>今日<rt>きょう</rt></ruby>、<ruby>私<rt>わたし</rt></ruby>は　<ruby>東京<rt>とうきょう</rt></ruby>の　ビジネスセンターへ　いきました。
+            </div>
+            <div class="sentence-romaji">Kyo-u, wa-ta-shi wa To-u-kyo-u no bi-ji-ne-su-se-n-ta-a e i-ki-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：今天，我去了東京的商業中心。</span>
+              <button class="audio-btn" onclick="speakJapanese('きょう、わたしはとうきょうのビジネスセンターへいきました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              この　エリアは　モダンで、<ruby>高<rt>たか</rt></ruby>い　ビルが　たくさん　あります。
+            </div>
+            <div class="sentence-romaji">Ko-no e-ri-a wa mo-da-n de, ta-ka-i bi-ru ga ta-ku-sa-n a-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：這個地區很現代，有很多高樓大廈。</span>
+              <button class="audio-btn" onclick="speakJapanese('このエリアはモダンで、たかいビルがたくさんあります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>朝<rt>あさ</rt></ruby>、オフィスに　<ruby>到着<rt>とうちゃく</rt></ruby>して、コンピューターを　<ruby>使<rt>つか</rt></ruby>って　データを　チェックしました。
+            </div>
+            <div class="sentence-romaji">A-sa, o-fi-su ni to-u-cha-ku shi-te, ko-n-pyu-u-ta-a o tsu-ka-t-te de-e-ta o che-k-ku shi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：早上抵達辦公室，使用了電腦並確認資料。</span>
+              <button class="audio-btn" onclick="speakJapanese('あさ、オフィスにとうちゃくして、コンピューターをつかってデータをチェックしました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              プロジェクトの　スケジュールは　とても　タイトでしたが、チームで　コミュニケーションを　とって　スムーズに　<ruby>進<rt>すす</rt></ruby>めることが　できました。
+            </div>
+            <div class="sentence-romaji">Pu-ro-je-ku-to no su-ke-ju-u-ru wa to-te-mo ta-i-to de-shi-ta ga, chi-i-mu de ko-myu-ni-ke-e-sho-n o to-t-te su-mu-u-zu ni su-su-me-ru ko-to ga de-ki-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：專案的時程非常緊湊，但透過團隊溝通，得以順利進行。</span>
+              <button class="audio-btn" onclick="speakJapanese('プロジェクトのスケジュールはとてもタイトでしたが、チームでコミュニケーションをとってスムーズにすすめることができました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>昼<rt>ひる</rt></ruby>には、レストランで　パスタと　コーヒーを　オーダーしました。
+            </div>
+            <div class="sentence-romaji">Hi-ru ni wa, re-su-to-ra-n de pa-su-ta to ko-o-hi-i o o-o-da-a shi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：中午在餐廳點了義大利麵和咖啡。</span>
+              <button class="audio-btn" onclick="speakJapanese('ひるには、レストランでパスタとコーヒーをオーダーしました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 6 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              サービスは　とても　プロフェッショナルで、フードも　おいしかったです。
+            </div>
+            <div class="sentence-romaji">Sa-a-bi-su wa to-te-mo pu-ro-fe-s-sho-na-ru de, fu-u-do mo o-i-shi-ka-t-ta de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：服務非常專業，食物也很好吃。</span>
+              <button class="audio-btn" onclick="speakJapanese('サービスはとてもプロフェッショナルで、フードもおいしかったです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 7 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>午後<rt>ごご</rt></ruby>は　クライアントと　ミーティングが　ありました。
+            </div>
+            <div class="sentence-romaji">Go-go wa ku-ra-i-a-n-to to mi-i-ti-n-gu ga a-ri-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：下午和客戶有會議。</span>
+              <button class="audio-btn" onclick="speakJapanese('ごごはクライアントとミーティングがありました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 8 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              プレゼンテーションを　して、フィードバックを　もらいました。
+            </div>
+            <div class="sentence-romaji">Pu-re-ze-n-te-e-sho-n o shi-te, fi-i-do-ba-k-ku o mo-ra-i-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：進行了簡報，並獲得了回饋。</span>
+              <button class="audio-btn" onclick="speakJapanese('プレゼンテーションをして、フィードバックをもらいました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 9 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              とても　ポジティブな　コメントが　<ruby>多<rt>おお</rt></ruby>くて、<ruby>自信<rt>じしん</rt></ruby>に　なりました。
+            </div>
+            <div class="sentence-romaji">To-te-mo po-ji-ti-bu na ko-me-n-to ga o-o-ku-te, ji-shi-n ni na-ri-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：有很多非常正面的評價，讓我增加了自信。</span>
+              <button class="audio-btn" onclick="speakJapanese('とてもポジティブなコメントがおおくて、じしんになりました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 10 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>夕方<rt>ゆうがた</rt></ruby>、オフィスを　<ruby>出<rt>で</rt></ruby>て、カフェで　リラックス　しました。
+            </div>
+            <div class="sentence-romaji">Yu-u-ga-ta, o-fi-su o de-te, ka-fe de ri-ra-k-ku-su shi-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：傍晚離開辦公室，在咖啡廳放鬆了一下。</span>
+              <button class="audio-btn" onclick="speakJapanese('ゆうがた、オフィスをでて、カフェでリラックスしました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 11 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>音楽<rt>おんがく</rt></ruby>を　<ruby>聴<rt>き</rt></ruby>きながら、<ruby>今日<rt>きょう</rt></ruby>の　ワークを　<ruby>振<rt>ふ</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>りました。
+            </div>
+            <div class="sentence-romaji">O-n-ga-ku o ki-ki-na-ga-ra, kyo-u no wa-a-ku o fu-ri-ka-e-ri-ma-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：一邊聽音樂，一邊回顧了今天的工作。</span>
+              <button class="audio-btn" onclick="speakJapanese('おんがくをききながら、きょうのワークをふりかえりました')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 12 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>今日<rt>きょう</rt></ruby>は　とても　<ruby>忙<rt>いそが</rt></ruby>しい　<ruby>一日<rt>いちにち</rt></ruby>でしたが、とても　<ruby>充実<rt>じゅうじつ</rt></ruby>した　いい　<ruby>一日<rt>いちにち</rt></ruby>でした。
+            </div>
+            <div class="sentence-romaji">Kyo-u wa to-te-mo i-so-ga-shi-i i-chi-ni-chi de-shi-ta ga, to-te-mo ju-u-ji-tsu shi-ta i-i i-chi-ni-chi de-shi-ta.</div>
+            <div class="sentence-cn">
+              <span>中文：今天雖然是非常忙碌的一天，但也是十分充實美好的一天。</span>
+              <button class="audio-btn" onclick="speakJapanese('きょうはとてもいそがしいいちにちでしたが、とてもじゅうじつしたいいいちにちでした')">🔊</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Section 1: Verbs Vault (動詞寶庫) -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-person-running" style="color: #4A90E2;"></i> 🏃 動詞寶庫 (本篇登場核心動詞)</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 使う（つかう）</div>
+            <button class="audio-btn" onclick="speakJapanese('つかう')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：tsu-ka-u | 分類：第一類動詞</div>
+          <div class="vocab-meaning">意思：使用</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v18_1')">📊 展開活用變化表</button>
+          <div id="conjugation-v18_1" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>使う</td><td>使います</td><td>使いました</td><td>使って</td><td>使わない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：コンピューターを使ってデータをチェックした。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('コンピューターをつかってデータをチェックした')">🔊</button></div>
+            <div class="example-cn">（使用了電腦確認資料。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 進める（すすめる）</div>
+            <button class="audio-btn" onclick="speakJapanese('すすめる')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：su-su-me-ru | 分類：第二類動詞</div>
+          <div class="vocab-meaning">意思：推進、進行 (他動詞)</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v18_2')">📊 展開活用變化表</button>
+          <div id="conjugation-v18_2" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>進める</td><td>進めます</td><td>進めました</td><td>進めて</td><td>進めない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：スムーズに進めることができました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('スムーズにすすめることができました')">🔊</button></div>
+            <div class="example-cn">（得以順利地進行。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 振り返る（ふりかえる）</div>
+            <button class="audio-btn" onclick="speakJapanese('ふりかえる')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：fu-ri-ka-e-ru | 分類：第一類動詞</div>
+          <div class="vocab-meaning">意思：回顧、回頭看</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v18_3')">📊 展開活用變化表</button>
+          <div id="conjugation-v18_3" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>振り返る</td><td>振り返ります</td><td>振り返りました</td><td>振り返って</td><td>振り返らない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：今日のワークを振り返りました。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('きょうのワークをふりかえりました')">🔊</button></div>
+            <div class="example-cn">（回顧了今天的工作。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (外來語形容詞)</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ モダンな</div>
+            <button class="audio-btn" onclick="speakJapanese('モダンな')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：mo-da-n na | な形容詞</div>
+          <div class="vocab-meaning">意思：現代的 (modern)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：このエリアはモダンです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('このエリアはモダンです')">🔊</button></div>
+            <div class="example-cn">（這個地區很現代。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ タイトな</div>
+            <button class="audio-btn" onclick="speakJapanese('タイトな')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ta-i-to na | な形容詞</div>
+          <div class="vocab-meaning">意思：緊湊的、緊的 (tight)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：スケジュールはとてもタイトです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('スケジュールはとてもタイトです')">🔊</button></div>
+            <div class="example-cn">（時程非常緊湊。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ ポジティブな</div>
+            <button class="audio-btn" onclick="speakJapanese('ポジティブな')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：po-ji-ti-bu na | な形容詞</div>
+          <div class="vocab-meaning">意思：正面的、積極的 (positive)</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：ポジティブなコメントが多かったです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('ポジティブなコメントがおおかったです')">🔊</button></div>
+            <div class="example-cn">（有很多正面的評價。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 3: Katakana Vocabulary -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-book" style="color: #E6A23C;"></i> 🌸 職場外來語挑戰 (Katakana Challenge)</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #E6A23C;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏢 ビジネスセンター</div>
+            <button class="audio-btn" onclick="speakJapanese('ビジネスセンター')">🔊</button>
+          </div>
+          <div class="vocab-romaji">Business Center</div>
+          <div class="vocab-meaning">意思：商業中心</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #E6A23C;">
+          <div class="vocab-header">
+            <div class="vocab-word">📅 スケジュール</div>
+            <button class="audio-btn" onclick="speakJapanese('スケジュール')">🔊</button>
+          </div>
+          <div class="vocab-romaji">Schedule</div>
+          <div class="vocab-meaning">意思：時程表、計畫</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #E6A23C;">
+          <div class="vocab-header">
+            <div class="vocab-word">🗣️ コミュニケーション</div>
+            <button class="audio-btn" onclick="speakJapanese('コミュニケーション')">🔊</button>
+          </div>
+          <div class="vocab-romaji">Communication</div>
+          <div class="vocab-meaning">意思：溝通</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #E6A23C;">
+          <div class="vocab-header">
+            <div class="vocab-word">👥 クライアント</div>
+            <button class="audio-btn" onclick="speakJapanese('クライアント')">🔊</button>
+          </div>
+          <div class="vocab-romaji">Client</div>
+          <div class="vocab-meaning">意思：客戶</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #E6A23C;">
+          <div class="vocab-header">
+            <div class="vocab-word">🤝 ミーティング</div>
+            <button class="audio-btn" onclick="speakJapanese('ミーティング')">🔊</button>
+          </div>
+          <div class="vocab-romaji">Meeting</div>
+          <div class="vocab-meaning">意思：會議</div>
+        </div>
+        
+        <div class="vocab-card" style="border-top: 4px solid #E6A23C;">
+          <div class="vocab-header">
+            <div class="vocab-word">📊 プレゼンテーション</div>
+            <button class="audio-btn" onclick="speakJapanese('プレゼンテーション')">🔊</button>
+          </div>
+          <div class="vocab-romaji">Presentation</div>
+          <div class="vocab-meaning">意思：簡報</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 4: Grammar Classroom -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 ～ことができます (能夠... / 會...)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>動詞辭書形 ＋ ことができます。表示具備某種能力，或在某情況下允許/可能做到某事。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：スムーズに進めることができました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('スムーズにすすめることができました')">🔊</button></div>
+            <div class="example-cn">（得以順利地進行。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 ～をもらいました (從...獲得...)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>接受者 は/が ＋ 授予者 に/から ＋ 物品 を ＋ もらいました。表示從他人那裡得到某物（具體或抽象皆可）。若是「～てもらいました」則表示請人幫忙做某事。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句①：クライアントからフィードバックをもらいました。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('クライアントからフィードバックをもらいました')">🔊</button></div>
+            <div class="example-cn">（從客戶那裡獲得了回饋。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章18 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「クライアント」在日文職場中通常是指什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！Client 就是客戶的意思。')">A. 客戶</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '老闆是「ボス」或「社長」喔！')">B. 老闆</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '同事是「同僚(どうりょう)」喔！')">C. 同事</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「進める＿＿＿できました。」（得以進行），空格應填什麼文法？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 1, '「もの」通常指具體的物品喔！')">A. ものが</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 1, '正解！「辭書形 ＋ ことができます」表示能夠做到某事。')">B. ことが</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 1, '「ほうが」是用在比較句型喔！')">C. ほうが</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：「プレゼンテーション」的意思是什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 2, '出差是「出張(しゅっちょう)」喔！')">A. 出差</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 2, '加班是「残業(ざんぎょう)」喔！')">B. 加班</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 2, '正解！Presentation 就是簡報的意思。')">C. 簡報</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
+      </div>
+    </div>
+
+
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-18')">
+      ✅ 標記為已學習
+    </button>
+
+  </main>
+
+  <!-- Karaoke Progress Bar (fixed at bottom of viewport) -->
+  <div class="karaoke-progress-container">
+    <div class="karaoke-progress-bar"></div>
+  </div>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章18 獨立單元網頁 &copy; 2026. <a href="../../index.html"
+        style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="../../lesson-common.js"></script>
+  <script src="lesson.js"></script>
+  <script>
+    // Dynamic visibility check script
+    document.addEventListener('DOMContentLoaded', () => {
+      const verbContainer = document.querySelector('#verb-vault-section .card-grid');
+      if (!verbContainer || verbContainer.children.length === 0) {
+        document.getElementById('verb-vault-section').style.display = 'none';
+      }
+
+      const adjContainer = document.querySelector('#adj-vault-section .card-grid');
+      if (!adjContainer || adjContainer.children.length === 0) {
+        document.getElementById('adj-vault-section').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
