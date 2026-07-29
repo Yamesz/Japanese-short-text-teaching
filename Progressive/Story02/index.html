@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>階梯閱讀02：第一次的東京大冒險 (N5-N3) | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以章節推進的方式，帶領學生體驗主角的東京大冒險，難度從第一幕 N5 漸進至第三幕 N3。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body onload="initArticleLearnedState('progressive-02')">
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 階梯閱讀02：第一次的東京大冒險
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：這是一個連續的故事，隨著主角遇到更多的挑戰，難度將從第一幕的 N5 漸漸提升到第三幕的 N3。
+      </p>
+    </div>
+  </header>
+
+  <!-- Level Switcher -->
+  <div class="level-switcher-container">
+    <div class="level-switcher">
+      <button class="level-btn active" data-level="n5" onclick="switchLevel('n5')">第一幕 (N5 出發的早晨)</button>
+      <button class="level-btn locked" data-level="n4" onclick="switchLevel('n4')"><i class="fa-solid fa-lock"></i> 第二幕 (N4 迷路與新朋友)</button>
+      <button class="level-btn locked" data-level="n3" onclick="switchLevel('n3')"><i class="fa-solid fa-lock"></i> 第三幕 (N3 最終的體悟)</button>
+    </div>
+  </div>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+
+    <!-- ==================== N5 CONTENT ==================== -->
+    <div id="level-n5" class="level-content active">
+      <div class="lesson-layout">
+        <!-- Left Column -->
+        <div>
+          <div class="image-viewer-card" style="position: static; text-align: left;">
+            <div class="short-text-title-row">
+              <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">📜 日語短文：第一幕</h3>
+              <div class="lang-toggle-wrapper">
+                <span class="lang-toggle-label">🌐 中日雙語</span>
+                <label class="lang-toggle">
+                  <input type="checkbox" onchange="toggleTranslation(this)">
+                  <span class="toggle-track"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="short-text-controls-row">
+              <div class="speed-control">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢</button>
+                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普</button>
+                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快</button>
+              </div>
+              <div class="karaoke-controls">
+                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
+                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+              </div>
+            </div>
+
+            <div class="karaoke-status idle">
+              <span class="status-dot"></span><span class="status-text">準備就緒</span>
+            </div>
+
+            <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', sans-serif; color: #2D3748; margin-top: 0.5rem;">
+              <div style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+                はじめての　とうきょう
+              </div>
+              
+              <div class="karaoke-line" data-sentence-index="0">
+                <span class="karaoke-jp">きょうは　とても　いい　てんきです。</span>
+                <div class="karaoke-cn">今天天氣非常好。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="1">
+                <span class="karaoke-jp">わたしは　あさ　６じに　おきました。</span>
+                <div class="karaoke-cn">我早上6點就起床了。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="2">
+                <span class="karaoke-jp">あさごはんを　たべて、えきへ　いきました。</span>
+                <div class="karaoke-cn">吃了早餐後，就前往車站。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="3">
+                <span class="karaoke-jp">えきで　とうきょうゆきの　きっぷを　かいました。</span>
+                <div class="karaoke-cn">在車站買了前往東京的車票。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="4">
+                <span class="karaoke-jp">しんかんせんは　とても　はやかったです。</span>
+                <div class="karaoke-cn">新幹線非常快。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="5">
+                <span class="karaoke-jp">まどから　ふじさんが　みえました。</span>
+                <div class="karaoke-cn">從窗戶看得到富士山。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="6">
+                <span class="karaoke-jp">わたしは　とても　うれしかったです。</span>
+                <div class="karaoke-cn">我感到非常開心。</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+              <b>🌸 さくら先生導讀點撥：</b><br>
+              這是第一幕出發的早晨。使用了很多 N5 的基礎過去式和助詞「へ」(方向)、「で」(場所)。大家注意看新幹線很快的過去式變化喔！
+            </div>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+               <button class="action-btn" style="font-size:1.1rem; padding: 0.8rem 2rem; border-radius: 30px;" onclick="unlockLevel('n4')">✅ 完成第一幕，解鎖第二幕！ <i class="fa-solid fa-unlock"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <h3 class="section-title" style="margin-top: 0;">📖 逐句朗讀與解析</h3>
+          <div class="sentence-list">
+            <div class="sentence-card">
+              <div class="sentence-jp">きょうは　とても　いい　<ruby>天気<rt>てんき</rt></ruby>です。</div>
+              <div class="sentence-romaji">Kyo-o wa to-te-mo i-i te-n-ki de-su.</div>
+              <div class="sentence-cn"><span>中文：今天天氣非常好。</span><button class="audio-btn" onclick="speakJapanese('きょうはとてもいいてんきです')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">わたしは　<ruby>朝<rt>あさ</rt></ruby>　６<ruby>時<rt>じ</rt></ruby>に　<ruby>起<rt>お</rt></ruby>きました。</div>
+              <div class="sentence-romaji">Wa-ta-shi wa a-sa ro-ku-ji ni o-ki-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：我早上6點就起床了。</span><button class="audio-btn" onclick="speakJapanese('わたしはあさろくじにおきました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp"><ruby>朝<rt>あさ</rt></ruby>ごはんを　<ruby>食<rt>た</rt></ruby>べて、<ruby>駅<rt>えき</rt></ruby>へ　いきました。</div>
+              <div class="sentence-romaji">A-sa-go-ha-n o ta-be-te, e-ki e i-ki-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：吃了早餐後，就前往車站。</span><button class="audio-btn" onclick="speakJapanese('あさごはんをたべて、えきへいきました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp"><ruby>駅<rt>えき</rt></ruby>で　<ruby>東京行<rt>とうきょうゆ</rt></ruby>きの　きっぷを　<ruby>買<rt>か</rt></ruby>いました。</div>
+              <div class="sentence-romaji">E-ki de to-u-kyo-u-yu-ki no ki-p-pu o ka-i-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：在車站買了前往東京的車票。</span><button class="audio-btn" onclick="speakJapanese('えきでとうきょうゆきのきっぷをかいました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">しんかんせんは　とても　<ruby>早<rt>はや</rt></ruby>かったです。</div>
+              <div class="sentence-romaji">Shi-n-ka-n-se-n wa to-te-mo ha-ya-ka-t-ta-de-su.</div>
+              <div class="sentence-cn"><span>中文：新幹線非常快。</span><button class="audio-btn" onclick="speakJapanese('しんかんせんはとてもはやかったです')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp"><ruby>窓<rt>まど</rt></ruby>から　<ruby>富士山<rt>ふじさん</rt></ruby>が　<ruby>見<rt>み</rt></ruby>えました。</div>
+              <div class="sentence-romaji">Ma-do ka-ra fu-ji-sa-n ga mi-e-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：從窗戶看得到富士山。</span><button class="audio-btn" onclick="speakJapanese('まどからふじさんがみえました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">わたしは　とても　うれしかったです。</div>
+              <div class="sentence-romaji">Wa-ta-shi wa to-te-mo u-re-shi-ka-t-ta-de-su.</div>
+              <div class="sentence-cn"><span>中文：我感到非常開心。</span><button class="audio-btn" onclick="speakJapanese('わたしはとてもうれしかったです')">🔊</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vaults for N5 -->
+      <div id="verb-vault-section" style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-person-running" style="color: #4A90E2;"></i> 🏃 動詞寶庫 (N5)</h2>
+        <div class="card-grid">
+          <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+            <div class="vocab-header"><div class="vocab-word">🏃 買う（かう）</div><button class="audio-btn" onclick="speakJapanese('かう')">🔊</button></div>
+            <div class="vocab-romaji">讀音：ka-u | 第一類動詞</div><div class="vocab-meaning">意思：買</div>
+            <button class="conjugation-toggle" onclick="toggleConjugation('v_n5_1')">📊 展開活用變化表</button>
+            <div id="conjugation-v_n5_1" class="conjugation-table-wrapper">
+              <table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th></tr><tr><td>買う</td><td>買います</td><td>買いました</td><td>買って</td></tr></table>
+            </div>
+            <div class="example-box"><div class="example-jp">例句：駅で切符を買いました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('えきできっぷをかいました')">🔊</button></div><div class="example-cn">（在車站買了車票。）</div></div>
+          </div>
+          <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+            <div class="vocab-header"><div class="vocab-word">🏃 見える（みえる）</div><button class="audio-btn" onclick="speakJapanese('みえる')">🔊</button></div>
+            <div class="vocab-romaji">讀音：mi-e-ru | 第二類動詞</div><div class="vocab-meaning">意思：看得見 (自然進入視線)</div>
+            <button class="conjugation-toggle" onclick="toggleConjugation('v_n5_2')">📊 展開活用變化表</button>
+            <div id="conjugation-v_n5_2" class="conjugation-table-wrapper">
+              <table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th></tr><tr><td>見える</td><td>見えます</td><td>見えました</td><td>見えて</td></tr></table>
+            </div>
+            <div class="example-box"><div class="example-jp">例句：窓から富士山が見えました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('まどからふじさんがみえました')">🔊</button></div><div class="example-cn">（從窗戶看見了富士山。）</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="adj-vault-section" style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (N5)</h2>
+        <div class="card-grid">
+          <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+            <div class="vocab-header"><div class="vocab-word">✨ 早い（はやい）</div><button class="audio-btn" onclick="speakJapanese('はやい')">🔊</button></div>
+            <div class="vocab-romaji">讀音：ha-ya-i | い形容詞</div><div class="vocab-meaning">意思：快、早</div>
+            <div class="example-box"><div class="example-jp">例句：新幹線はとても早かったです。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('しんかんせんはとてもはやかったです')">🔊</button></div><div class="example-cn">（新幹線非常快。）</div></div>
+          </div>
+          <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+            <div class="vocab-header"><div class="vocab-word">✨ 嬉しい（うれしい）</div><button class="audio-btn" onclick="speakJapanese('うれしい')">🔊</button></div>
+            <div class="vocab-romaji">讀音：u-re-shi-i | い形容詞</div><div class="vocab-meaning">意思：高興的</div>
+            <div class="example-box"><div class="example-jp">例句：私はとても嬉しかったです。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('わたしはとてもうれしかったです')">🔊</button></div><div class="example-cn">（我非常高興。）</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-chalkboard-user" style="color: #9B59B6;"></i> 🧩 助詞教室 (N5)</h2>
+        <div class="card-grid">
+          <div class="grammar-card">
+            <div class="grammar-pattern">🧩 へ (方向)</div>
+            <div class="grammar-usage"><b>用法：</b>標示移動的目的地或方向。</div>
+            <div class="example-box"><div class="example-jp">例句：駅へ行きました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('えきへいきました')">🔊</button></div><div class="example-cn">（前往了車站。）</div></div>
+          </div>
+          <div class="grammar-card">
+            <div class="grammar-pattern">🧩 で (場所)</div>
+            <div class="grammar-usage"><b>用法：</b>動作發生的場所。</div>
+            <div class="example-box"><div class="example-jp">例句：駅で切符を買いました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('えきできっぷをかいました')">🔊</button></div><div class="example-cn">（在車站買了車票。）</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室 (N5)</h2>
+        <div class="card-grid">
+          <div class="grammar-card">
+            <div class="grammar-pattern">📝 い形容詞過去式 ＋ かったです</div>
+            <div class="grammar-usage"><b>用法：</b>描述過去的狀態時，要把形容詞字尾的「い」去掉，加上「かったです」。</div>
+            <div class="example-box"><div class="example-jp">例句：早いです ➔ 早かったです。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('はやかったです')">🔊</button></div><div class="example-cn">（很快 ➔ 當時很快。）</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== N4 CONTENT ==================== -->
+    <div id="level-n4" class="level-content">
+      <div id="overlay-n4" class="unlock-overlay">
+        <h3><i class="fa-solid fa-lock"></i> 閱讀完第一幕才能解鎖喔！</h3>
+      </div>
+      <div class="lesson-layout">
+        <!-- Left Column -->
+        <div>
+          <div class="image-viewer-card" style="position: static; text-align: left;">
+            <div class="short-text-title-row">
+              <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">📜 日語短文：第二幕</h3>
+              <div class="lang-toggle-wrapper">
+                <span class="lang-toggle-label">🌐 中日雙語</span>
+                <label class="lang-toggle">
+                  <input type="checkbox" onchange="toggleTranslation(this)">
+                  <span class="toggle-track"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="short-text-controls-row">
+              <div class="speed-control">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢</button>
+                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普</button>
+                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快</button>
+              </div>
+              <div class="karaoke-controls">
+                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
+                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+              </div>
+            </div>
+
+            <div class="karaoke-status idle">
+              <span class="status-dot"></span><span class="status-text">準備就緒</span>
+            </div>
+
+            <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', sans-serif; color: #2D3748; margin-top: 0.5rem;">
+              <div style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+                まよいみちと　しんせつなひと
+              </div>
+              
+              <div class="karaoke-line" data-sentence-index="0">
+                <span class="karaoke-jp">とうきょうえきに　ついたら、ひとが　おおすぎて　びっくりしました。</span>
+                <div class="karaoke-cn">一抵達東京車站，人多到讓我嚇了一跳。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="1">
+                <span class="karaoke-jp">スマホの　ちずを　みてみましたが、みちが　ぜんぜん　わかりませんでした。</span>
+                <div class="karaoke-cn">雖然試著看了手機地圖，但完全搞不懂路。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="2">
+                <span class="karaoke-jp">そのとき、おばあさんが　「どうしたの？」と　こえを　かけてくれました。</span>
+                <div class="karaoke-cn">那時，一位老奶奶出聲叫住了我：「怎麼了嗎？」</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="3">
+                <span class="karaoke-jp">「スカイツリーに　いきたいんですが…」と　いうと、</span>
+                <div class="karaoke-cn">我說：「我想到晴空塔去...」，</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="4">
+                <span class="karaoke-jp">おばあさんは　「あっちの　でんしゃに　のるといいよ」と　おしえてくれました。</span>
+                <div class="karaoke-cn">老奶奶便告訴我：「搭那一邊的電車就可以喔」。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="5">
+                <span class="karaoke-jp">とうきょうの　ひとは　つめたいと　きいていましたが、とても　しんせつだなぁと　おもいました。</span>
+                <div class="karaoke-cn">雖然曾聽說東京的人很冷漠，但我認為他們非常親切。</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+              <b>🌸 さくら先生導讀點撥：</b><br>
+              這是第二幕！加入了 N4 程度的文法，像是「〜たら」(一...就...)、「〜てみます」(試著做)、「〜てくれます」(別人為我做)。描述意外事件時，這些文法非常有用喔！
+            </div>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+               <button class="action-btn" style="font-size:1.1rem; padding: 0.8rem 2rem; border-radius: 30px;" onclick="unlockLevel('n3')">✅ 完成第二幕，解鎖第三幕！ <i class="fa-solid fa-unlock"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <h3 class="section-title" style="margin-top: 0;">📖 逐句朗讀與解析</h3>
+          <div class="sentence-list">
+            <div class="sentence-card">
+              <div class="sentence-jp"><ruby>東京駅<rt>とうきょうえき</rt></ruby>に　<ruby>着<rt>つ</rt></ruby>いたら、<ruby>人<rt>ひと</rt></ruby>が　<ruby>多<rt>おお</rt></ruby>すぎて　びっくりしました。</div>
+              <div class="sentence-romaji">To-u-kyo-u-e-ki ni tsu-i-ta-ra, hi-to ga o-o-su-gi-te bi-k-ku-ri shi-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：一抵達東京車站，人多到讓我嚇了一跳。</span><button class="audio-btn" onclick="speakJapanese('とうきょうえきについたら、ひとがおおすぎてびっくりしました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">スマホの　<ruby>地図<rt>ちず</rt></ruby>を　<ruby>見<rt>み</rt></ruby>てみましたが、<ruby>道<rt>みち</rt></ruby>が　ぜんぜん　わかりませんでした。</div>
+              <div class="sentence-romaji">Su-ma-ho no chi-zu o mi-te mi-ma-shi-ta ga, mi-chi ga ze-n-ze-n wa-ka-ri-ma-se-n de-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：雖然試著看了手機地圖，但完全搞不懂路。</span><button class="audio-btn" onclick="speakJapanese('スマホのちずをみてみましたが、みちがぜんぜんわかりませんでした')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">そのとき、おばあさんが　「どうしたの？」と　<ruby>声<rt>こえ</rt></ruby>を　かけてくれました。</div>
+              <div class="sentence-romaji">So-no to-ki, o-ba-a-sa-n ga do-o shi-ta no? to ko-e o ka-ke-te ku-re-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：那時，一位老奶奶出聲叫住了我：「怎麼了嗎？」</span><button class="audio-btn" onclick="speakJapanese('そのとき、おばあさんがどうしたのとこえをかけてくれました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">「スカイツリーに　いきたいんですが…」と　いうと、</div>
+              <div class="sentence-romaji">Su-ka-i-tsu-ri-i ni i-ki-ta-i-n de-su ga to i-u to,</div>
+              <div class="sentence-cn"><span>中文：我說：「我想到晴空塔去...」，</span><button class="audio-btn" onclick="speakJapanese('スカイツリーにいきたいんですがというと')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">おばあさんは　「あっちの　<ruby>電車<rt>でんしゃ</rt></ruby>に　<ruby>乗<rt>の</rt></ruby>るといいよ」と　<ruby>教<rt>おし</rt></ruby>えてくれました。</div>
+              <div class="sentence-romaji">O-ba-a-sa-n wa a-c-chi no de-n-sha ni no-ru to i-i yo to o-shi-e-te ku-re-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：老奶奶便告訴我：「搭那一邊的電車就可以喔」。</span><button class="audio-btn" onclick="speakJapanese('おばあさんはあっちのでんしゃにのるといいよとおしえてくれました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp"><ruby>東京<rt>とうきょう</rt></ruby>の　<ruby>人<rt>ひと</rt></ruby>は　<ruby>冷<rt>つめ</rt></ruby>たいと　<ruby>聞<rt>き</rt></ruby>いていましたが、とても　<ruby>親切<rt>しんせつ</rt></ruby>だなぁと　<ruby>思<rt>おも</rt></ruby>いました。</div>
+              <div class="sentence-romaji">To-u-kyo-u no hi-to wa tsu-me-ta-i to ki-i-te i-ma-shi-ta ga, to-te-mo shi-n-se-tsu da na-a to o-mo-i-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：雖然曾聽說東京的人很冷漠，但我認為他們非常親切。</span><button class="audio-btn" onclick="speakJapanese('とうきょうのひとはつめたいときいていましたが、とてもしんせつだなあとおもいました')">🔊</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vaults for N4 -->
+      <div id="verb-vault-section" style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-person-running" style="color: #4A90E2;"></i> 🏃 動詞寶庫 (N4)</h2>
+        <div class="card-grid">
+          <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+            <div class="vocab-header"><div class="vocab-word">🏃 着く（つく）</div><button class="audio-btn" onclick="speakJapanese('つく')">🔊</button></div>
+            <div class="vocab-romaji">讀音：tsu-ku | 第一類動詞</div><div class="vocab-meaning">意思：抵達、到達</div>
+            <button class="conjugation-toggle" onclick="toggleConjugation('v_n4_1')">📊 展開活用變化表</button>
+            <div id="conjugation-v_n4_1" class="conjugation-table-wrapper">
+              <table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>た形</th><th>たら (條件)</th></tr><tr><td>着く</td><td>着きます</td><td>着いた</td><td>着いたら</td></tr></table>
+            </div>
+            <div class="example-box"><div class="example-jp">例句：東京駅に着きました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('とうきょうえきにつきました')">🔊</button></div><div class="example-cn">（抵達了東京車站。）</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="adj-vault-section" style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (N4)</h2>
+        <div class="card-grid">
+          <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+            <div class="vocab-header"><div class="vocab-word">✨ 冷たい（つめたい）</div><button class="audio-btn" onclick="speakJapanese('つめたい')">🔊</button></div>
+            <div class="vocab-romaji">讀音：tsu-me-ta-i | い形容詞</div><div class="vocab-meaning">意思：冷漠的、冰冷的</div>
+            <div class="example-box"><div class="example-jp">例句：東京の人は冷たいと聞いていました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('とうきょうのひとはつめたいときいていました')">🔊</button></div><div class="example-cn">（聽說東京的人很冷漠。）</div></div>
+          </div>
+          <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+            <div class="vocab-header"><div class="vocab-word">✨ 親切（しんせつ）</div><button class="audio-btn" onclick="speakJapanese('しんせつ')">🔊</button></div>
+            <div class="vocab-romaji">讀音：shi-n-se-tsu | な形容詞</div><div class="vocab-meaning">意思：親切的、友善的</div>
+            <div class="example-box"><div class="example-jp">例句：おばあさんはとても親切でした。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('おばあさんはとてもしんせつでした')">🔊</button></div><div class="example-cn">（老奶奶非常親切。）</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室 (N4)</h2>
+        <div class="card-grid">
+          <div class="grammar-card">
+            <div class="grammar-pattern">📝 ～たら (發現/契機)</div>
+            <div class="grammar-usage"><b>用法：</b>除了「如果」以外，動作接「たら」還可以表示「一做了A，就發現了B」。</div>
+            <div class="example-box"><div class="example-jp">例句：駅に着いたら、人が多かったです。</div><div class="example-cn">（一到車站，就發現人很多。）</div></div>
+          </div>
+          <div class="grammar-card">
+            <div class="grammar-pattern">📝 ～てくれます (別人為我做)</div>
+            <div class="grammar-usage"><b>用法：</b>表示別人親切地為我(或我這方的人)做某事，帶有感激之情。</div>
+            <div class="example-box"><div class="example-jp">例句：おばあさんが教えてくれました。</div><div class="example-cn">（老奶奶告訴了我。）</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== N3 CONTENT ==================== -->
+    <div id="level-n3" class="level-content">
+      <div id="overlay-n3" class="unlock-overlay">
+        <h3><i class="fa-solid fa-lock"></i> 閱讀完第二幕才能解鎖喔！</h3>
+      </div>
+      <div class="lesson-layout">
+        <!-- Left Column -->
+        <div>
+          <div class="image-viewer-card" style="position: static; text-align: left;">
+            <div class="short-text-title-row">
+              <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">📜 日語短文：第三幕</h3>
+              <div class="lang-toggle-wrapper">
+                <span class="lang-toggle-label">🌐 中日雙語</span>
+                <label class="lang-toggle">
+                  <input type="checkbox" onchange="toggleTranslation(this)">
+                  <span class="toggle-track"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="short-text-controls-row">
+              <div class="speed-control">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+                <button class="speed-btn" data-rate="0.8" onclick="setSpeechRate(0.8, this)">🐢 慢</button>
+                <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普</button>
+                <button class="speed-btn" data-rate="1.2" onclick="setSpeechRate(1.2, this)">🐇 快</button>
+              </div>
+              <div class="karaoke-controls">
+                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
+                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+              </div>
+            </div>
+
+            <div class="karaoke-status idle">
+              <span class="status-dot"></span><span class="status-text">準備就緒</span>
+            </div>
+
+            <div style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', sans-serif; color: #2D3748; margin-top: 0.5rem;">
+              <div style="font-size: 1.6rem; font-weight: bold; text-align: center; color: #E65C83; margin-bottom: 1.2rem; border-bottom: 2px dotted #FFC0CB; padding-bottom: 0.8rem;">
+                おもいがけない　けつまつ
+              </div>
+              
+              <div class="karaoke-line" data-sentence-index="0">
+                <span class="karaoke-jp">おばあさんの　おかげで、ようやく　もくてきちに　たどりつくことが　できました。</span>
+                <div class="karaoke-cn">多虧了老奶奶，我總算抵達了目的地。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="1">
+                <span class="karaoke-jp">ところが、スカイツリーに　のぼろうとしたものの、きょうは　きょうふうのため　てんぼうだいが　へいさされていました。</span>
+                <div class="karaoke-cn">然而，正當我打算登上晴空塔時，卻發現今天因為強風的關係，觀景台被關閉了。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="2">
+                <span class="karaoke-jp">せっかく　とおくから　きたのに、のぼれなくて　本当に　がっかりしてしまいました。</span>
+                <div class="karaoke-cn">難得大老遠跑來卻登不上去，真的感到非常失望。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="3">
+                <span class="karaoke-jp">しかたなく　ちかくの　かわぞいを　あるいていると、きれいな　ゆうひに　てらされた　スカイツリーが　みえました。</span>
+                <div class="karaoke-cn">無可奈何之下，我在附近的河畔散步時，看見了被美麗夕陽照耀著的晴空塔。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="4">
+                <span class="karaoke-jp">そのけしきは　あまりにも　うつくしく、カメラを　むけずには　いられませんでした。</span>
+                <div class="karaoke-cn">那景色美得讓人忍不住舉起相機。</div>
+              </div>
+              <div class="karaoke-line" data-sentence-index="5">
+                <span class="karaoke-jp">よていどおりには　いきませんでしたが、この　おもいがけない　けしきに　であえたことは、わたしにとって　さいこうの　おもいでに　なりました。</span>
+                <div class="karaoke-cn">雖然事情沒有按照計畫進行，但能與這意想不到的景色相遇，對我來說成了最棒的回憶。</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+              <b>🌸 さくら先生導讀點撥：</b><br>
+              這是第三幕的大結局！在 N3 的階段，我們用「〜たものの」(雖然...但是...)、「〜てしまう」(遺憾/無可挽回)、「〜ずにはいられない」(忍不住) 等較有情緒層次的文法，寫出了因為意外反而獲得另一種感動的心情轉折。
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <h3 class="section-title" style="margin-top: 0;">📖 逐句朗讀與解析</h3>
+          <div class="sentence-list">
+            <div class="sentence-card">
+              <div class="sentence-jp">おばあさんの　おかげで、ようやく　<ruby>目的地<rt>もくてきち</rt></ruby>に　たどりつくことが　できました。</div>
+              <div class="sentence-romaji">O-ba-a-sa-n no o-ka-ge de, yo-o-ya-ku mo-ku-te-ki-chi ni ta-do-ri-tsu-ku ko-to ga de-ki-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：多虧了老奶奶，我總算抵達了目的地。</span><button class="audio-btn" onclick="speakJapanese('おばあさんのおかげで、ようやくもくてきちにたどりつくことができました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">ところが、スカイツリーに　<ruby>登<rt>のぼ</rt></ruby>ろうとしたものの、きょうは　<ruby>強風<rt>きょうふう</rt></ruby>のため　<ruby>展望台<rt>てんぼうだい</rt></ruby>が　<ruby>閉鎖<rt>へいさ</rt></ruby>されていました。</div>
+              <div class="sentence-romaji">To-ko-ro-ga, su-ka-i-tsu-ri-i ni no-bo-ro-o to shi-ta mo-no no, kyo-o wa kyo-u-fu-u no ta-me te-n-bo-u-da-i ga he-i-sa sa-re-te i-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：然而，正當我打算登上晴空塔時，卻發現今天因為強風的關係，觀景台被關閉了。</span><button class="audio-btn" onclick="speakJapanese('ところが、スカイツリーにのぼろうとしたものの、きょうはきょうふうのためてんぼうだいがへいさされていました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">せっかく　<ruby>遠<rt>とお</rt></ruby>くから　<ruby>来<rt>き</rt></ruby>たのに、<ruby>登<rt>のぼ</rt></ruby>れなくて　<ruby>本当<rt>ほんとう</rt></ruby>に　がっかりしてしまいました。</div>
+              <div class="sentence-romaji">Se-k-ka-ku to-o-ku ka-ra ki-ta no ni, no-bo-re-na-ku-te ho-n-to-o ni ga-k-ka-ri shi-te shi-ma-i-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：難得大老遠跑來卻登不上去，真的感到非常失望。</span><button class="audio-btn" onclick="speakJapanese('せっかくとおくからきたのに、のぼれなくてほんとうにがっかりしてしまいました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">しかたなく　<ruby>近<rt>ちか</rt></ruby>くの　<ruby>川沿<rt>かわぞ</rt></ruby>いを　<ruby>歩<rt>ある</rt></ruby>いていると、きれいな　<ruby>夕日<rt>ゆうひ</rt></ruby>に　<ruby>照<rt>て</rt></ruby>らされた　スカイツリーが　<ruby>見<rt>み</rt></ruby>えました。</div>
+              <div class="sentence-romaji">Shi-ka-ta na-ku chi-ka-ku no ka-wa-zo-i o a-ru-i-te i-ru to, ki-re-i-na yu-u-hi ni te-ra-sa-re-ta su-ka-i-tsu-ri-i ga mi-e-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：無可奈何之下，我在附近的河畔散步時，看見了被美麗夕陽照耀著的晴空塔。</span><button class="audio-btn" onclick="speakJapanese('しかたなくちかくのかわぞいをあるいていると、きれいなゆうひにてらされたスカイツリーがみえました')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp">その<ruby>景色<rt>けしき</rt></ruby>は　あまりにも　<ruby>美<rt>うつく</rt></ruby>しく、カメラを　<ruby>向<rt>む</rt></ruby>けずには　いられませんでした。</div>
+              <div class="sentence-romaji">So-no ke-shi-ki wa a-ma-ri ni mo u-tsu-ku-shi-ku, ka-me-ra o mu-ke-zu ni wa i-ra-re-ma-se-n de-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：那景色美得讓人忍不住舉起相機。</span><button class="audio-btn" onclick="speakJapanese('そのけしきはあまりにもうつくしく、カメラをむけずにはいられませんでした')">🔊</button></div>
+            </div>
+            <div class="sentence-card">
+              <div class="sentence-jp"><ruby>予定通<rt>よていどお</rt></ruby>りには　いきませんでしたが、この　<ruby>思<rt>おも</rt></ruby>いがけない　<ruby>景色<rt>けしき</rt></ruby>に　<ruby>出会<rt>であ</rt></ruby>えたことは、わたしにとって　<ruby>最高<rt>さいこう</rt></ruby>の　<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby>に　なりました。</div>
+              <div class="sentence-romaji">Yo-te-i-do-o-ri ni wa i-ki-ma-se-n de-shi-ta ga, ko-no o-mo-i-ga-ke-na-i ke-shi-ki ni de-a-e-ta ko-to wa, wa-ta-shi ni to-t-te sa-i-ko-o no o-mo-i-de ni na-ri-ma-shi-ta.</div>
+              <div class="sentence-cn"><span>中文：雖然事情沒有按照計畫進行，但能與這意想不到的景色相遇，對我來說成了最棒的回憶。</span><button class="audio-btn" onclick="speakJapanese('よていどおりにはいきませんでしたが、このおもいがけないけしきにであえたことは、わたしにとってさいこうのおもいでになりました')">🔊</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vaults for N3 -->
+      <div id="verb-vault-section" style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-person-running" style="color: #4A90E2;"></i> 🏃 動詞寶庫 (N3)</h2>
+        <div class="card-grid">
+          <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+            <div class="vocab-header"><div class="vocab-word">🏃 閉鎖する（へいさする）</div><button class="audio-btn" onclick="speakJapanese('へいさする')">🔊</button></div>
+            <div class="vocab-romaji">讀音：he-i-sa su-ru | 第三類動詞</div><div class="vocab-meaning">意思：關閉、封鎖</div>
+            <button class="conjugation-toggle" onclick="toggleConjugation('v_n3_1')">📊 展開活用變化表</button>
+            <div id="conjugation-v_n3_1" class="conjugation-table-wrapper">
+              <table class="conjugation-table"><tr><th>辭書形</th><th>被動態</th><th>被動過去進行</th></tr><tr><td>閉鎖する</td><td>閉鎖される</td><td>閉鎖されていた</td></tr></table>
+            </div>
+            <div class="example-box"><div class="example-jp">例句：展望台が閉鎖されていました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('てんぼうだいがへいさされていました')">🔊</button></div><div class="example-cn">（觀景台被關閉了。）</div></div>
+          </div>
+          <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+            <div class="vocab-header"><div class="vocab-word">🏃 照らす（てらす）</div><button class="audio-btn" onclick="speakJapanese('てらす')">🔊</button></div>
+            <div class="vocab-romaji">讀音：te-ra-su | 第一類動詞</div><div class="vocab-meaning">意思：照耀</div>
+            <button class="conjugation-toggle" onclick="toggleConjugation('v_n3_2')">📊 展開活用變化表</button>
+            <div id="conjugation-v_n3_2" class="conjugation-table-wrapper">
+              <table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>被動態</th><th>被動過去式</th></tr><tr><td>照らす</td><td>照らします</td><td>照らされる</td><td>照らされた</td></tr></table>
+            </div>
+            <div class="example-box"><div class="example-jp">例句：夕日に照らされたスカイツリーが見えました。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('ゆうひにてらされたスカイツリーがみえました')">🔊</button></div><div class="example-cn">（看見了被夕陽照耀著的晴空塔。）</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="adj-vault-section" style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫 (N3)</h2>
+        <div class="card-grid">
+          <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+            <div class="vocab-header"><div class="vocab-word">✨ 美しい（うつくしい）</div><button class="audio-btn" onclick="speakJapanese('うつくしい')">🔊</button></div>
+            <div class="vocab-romaji">讀音：u-tsu-ku-shi-i | い形容詞</div><div class="vocab-meaning">意思：美麗的 (較文學、客觀的優美)</div>
+            <div class="example-box"><div class="example-jp">例句：その景色はあまりにも美しかったです。<button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem;" onclick="speakJapanese('そのけしきはあまりにもうつくしかったです')">🔊</button></div><div class="example-cn">（那景色實在是太美了。）</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室 (N3)</h2>
+        <div class="card-grid">
+          <div class="grammar-card">
+            <div class="grammar-pattern">📝 ～ようとしたものの</div>
+            <div class="grammar-usage"><b>用法：</b>「意向形＋とする」表示正打算做某事，後面接「ものの」表示轉折(但是/卻)。</div>
+            <div class="example-box"><div class="example-jp">例句：登ろうとしたものの、閉鎖されていました。</div><div class="example-cn">（正打算登上去，卻被關閉了。）</div></div>
+          </div>
+          <div class="grammar-card">
+            <div class="grammar-pattern">📝 ～てしまう (遺憾/無可挽回)</div>
+            <div class="grammar-usage"><b>用法：</b>除了表示「完成」外，常帶有遺憾、後悔的語氣。</div>
+            <div class="example-box"><div class="example-jp">例句：がっかりしてしまいました。</div><div class="example-cn">（感到非常失望了。）</div></div>
+          </div>
+          <div class="grammar-card">
+            <div class="grammar-pattern">📝 ～ずにはいられない (忍不住)</div>
+            <div class="grammar-usage"><b>用法：</b>表示內心的情感強烈到無法克制，一定會做出某個動作。（動詞否定形去ない＋ずには）</div>
+            <div class="example-box"><div class="example-jp">例句：カメラを向けずにはいられませんでした。</div><div class="example-cn">（忍不住把相機對準過去。）</div></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </main>
+  
+  <div style="background: #FFF5F7; padding: 3rem 1.5rem; text-align: center; border-top: 1px solid #FFD1DC;">
+    <h3 style="color: #E65C83; margin-bottom: 1.5rem;"><i class="fa-solid fa-graduation-cap"></i> さくら先生的總結測驗</h3>
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
+      <p style="margin-top:0;"><b>Q1: 故事中，主角抵達東京車站時發生了什麼事？</b></p>
+      <div style="display:flex; flex-direction:column; gap: 0.5rem; margin-bottom: 1.5rem;">
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 1, '晴空塔關閉是在第三幕喔！')">A. 晴空塔因為強風關閉了</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 1, '正解！因為人太多而且看不懂地圖所以迷路了。')">B. 人太多，不知道該往哪走</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 1, '老奶奶是來幫助主角的！')">C. 遇到一個迷路的老奶奶</button>
+      </div>
+      
+      <p><b>Q2: 當主角發現晴空塔關閉時，他使用了哪個文法來表達心情？</b></p>
+      <div style="display:flex; flex-direction:column; gap: 0.5rem; margin-bottom: 1.5rem;">
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 2, '「〜ずにはいられない」是忍不住（舉起相機）。')">A. 〜ずにはいられない</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 2, '「〜てくれました」是老奶奶幫忙時用的。')">B. 〜てくれました</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 2, '正解！「がっかりしてしまいました」表達了無法挽回的遺憾。')">C. 〜てしまいました</button>
+      </div>
+      
+      <p><b>Q3: 這趟旅程對主角來說，最後的結論是什麼？</b></p>
+      <div style="display:flex; flex-direction:column; gap: 0.5rem;">
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！雖然沒達成原本計畫，但遇見了意想不到的風景，成為了最棒的回憶。')">A. 雖然計畫被打亂，但獲得了最棒的回憶</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '主角最後覺得這是一趟最棒的回憶喔！')">B. 因為沒登上晴空塔，是一趟糟糕的旅行</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '老奶奶沒有陪他走去晴空塔喔！')">C. 和老奶奶一起在河邊看夕陽</button>
+      </div>
+      
+      <div id="quiz-feedback-q1" class="quiz-feedback" style="display:none; margin-top: 1rem;"></div>
+      <div id="quiz-feedback-q2" class="quiz-feedback" style="display:none; margin-top: 1rem;"></div>
+      <div id="quiz-feedback-q3" class="quiz-feedback" style="display:none; margin-top: 1rem;"></div>
+    </div>
+  </div>
+
+  <footer class="lesson-footer" style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+    &copy; 2026 さくら先生の日本語教室 | 短文教學 Progressive Mode 
+  </footer>
+
+  <script src="../../lesson-common.js"></script>
+  <script src="lesson.js"></script>
+</body>
+</html>
