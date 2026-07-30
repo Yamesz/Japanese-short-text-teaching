@@ -43,11 +43,7 @@ function initArticleLearnedState(articleId) {
     btn.innerHTML = '🎉 已完成本單元學習！ (點擊取消)';
   }
 
-  const savedRate = parseFloat(localStorage.getItem('sakura_speech_rate') || '1.0');
-  if (typeof currentSpeechRate !== 'undefined') currentSpeechRate = savedRate;
-  document.querySelectorAll('.speed-control .speed-btn').forEach(b => {
-    b.classList.toggle('active', parseFloat(b.getAttribute('data-rate')) === savedRate);
-  });
+  if (typeof syncSpeedControlButtons === 'function') syncSpeedControlButtons();
 }
 
 document.addEventListener('DOMContentLoaded', () => {

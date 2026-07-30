@@ -27,6 +27,25 @@
     </div>
   </section>
 
+  <section class="site-settings" aria-labelledby="speech-settings-title">
+    <div class="site-settings__intro">
+      <h2 id="speech-settings-title">⚙️ 全站語速設定</h2>
+      <p>設定會記住在這個瀏覽器，並套用至所有教材頁的「慢速／普通」朗讀。</p>
+    </div>
+    <form id="speech-rate-settings-form" class="speech-rate-settings-form">
+      <label>
+        <span>🐢 慢速</span>
+        <input id="speech-rate-slow" name="slow" type="number" min="0.30" max="1.30" step="0.05" inputmode="decimal" required>
+      </label>
+      <label>
+        <span>🏃 普通</span>
+        <input id="speech-rate-normal" name="normal" type="number" min="0.30" max="1.30" step="0.05" inputmode="decimal" required>
+      </label>
+      <button class="action-btn" type="submit">儲存語速</button>
+      <p id="speech-rate-settings-status" class="speech-rate-settings-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
   <!-- Lessons Portal Section -->
   <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
 
@@ -597,6 +616,7 @@
     <p>🌸 さくら先生の日本語教室 &copy; 2026. 專為繁體中文學習者設計的日語短文與多媒體學習平台。</p>
   </footer>
 
+  <script src="js/audio.js"></script>
   <script src="script.js"></script>
 </body>
 

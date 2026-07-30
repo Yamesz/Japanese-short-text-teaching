@@ -1,44 +1,6 @@
 // さくら先生の日本語教室 JavaScript Logic
 
-// 1. Text to Speech (TTS) Native Japanese Voice Reader
-function speakJapanese(text) {
-  if (!('speechSynthesis' in window)) {
-    alert('您的瀏覽器不支援語音合成功能');
-    return;
-  }
-
-  // Cancel any ongoing speech
-  window.speechSynthesis.cancel();
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'ja-JP';
-  utterance.rate = 0.85; // Slightly slower for language learners
-
-  // Try to pick Japanese voice if available
-  const voices = window.speechSynthesis.getVoices();
-  const jaVoices = voices.filter(v => v.lang.includes('ja'));
-  
-  // Prefer female voices
-  const femaleKeywords = ['ayumi', 'kyoko', 'nanami', 'haruka', 'mei', 'sakura', 'female', 'woman', 'jaa', 'jac', 'jae', '女性', '女'];
-  const femaleVoice = jaVoices.find(v => femaleKeywords.some(k => v.name.toLowerCase().includes(k)));
-  
-  if (femaleVoice) {
-    utterance.voice = femaleVoice;
-  } else if (jaVoices.length > 0) {
-    utterance.voice = jaVoices[0];
-  }
-
-  window.speechSynthesis.speak(utterance);
-}
-
-// Pre-load voices
-if ('speechSynthesis' in window) {
-  window.speechSynthesis.onvoiceschanged = () => {
-    window.speechSynthesis.getVoices();
-  };
-}
-
-// 2. Feature Tab Switcher
+// 1. Feature Tab Switcher
 document.addEventListener('DOMContentLoaded', () => {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
@@ -66,7 +28,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Progress Tracking & Level Filter
   initProgressAndFilters();
+  initSpeechRateSettings();
 });
+
+function initSpeechRateSettings() {
+  const form = document.getElementById('speech-rate-settings-form');
+  if (!form || typeof getSpeechRateConfig !== 'function') return;
+
+  const slowInput = document.getElementById('speech-rate-slow');
+  const normalInput = document.getElementById('speech-rate-normal');
+  const status = document.getElementById('speech-rate-settings-status');
+  const config = getSpeechRateConfig();
+  slowInput.value = config.slow.toFixed(2);
+  normalInput.value = config.normal.toFixed(2);
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    try {
+      saveSpeechRateConfig(slowInput.value, normalInput.value);
+      const saved = getSpeechRateConfig();
+      slowInput.value = saved.slow.toFixed(2);
+      normalInput.value = saved.normal.toFixed(2);
+      status.textContent = `已儲存：慢速 ${saved.slow.toFixed(2)}、普通 ${saved.normal.toFixed(2)}。`;
+      status.className = 'speech-rate-settings-status is-success';
+    } catch (error) {
+      status.textContent = error.message;
+      status.className = 'speech-rate-settings-status is-error';
+    }
+  });
+}
 
 // ===== Progress Tracking & Level Filter System =====
 function initProgressAndFilters() {
