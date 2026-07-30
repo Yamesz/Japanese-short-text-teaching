@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>階梯閱讀04：透明な傘（透明的傘） | さくら先生の日本語教室</title>
+  <meta name="description" content="同一則雨天借傘的暖心故事，從 N5 基礎版、N4 進階版一路解鎖到 N3 完整版。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body onload="initArticleLearnedState('prog-story-04')">
+  <header class="lesson-header">
+    <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color:var(--deep-sakura);font-size:2rem;margin-top:.5rem;">🌸 階梯閱讀04：透明な傘（透明的傘）</h1>
+      <p style="color:var(--text-muted);font-size:1.05rem;margin-top:.3rem;">學習目標：閱讀同一場雨、同一把傘，對照 N5 到 N3 的敘事與情感層次。</p>
+    </div>
+  </header>
+  <main style="max-width:1200px;margin:0 auto;padding:0 1.5rem 4rem;">
+    <div class="level-switcher-container">
+      <div class="level-switcher-title">🎯 選擇難度視角</div>
+      <div class="level-switcher">
+        <button class="level-btn active" data-level="n5" onclick="switchLevel('n5')">N5 基礎版</button>
+        <button class="level-btn" data-level="n4" onclick="switchLevel('n4')">N4 進階版</button>
+        <button class="level-btn" data-level="n3" onclick="switchLevel('n3')">N3 完整版</button>
+      </div>
+    </div>
+    <div id="levels-root"></div>
+
+    <section style="margin-top:3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-torii-gate" style="color:#E74C3C;"></i> 🌸 さくら先生的文化小知識</h2>
+      <div class="sensei-note-box">
+        <h3 style="color:#E74C3C;margin-top:0;">☔ 日本的透明塑膠傘與「常客」文化</h3>
+        <p>透明塑膠傘（ビニール傘）價格親民，在便利商店很常見。日本人借用物品後通常會盡快歸還；帶一份不昂貴的小點心表達謝意，是自然又不造成對方負擔的做法。住宅區的小店也常有每天光顧的「常連（じょうれん）」；一句簡短的「いつもありがとうございます」便能讓都市生活多一點溫度。</p>
+      </div>
+    </section>
+
+    <section style="margin-top:3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color:#FF85A1;"></i> 📝 階梯閱讀 隨堂小測驗（全 3 題）</h2>
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1（N5）：店員借給主角什麼？</div>
+        <label class="quiz-option"><input type="radio" name="q1" value="a"> A. 透明傘</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="b"> B. 手帕</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="c"> C. 雨衣</label>
+      </div>
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2（N4）：主角隔天為什麼帶小點心去便利商店？</div>
+        <label class="quiz-option"><input type="radio" name="q2" value="a"> A. 當作早餐</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="b"> B. 表達借傘的謝意</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="c"> C. 店員訂購了點心</label>
+      </div>
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3（N3）：「〜にすぎなかった」在文中表達什麼？</div>
+        <label class="quiz-option"><input type="radio" name="q3" value="a"> A. 不只是某個地方</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="b"> B. 原本只不過是匆匆經過的地方</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="c"> C. 從來沒有去過</label>
+      </div>
+      <button class="action-btn" style="margin-top:1rem;" onclick="submitStoryQuiz()">送出答案並計算分數</button>
+      <div id="quiz-result" class="sensei-note-box" style="display:none;">
+        <h3 style="color:var(--deep-sakura);margin-bottom:.5rem;">🎉 測驗完成結果</h3>
+        <p id="quiz-score"></p><p id="quiz-message"></p>
+      </div>
+    </section>
+
+    <section style="text-align:center;margin-top:2.5rem;">
+      <button id="mark-learned-btn" class="action-btn" onclick="toggleArticleLearned('prog-story-04')">✅ 標記為已學習</button>
+    </section>
+  </main>
+  <div class="karaoke-progress-container"><div class="karaoke-progress-bar"></div></div>
+  <footer style="text-align:center;padding:2rem;color:var(--text-muted);">🌸 さくら先生の日本語教室 - 階梯閱讀單元 &copy; 2026</footer>
+  <script src="../../lesson-common.js"></script>
+  <script src="lesson.js"></script>
+</body>
+</html>
