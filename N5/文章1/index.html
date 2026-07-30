@@ -682,22 +682,13 @@
         style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
   </footer>
 
-  <script src="../../lesson-common.js"></script>
+    <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
   <script src="lesson.js"></script>
-  <script>
-    // Dynamic visibility check script
-    document.addEventListener('DOMContentLoaded', () => {
-      const verbContainer = document.querySelector('#verb-vault-section .card-grid');
-      if (!verbContainer || verbContainer.children.length === 0) {
-        document.getElementById('verb-vault-section').style.display = 'none';
-      }
-
-      const adjContainer = document.querySelector('#adj-vault-section .card-grid');
-      if (!adjContainer || adjContainer.children.length === 0) {
-        document.getElementById('adj-vault-section').style.display = 'none';
-      }
-    });
-  </script>
+  
 </body>
 
 </html>

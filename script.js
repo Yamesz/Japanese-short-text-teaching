@@ -16,9 +16,16 @@ function speakJapanese(text) {
 
   // Try to pick Japanese voice if available
   const voices = window.speechSynthesis.getVoices();
-  const jaVoice = voices.find(v => v.lang.includes('ja'));
-  if (jaVoice) {
-    utterance.voice = jaVoice;
+  const jaVoices = voices.filter(v => v.lang.includes('ja'));
+  
+  // Prefer female voices
+  const femaleKeywords = ['ayumi', 'kyoko', 'nanami', 'haruka', 'mei', 'sakura', 'female', 'woman', 'jaa', 'jac', 'jae', '女性', '女'];
+  const femaleVoice = jaVoices.find(v => femaleKeywords.some(k => v.name.toLowerCase().includes(k)));
+  
+  if (femaleVoice) {
+    utterance.voice = femaleVoice;
+  } else if (jaVoices.length > 0) {
+    utterance.voice = jaVoices[0];
   }
 
   window.speechSynthesis.speak(utterance);

@@ -29,8 +29,8 @@
   <div class="level-switcher-container">
     <div class="level-switcher">
       <button class="level-btn active" data-level="n5" onclick="switchLevel('n5')">第一幕 (N5 出發的早晨)</button>
-      <button class="level-btn locked" data-level="n4" onclick="switchLevel('n4')"><i class="fa-solid fa-lock"></i> 第二幕 (N4 迷路與新朋友)</button>
-      <button class="level-btn locked" data-level="n3" onclick="switchLevel('n3')"><i class="fa-solid fa-lock"></i> 第三幕 (N3 最終的體悟)</button>
+      <button class="level-btn" data-level="n4" onclick="switchLevel('n4')">第二幕 (N4 迷路與新朋友)</button>
+      <button class="level-btn" data-level="n3" onclick="switchLevel('n3')">第三幕 (N3 最終的體悟)</button>
     </div>
   </div>
 
@@ -60,8 +60,8 @@
                 <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通</button>
               </div>
               <div class="karaoke-controls">
-                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
-                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+                <button class="action-btn karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+                <button class="action-btn karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
               </div>
             </div>
 
@@ -109,9 +109,7 @@
               這是第一幕出發的早晨。使用了很多 N5 的基礎過去式和助詞「へ」(方向)、「で」(場所)。大家注意看新幹線很快的過去式變化喔！
             </div>
             
-            <div style="margin-top: 1.5rem; text-align: center;">
-               <button class="action-btn" style="font-size:1.1rem; padding: 0.8rem 2rem; border-radius: 30px;" onclick="unlockLevel('n4')">✅ 完成第一幕，解鎖第二幕！ <i class="fa-solid fa-unlock"></i></button>
-            </div>
+
           </div>
         </div>
 
@@ -230,9 +228,7 @@
 
     <!-- ==================== N4 CONTENT ==================== -->
     <div id="level-n4" class="level-content">
-      <div id="overlay-n4" class="unlock-overlay">
-        <h3><i class="fa-solid fa-lock"></i> 閱讀完第一幕才能解鎖喔！</h3>
-      </div>
+      
       <div class="lesson-layout">
         <!-- Left Column -->
         <div>
@@ -255,8 +251,8 @@
                 <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通</button>
               </div>
               <div class="karaoke-controls">
-                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
-                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+                <button class="action-btn karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+                <button class="action-btn karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
               </div>
             </div>
 
@@ -300,9 +296,7 @@
               這是第二幕！加入了 N4 程度的文法，像是「〜たら」(一...就...)、「〜てみます」(試著做)、「〜てくれます」(別人為我做)。描述意外事件時，這些文法非常有用喔！
             </div>
             
-            <div style="margin-top: 1.5rem; text-align: center;">
-               <button class="action-btn" style="font-size:1.1rem; padding: 0.8rem 2rem; border-radius: 30px;" onclick="unlockLevel('n3')">✅ 完成第二幕，解鎖第三幕！ <i class="fa-solid fa-unlock"></i></button>
-            </div>
+
           </div>
         </div>
 
@@ -396,9 +390,7 @@
 
     <!-- ==================== N3 CONTENT ==================== -->
     <div id="level-n3" class="level-content">
-      <div id="overlay-n3" class="unlock-overlay">
-        <h3><i class="fa-solid fa-lock"></i> 閱讀完第二幕才能解鎖喔！</h3>
-      </div>
+      
       <div class="lesson-layout">
         <!-- Left Column -->
         <div>
@@ -421,8 +413,8 @@
                 <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通</button>
               </div>
               <div class="karaoke-controls">
-                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
-                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+                <button class="action-btn karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+                <button class="action-btn karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
               </div>
             </div>
 
@@ -602,7 +594,11 @@
     &copy; 2026 さくら先生の日本語教室 | 短文教學 Progressive Mode 
   </footer>
 
-  <script src="../../lesson-common.js"></script>
+    <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
   <script src="lesson.js"></script>
 </body>
 </html>

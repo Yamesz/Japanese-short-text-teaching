@@ -67,8 +67,8 @@
                 <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通</button>
               </div>
               <div class="karaoke-controls">
-                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
-                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+                <button class="action-btn karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+                <button class="action-btn karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
               </div>
             </div>
 
@@ -366,8 +366,8 @@
                 <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通</button>
               </div>
               <div class="karaoke-controls">
-                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
-                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+                <button class="action-btn karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+                <button class="action-btn karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
               </div>
             </div>
 
@@ -645,8 +645,8 @@
                 <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通</button>
               </div>
               <div class="karaoke-controls">
-                <button class="action-btn play-btn" onclick="player.playAll()">🔊 全篇朗讀</button>
-                <button class="action-btn stop-btn" onclick="player.stop()" disabled>⏹ 停止</button>
+                <button class="action-btn karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+                <button class="action-btn karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
               </div>
             </div>
 
@@ -930,7 +930,11 @@
     &copy; 2026 さくら先生の日本語教室 | 短文教學 Progressive Mode
   </footer>
 
-  <script src="../../lesson-common.js"></script>
+    <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
   <script src="lesson.js"></script>
 </body>
 
