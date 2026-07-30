@@ -1,6 +1,20 @@
 // js/progress.js
+const LEGACY_ARTICLE_IDS = {
+  'prog-story-01': 'progressive-01',
+  'prog-story-04': 'progressive-04'
+};
+
+function getLearnedArticles() {
+  const learned = JSON.parse(localStorage.getItem('sakura_learned_articles') || '[]');
+  const normalized = [...new Set(learned.map(id => LEGACY_ARTICLE_IDS[id] || id))];
+  if (normalized.length !== learned.length || normalized.some((id, index) => id !== learned[index])) {
+    localStorage.setItem('sakura_learned_articles', JSON.stringify(normalized));
+  }
+  return normalized;
+}
+
 function toggleArticleLearned(articleId) {
-  let learned = JSON.parse(localStorage.getItem('sakura_learned_articles') || '[]');
+  let learned = getLearnedArticles();
   const index = learned.indexOf(articleId);
   const btn = document.getElementById('mark-learned-btn');
 
@@ -22,7 +36,7 @@ function toggleArticleLearned(articleId) {
 }
 
 function initArticleLearnedState(articleId) {
-  const learned = JSON.parse(localStorage.getItem('sakura_learned_articles') || '[]');
+  const learned = getLearnedArticles();
   const btn = document.getElementById('mark-learned-btn');
   if (btn && learned.includes(articleId)) {
     btn.classList.add('is-learned');
