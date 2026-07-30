@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章22：サッカーのワールドカップ | さくら先生の日本語教室</title>
+  <meta name="description" content="本單元以 N5 日文短文『サッカーのワールドカップ（足球世界盃）』為教材，由さくら先生帶你學習相關單字與文法。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body onload="initArticleLearnedState('article-22')">
+
+  <!-- Header Banner -->
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章22：サッカーのワールドカップ（足球世界盃）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：學習描述頻率的「数量＋に＋回数」，以及表示目的的「～のために」，並認識比賽相關的實用單字。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Lesson Content Layout -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem 1.5rem;">
+
+    <div class="lesson-layout">
+
+      <!-- Left Column: Short Passage Original Text -->
+      <div>
+        <div class="image-viewer-card" style="position: static; text-align: left;">
+          <!-- Title Row -->
+          <div class="short-text-title-row">
+            <h3 style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">
+              📜 日語短文
+            </h3>
+            <!-- Bilingual Toggle -->
+            <div class="lang-toggle-wrapper">
+              <span class="lang-toggle-label">🌐 中日雙語</span>
+              <label class="lang-toggle">
+                <input type="checkbox" id="bilingual-toggle" onchange="toggleTranslation(this)">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Controls Row: Speed + Play/Stop -->
+          <div class="short-text-controls-row">
+            <!-- Speed Control Selector -->
+            <div class="speed-control">
+              <span style="font-size:0.75rem; color:var(--text-muted); font-weight:bold; margin-left:0.3rem;">語速：</span>
+              <button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速 0.5x</button>
+              <button class="speed-btn active" data-rate="1.0" onclick="setSpeechRate(1.0, this)">🏃 普通 1x</button>
+              <button class="speed-btn" data-rate="1.3" onclick="setSpeechRate(1.3, this)">🐇 快速 1.3x</button>
+            </div>
+
+            <div class="karaoke-controls">
+              <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">
+                🔊 全篇朗讀
+              </button>
+              <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>
+                ⏹ 停止
+              </button>
+            </div>
+          </div>
+
+          <!-- Status Indicator -->
+          <div class="karaoke-status idle">
+            <span class="status-dot"></span>
+            <span class="status-text">準備就緒</span>
+          </div>
+
+          <!-- Pause Notice -->
+          <div class="pause-notice">
+            ⚠️ 若暫停無效，請按「⏹ 停止」後重新播放
+          </div>
+
+          <!-- Original Japanese text box -->
+          <div
+            style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem; font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; color: #2D3748; box-shadow: inset 0 2px 8px rgba(0,0,0,0.03); margin-top: 0.5rem;">
+            
+            <div class="karaoke-line" data-sentence-index="0">
+              <span class="karaoke-jp">サッカーのワールドカップは　せかいで　いちばん　ゆうめいな　たいかいです。</span>
+              <div class="karaoke-cn">足球世界盃是世界上最有名的比賽。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="1">
+              <span class="karaoke-jp">４ねんに　いちど　あります。</span>
+              <div class="karaoke-cn">每四年舉辦一次。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="2">
+              <span class="karaoke-jp">たくさんの　くにが　さんかします。</span>
+              <div class="karaoke-cn">有許多國家會參加。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="3">
+              <span class="karaoke-jp">せんしゅたちは　じぶんの　くにの　ために　がんばります。</span>
+              <div class="karaoke-cn">選手們為了自己的國家而努力。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="4">
+              <span class="karaoke-jp">しあいは　とても　おもしろいです。</span>
+              <div class="karaoke-cn">比賽非常有趣。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="5">
+              <span class="karaoke-jp">おおぜいの　ひとが　テレビで　みます。</span>
+              <div class="karaoke-cn">許多人會在電視上觀看。</div>
+            </div>
+            <div class="karaoke-line" data-sentence-index="6">
+              <span class="karaoke-jp">わたしは　ワールドカップが　だいすきです。</span>
+              <div class="karaoke-cn">我最喜歡世界盃了。</div>
+            </div>
+          </div>
+
+          <div
+            style="margin-top: 1.2rem; background: var(--light-sakura); padding: 1rem; border-radius: 12px; font-size: 0.9rem; border-left: 4px solid var(--primary-pink);">
+            <b>🌸 さくら先生導讀點撥：</b><br>
+            這是一篇介紹大家都很熟悉的「世界盃足球賽」的短文。短短幾句中包含了表示頻率的「～年に一度」，以及表達目的的「～のために」等N5到N4銜接階段的重要句型喔！一起來學習吧！
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sentence Breakdown -->
+      <div>
+        <h3 class="section-title" style="margin-top: 0;">
+          📖 逐句朗讀與解析 (漢字 + 假名注音 + 羅馬字 + 中文)
+        </h3>
+
+        <div class="sentence-list">
+
+          <!-- Sentence 1 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              サッカーのワールドカップは　<ruby>世界<rt>せかい</rt></ruby>で　いちばん　<ruby>有名<rt>ゆうめい</rt></ruby>な　<ruby>大会<rt>たいかい</rt></ruby>です。
+            </div>
+            <div class="sentence-romaji">Sa-k-ka-a no wa-a-ru-do-ka-p-pu wa se-ka-i de i-chi-ba-n yu-u-me-i na ta-i-ka-i de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：足球世界盃是世界上最有名的比賽。</span>
+              <button class="audio-btn" onclick="speakJapanese('サッカーのワールドカップはせかいでいちばんゆうめいなたいかいです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 2 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              ４<ruby>年<rt>ねん</rt></ruby>に　<ruby>一度<rt>いちど</rt></ruby>　あります。
+            </div>
+            <div class="sentence-romaji">Yo-ne-n ni i-chi-do a-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：每四年舉辦一次。</span>
+              <button class="audio-btn" onclick="speakJapanese('よねんにいちどあります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 3 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              たくさんの　<ruby>国<rt>くに</rt></ruby>が　<ruby>参加<rt>さんか</rt></ruby>します。
+            </div>
+            <div class="sentence-romaji">Ta-ku-sa-n no ku-ni ga sa-n-ka shi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：有許多國家會參加。</span>
+              <button class="audio-btn" onclick="speakJapanese('たくさんのくにがさんかします')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 4 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>選手<rt>せんしゅ</rt></ruby>たちは　<ruby>自分<rt>じぶん</rt></ruby>の　<ruby>国<rt>くに</rt></ruby>の　ために　がんばります。
+            </div>
+            <div class="sentence-romaji">Se-n-shu-ta-chi wa ji-bu-n no ku-ni no ta-me ni ga-n-ba-ri-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：選手們為了自己的國家而努力。</span>
+              <button class="audio-btn" onclick="speakJapanese('せんしゅたちはじぶんのくにのためにがんばります')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 5 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>試合<rt>しあい</rt></ruby>は　とても　おもしろいです。
+            </div>
+            <div class="sentence-romaji">Shi-a-i wa to-te-mo o-mo-shi-ro-i de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：比賽非常有趣。</span>
+              <button class="audio-btn" onclick="speakJapanese('しあいはとてもおもしろいです')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 6 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              <ruby>大勢<rt>おおぜい</rt></ruby>の　<ruby>人<rt>ひと</rt></ruby>が　テレビで　<ruby>見<rt>み</rt></ruby>ます。
+            </div>
+            <div class="sentence-romaji">O-o-ze-i no hi-to ga te-re-bi de mi-ma-su.</div>
+            <div class="sentence-cn">
+              <span>中文：許多人會在電視上觀看。</span>
+              <button class="audio-btn" onclick="speakJapanese('おおぜいのひとがテレビでみます')">🔊</button>
+            </div>
+          </div>
+
+          <!-- Sentence 7 -->
+          <div class="sentence-card">
+            <div class="sentence-jp">
+              わたしは　ワールドカップが　<ruby>大好<rt>だいす</rt></ruby>きです。
+            </div>
+            <div class="sentence-romaji">Wa-ta-shi wa wa-a-ru-do-ka-p-pu ga da-i-su-ki de-su.</div>
+            <div class="sentence-cn">
+              <span>中文：我最喜歡世界盃了。</span>
+              <button class="audio-btn" onclick="speakJapanese('わたしはワールドカップがだいすきです')">🔊</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Section 1: Verbs Vault (動詞寶庫) -->
+    <div id="verb-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-person-running" style="color: #4A90E2;"></i> 🏃 動詞寶庫 (本篇登場核心動詞)</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 ある</div>
+            <button class="audio-btn" onclick="speakJapanese('ある')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：a-ru | 分類：第一類動詞</div>
+          <div class="vocab-meaning">意思：有、舉辦、存在 (事物)</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v22_1')">📊 展開活用變化表</button>
+          <div id="conjugation-v22_1" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>ある</td><td>あります</td><td>ありました</td><td>あって</td><td>ない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：明日はテストがあります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('あしたはテストがあります')">🔊</button></div>
+            <div class="example-cn">（明天有考試。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 参加する（さんかする）</div>
+            <button class="audio-btn" onclick="speakJapanese('さんかする')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：sa-n-ka su-ru | 分類：第三類動詞</div>
+          <div class="vocab-meaning">意思：參加</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v22_2')">📊 展開活用變化表</button>
+          <div id="conjugation-v22_2" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>参加する</td><td>参加します</td><td>参加しました</td><td>参加して</td><td>参加しない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：パーティーに参加します。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('パーティーにさんかします')">🔊</button></div>
+            <div class="example-cn">（參加派對。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 頑張る（がんばる）</div>
+            <button class="audio-btn" onclick="speakJapanese('がんばる')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：ga-n-ba-ru | 分類：第一類動詞</div>
+          <div class="vocab-meaning">意思：努力、加油</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v22_3')">📊 展開活用變化表</button>
+          <div id="conjugation-v22_3" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>頑張る</td><td>頑張ります</td><td>頑張りました</td><td>頑張って</td><td>頑張らない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：日本語の勉強を頑張ります。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('にほんごのべんきょうをがんばります')">🔊</button></div>
+            <div class="example-cn">（努力學習日文。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header">
+            <div class="vocab-word">🏃 見る（みる）</div>
+            <button class="audio-btn" onclick="speakJapanese('みる')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：mi-ru | 分類：第二類動詞</div>
+          <div class="vocab-meaning">意思：看、觀看</div>
+          
+          <button class="conjugation-toggle" onclick="toggleConjugation('v22_4')">📊 展開活用變化表</button>
+          <div id="conjugation-v22_4" class="conjugation-table-wrapper">
+            <table class="conjugation-table">
+              <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+              <tr><td>見る</td><td>見ます</td><td>見ました</td><td>見て</td><td>見ない</td></tr>
+            </table>
+          </div>
+
+          <div class="example-box">
+            <div class="example-jp">例句①：毎日テレビを見ます。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('まいにちテレビをみます')">🔊</button></div>
+            <div class="example-cn">（每天看電視。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 2: Adjectives Vault (形容詞寶庫) -->
+    <div id="adj-vault-section" style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #6B9080;"></i> ✨ 形容詞寶庫</h2>
+
+      <div class="card-grid">
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ 有名な（ゆうめいな）</div>
+            <button class="audio-btn" onclick="speakJapanese('ゆうめいな')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：yu-u-me-i-na | 分類：な形容詞</div>
+          <div class="vocab-meaning">意思：有名的、著名的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：京都は有名なお寺が多いです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('きょうとはゆうめいなおてらがおおいです')">🔊</button></div>
+            <div class="example-cn">（京都有許多有名的寺廟。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ おもしろい</div>
+            <button class="audio-btn" onclick="speakJapanese('おもしろい')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：o-mo-shi-ro-i | 分類：い形容詞</div>
+          <div class="vocab-meaning">意思：有趣的、有意思的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：この映画はとても面白いです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('このえいがはとてもおもしろいです')">🔊</button></div>
+            <div class="example-cn">（這部電影非常有趣。）</div>
+          </div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #6B9080;">
+          <div class="vocab-header">
+            <div class="vocab-word">✨ 大好きな（だいすきな）</div>
+            <button class="audio-btn" onclick="speakJapanese('だいすきな')">🔊</button>
+          </div>
+          <div class="vocab-romaji">讀音：da-i-su-ki-na | 分類：な形容詞</div>
+          <div class="vocab-meaning">意思：最喜歡的、非常喜歡的</div>
+          <div class="example-box">
+            <div class="example-jp">例句①：私はりんごが大好きです。 <button class="audio-btn" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;" onclick="speakJapanese('わたしはりんごがだいすきです')">🔊</button></div>
+            <div class="example-cn">（我最喜歡蘋果了。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 4: Grammar Classroom -->
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title"><i class="fa-solid fa-pen-nib"></i> 📝 さくら先生的精選文法教室</h2>
+
+      <div class="card-grid">
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 數量詞 ＋ に ＋ 次數 (表示頻率)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>在一段時間或數量後面加上「に」，接著加上次數，可以表示做某事的頻率。<br>
+            例：１日（いちにち）に３回（さんかい）薬（くすり）を飲みます。（一天吃三次藥。）
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句：ワールドカップは４年に１度あります。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('ワールドカップはよねんにいちどあります')">🔊</button></div>
+            <div class="example-cn">（世界盃每四年舉辦一次。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 名詞 ＋ の ＋ ために (為了...)</div>
+          <div class="grammar-usage">
+            <b>用法：</b>接在名詞的後面，中間加上「の」，用來表示目的或是為某人/某事盡心盡力。<br>
+            如果是動詞，則是接辭書形，例如：「行くために」（為了去...）。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句：選手たちは自分の国のために頑張ります。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('せんしゅたちはじぶんのくにのためにがんばります')">🔊</button></div>
+            <div class="example-cn">（選手們為了自己的國家而努力。）</div>
+          </div>
+        </div>
+        
+        <div class="grammar-card">
+          <div class="grammar-pattern">📝 動作發生的場所 ＋ で</div>
+          <div class="grammar-usage">
+            <b>用法：</b>助詞「で」接在場所名詞後，表示動作發生的地點。也可以用來表示範圍（如「世界で」在世界上）或手段工具（如「テレビで」用電視）。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">例句：大勢の人がテレビで見ます。 <button class="audio-btn"
+                style="width:20px; height:20px; font-size:0.6rem; display:inline-flex;"
+                onclick="speakJapanese('おおぜいのひとがテレビでみます')">🔊</button></div>
+            <div class="example-cn">（許多人在電視上觀看。）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Section 6: Enhanced Multi-Question Lesson Quiz (3 Questions) -->
+    <div style="margin-top: 3rem;" class="lesson-quiz-container">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #FF85A1;"></i> 📝 文章22 隨堂小測驗 (全 3 題)</h2>
+
+      <!-- Question 1 -->
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「一年舉辦兩次」的日文該怎麼說？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 1, '這不是表示頻率的正確用法喔。')">A. １年で２回あります</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 1, '正解！數量詞加上に，再接次數。')">B. １年に２回あります</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 1, '這是錯的助詞。')">C. １年が２回あります</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「為了家人而努力」，空格該填什麼？「家族＿＿＿＿頑張ります」</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 2, '如果是名詞，要用「のために」喔。')">A. ために</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 2, '這是錯的接續方法。')">B. なために</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 2, '正解！名詞 ＋ の ＋ ために。')">C. のために</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：「有名な」是什麼詞性的單字？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '名詞後面不會有「な」喔。')">A. 名詞</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '正解！因為接續名詞時會用「な」，所以是な形容詞。')">B. な形容詞</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, 'い形容詞結尾會是「い」喔。')">C. い形容詞</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <!-- Score Summary -->
+      <div id="quiz-score-summary" class="quiz-score-summary">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
+      </div>
+    </div>
+
+
+    <!-- Mark as Learned Button -->
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-22')">
+      ✅ 標記為已學習
+    </button>
+
+  </main>
+
+  <!-- Karaoke Progress Bar (fixed at bottom of viewport) -->
+  <div class="karaoke-progress-container">
+    <div class="karaoke-progress-bar"></div>
+  </div>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室 - 文章22 獨立單元網頁 &copy; 2026. <a href="../../index.html"
+        style="color: var(--primary-pink); font-weight: bold; text-decoration: none;">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="../../lesson-common.js"></script>
+  <script src="lesson.js"></script>
+  <script>
+    // Dynamic visibility check script
+    document.addEventListener('DOMContentLoaded', () => {
+      const verbContainer = document.querySelector('#verb-vault-section .card-grid');
+      if (!verbContainer || verbContainer.children.length === 0) {
+        document.getElementById('verb-vault-section').style.display = 'none';
+      }
+
+      const adjContainer = document.querySelector('#adj-vault-section .card-grid');
+      if (!adjContainer || adjContainer.children.length === 0) {
+        document.getElementById('adj-vault-section').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

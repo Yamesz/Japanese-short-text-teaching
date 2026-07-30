@@ -21,7 +21,7 @@ function speakJapanese(text) {
 // Speed Control Buttons
 function setSpeechRate(rate, btnEl) {
   currentSpeechRate = rate;
-  const speedBtns = document.querySelectorAll('.speed-btn');
+  const speedBtns = document.querySelectorAll('.speed-control .speed-btn');
   speedBtns.forEach(b => b.classList.remove('active'));
   if (btnEl) btnEl.classList.add('active');
   localStorage.setItem('sakura_speech_rate', rate);
@@ -71,7 +71,7 @@ function initArticleLearnedState(articleId) {
   // Restore speech rate
   const savedRate = parseFloat(localStorage.getItem('sakura_speech_rate') || '1.0');
   currentSpeechRate = savedRate;
-  const speedBtns = document.querySelectorAll('.speed-btn');
+  const speedBtns = document.querySelectorAll('.speed-control .speed-btn');
   speedBtns.forEach(b => {
     if (parseFloat(b.getAttribute('data-rate')) === savedRate) {
       b.classList.add('active');

@@ -1,0 +1,485 @@
+/* Lesson specific styles for 文章22 */
+@import url('../../style.css');
+
+.lesson-header {
+  background: linear-gradient(135deg, #FFF0F3 0%, #FFFFFF 100%);
+  border-bottom: 2px solid var(--soft-pink);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--deep-sakura);
+  text-decoration: none;
+  font-weight: 700;
+  background: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.back-btn:hover {
+  background: var(--deep-sakura);
+  color: white;
+  transform: translateX(-4px);
+}
+
+.lesson-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .lesson-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image-viewer-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 133, 161, 0.2);
+  text-align: center;
+  position: sticky;
+  top: 90px;
+}
+
+/* Sentence breakdown cards */
+.sentence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sentence-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  border-left: 5px solid var(--primary-pink);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.sentence-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.sentence-jp {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+  line-height: 1.8;
+}
+
+ruby rt {
+  font-size: 0.75rem;
+  color: var(--deep-sakura);
+  font-weight: normal;
+}
+
+.sentence-romaji {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.sentence-cn {
+  font-size: 1rem;
+  color: var(--matcha-green);
+  font-weight: 700;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sensei-note-box {
+  background: var(--light-sakura);
+  border: 1.5px solid var(--soft-pink);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+
+/* ================================================
+   🎵 KARAOKE SYNC SYSTEM
+   ================================================ */
+
+/* --- Karaoke Controls Bar --- */
+.karaoke-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.karaoke-controls .action-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border: 2px solid var(--primary-pink);
+  background: white;
+  color: var(--deep-sakura);
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.karaoke-controls .action-btn:hover {
+  background: var(--deep-sakura);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(230, 92, 131, 0.3);
+}
+
+.karaoke-controls .action-btn:active {
+  transform: translateY(0);
+}
+
+.karaoke-controls .action-btn.is-playing {
+  background: var(--deep-sakura);
+  color: white;
+  animation: pulse-btn 1.8s ease-in-out infinite;
+}
+
+.karaoke-controls .action-btn.is-paused {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #F59E0B;
+}
+
+.karaoke-controls .action-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes pulse-btn {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(230, 92, 131, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(230, 92, 131, 0);
+  }
+}
+
+
+/* --- Bilingual Toggle Switch --- */
+.lang-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.lang-toggle-label {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.lang-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.lang-toggle .toggle-track {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #CBD5E1;
+  border-radius: 24px;
+  transition: background 0.3s ease;
+}
+
+.lang-toggle .toggle-track::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.68, -0.15, 0.27, 1.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.lang-toggle input:checked+.toggle-track {
+  background: var(--deep-sakura);
+}
+
+.lang-toggle input:checked+.toggle-track::before {
+  transform: translateX(20px);
+}
+
+.lang-toggle input:focus-visible+.toggle-track {
+  outline: 2px solid var(--deep-sakura);
+  outline-offset: 2px;
+}
+
+
+/* --- Karaoke Line (each sentence in short text) --- */
+.karaoke-line {
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border-left: none;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  cursor: default;
+}
+
+.karaoke-line:hover {
+  background: rgba(255, 240, 243, 0.5);
+}
+
+/* Active (currently reading) */
+.karaoke-line.active {
+  background: linear-gradient(90deg, #FFF0F3 0%, #FFE0E8 100%);
+  border-left: none;
+  transform: scale(1.025);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(230, 92, 131, 0.18);
+  animation: karaoke-glow 1.6s ease-in-out infinite;
+}
+
+/* Done (already read) */
+.karaoke-line.done {
+  opacity: 0.55;
+  border-left: none;
+  transition: opacity 0.5s ease;
+}
+
+.karaoke-line.done .karaoke-jp {
+  color: var(--text-muted);
+}
+
+@keyframes karaoke-glow {
+  0%, 100% {
+    box-shadow: 0 2px 16px rgba(230, 92, 131, 0.18);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(230, 92, 131, 0.35);
+  }
+}
+
+
+/* --- Karaoke Japanese Text --- */
+.karaoke-jp {
+  font-size: 1.25rem;
+  line-height: 2.2;
+  color: #2D3748;
+  transition: color 0.3s ease;
+}
+
+.karaoke-line.active .karaoke-jp {
+  color: var(--deep-sakura);
+  font-weight: 700;
+}
+
+
+/* --- Karaoke Chinese Translation (expandable) --- */
+.karaoke-cn {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.3s ease 0.05s,
+    padding 0.3s ease,
+    margin 0.3s ease;
+  font-size: 0.92rem;
+  color: var(--matcha-green);
+  font-weight: 600;
+  padding: 0 0.2rem;
+  margin-top: 0;
+  border-left: 3px solid transparent;
+  line-height: 1.5;
+}
+
+.karaoke-cn.show {
+  max-height: 80px;
+  opacity: 1;
+  border-left: none;
+  background: transparent;
+}
+
+
+/* --- Karaoke Progress Bar --- */
+.karaoke-progress-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 192, 203, 0.3);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.karaoke-progress-container.visible {
+  opacity: 1;
+}
+
+.karaoke-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-pink), var(--deep-sakura));
+  border-radius: 0 2px 2px 0;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 8px rgba(230, 92, 131, 0.5);
+}
+
+
+/* --- Karaoke Status Indicator --- */
+.karaoke-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  min-height: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.karaoke-status .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  transition: background 0.3s ease;
+}
+
+.karaoke-status.playing .status-dot {
+  background: #10B981;
+  animation: status-blink 1s ease-in-out infinite;
+}
+
+.karaoke-status.paused .status-dot {
+  background: #F59E0B;
+}
+
+@keyframes status-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+
+/* --- Title bar separator --- */
+.short-text-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.short-text-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed rgba(255, 133, 161, 0.25);
+}
+
+
+/* --- Pause notice tooltip --- */
+.pause-notice {
+  font-size: 0.72rem;
+  color: #92400E;
+  background: #FEF3C7;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+  animation: fadeInUp 0.3s ease;
+}
+
+.pause-notice.show {
+  display: inline-flex;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --- Responsive adjustments --- */
+@media (max-width: 600px) {
+  .karaoke-controls {
+    gap: 0.35rem;
+  }
+  .karaoke-controls .action-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+  }
+  .lang-toggle-wrapper {
+    font-size: 0.75rem;
+  }
+  .lang-toggle {
+    width: 38px;
+    height: 20px;
+  }
+  .lang-toggle .toggle-track::before {
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+  }
+  .lang-toggle input:checked+.toggle-track::before {
+    transform: translateX(17px);
+  }
+  .karaoke-jp {
+    font-size: 1.1rem;
+  }
+  .short-text-controls-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
