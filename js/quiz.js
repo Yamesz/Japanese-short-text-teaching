@@ -1,6 +1,50 @@
 // js/quiz.js
 let quizScores = {};
 
+// Normalize the older Story02/03 quiz markup to the shared quiz contract.
+// New lessons should author .quiz-question-block directly; this bridge keeps
+// existing lessons functional while they are migrated.
+function upgradeLegacyQuizMarkup() {
+  const legacyGroups = new Map();
+
+  document.querySelectorAll('.quiz-opt-btn[onclick*="checkQuizQuestion"]').forEach(button => {
+    const match = button.getAttribute('onclick').match(/checkQuizQuestion\('([^']+)'/);
+    if (!match) return;
+    const questionId = match[1];
+    const options = button.parentElement;
+    if (!legacyGroups.has(questionId)) legacyGroups.set(questionId, options);
+  });
+
+  legacyGroups.forEach((options, questionId) => {
+    if (document.getElementById(`quiz-block-${questionId}`)) return;
+
+    const block = document.createElement('div');
+    block.id = `quiz-block-${questionId}`;
+    block.className = 'quiz-question-block';
+    options.parentNode.insertBefore(block, options.previousElementSibling);
+
+    const question = options.previousElementSibling;
+    if (question && question.tagName === 'P') block.appendChild(question);
+    block.appendChild(options);
+
+    const feedback = document.createElement('div');
+    feedback.id = `quiz-fb-${questionId}`;
+    feedback.className = 'quiz-feedback';
+    feedback.style.display = 'none';
+    feedback.style.marginTop = '1rem';
+    block.appendChild(feedback);
+  });
+
+  if (legacyGroups.size > 0 && !document.getElementById('quiz-score-summary')) {
+    const summary = document.createElement('div');
+    summary.id = 'quiz-score-summary';
+    summary.className = 'quiz-score-summary';
+    summary.innerHTML = '<h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3><div class="quiz-score-number"></div><div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>';
+    const lastBlock = Array.from(legacyGroups.values()).at(-1).closest('.quiz-question-block');
+    if (lastBlock) lastBlock.parentElement.appendChild(summary);
+  }
+}
+
 function checkQuizQuestion(qId, selectedIdx, correctIdx, explanation) {
   const fb = document.getElementById(`quiz-fb-${qId}`);
   const block = document.getElementById(`quiz-block-${qId}`);
@@ -55,3 +99,5 @@ function updateQuizSummary() {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', upgradeLegacyQuizMarkup);
