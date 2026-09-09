@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゼルダの伝説40周年特別篇 | さくら先生の日本語教室</title>
+  <meta name="description" content="以ゼルダの伝説40周年 Direct為素材的日語聽力與閱讀特別系列，共17篇，附字幕範圍與YouTube時間連結。">
+  <link rel="stylesheet" href="series.css">
+</head>
+<body>
+  <header class="series-header">
+    <div class="series-shell" style="padding-bottom: 0;">
+      <a href="../index.html" class="series-back">← 回主頁入口</a>
+      <h1>🎮 ゼルダの伝説40周年特別篇</h1>
+      <p>把官方 Direct 的內容整理成 17 篇日語學習單元，從 N4 到 N2，搭配逐句朗讀、文法解析與影片時間連結。</p>
+    </div>
+  </header>
+
+  <main class="series-shell">
+    <section class="series-source">
+      <strong>🎬 影片來源：</strong>
+      <a href="https://www.youtube.com/watch?v=xKtKV9wSPQk" target="_blank" rel="noopener noreferrer">ゼルダの伝説40周年 Direct 2026.9.8</a>
+      <br>
+      <span>每一篇單元都附有該段落的字幕編號、實際檔案行號，以及可直接跳到對應時間的 YouTube 連結。</span>
+    </section>
+
+    <section class="series-progress">
+      <div class="series-progress-label"><span>📊 Zelda40 系列進度</span><span id="series-progress-text">載入中…</span></div>
+      <div class="series-progress-track"><div class="series-progress-fill" id="series-progress-fill"></div></div>
+    </section>
+
+    <div class="series-filter-bar" aria-label="系列程度篩選">
+      <button class="series-filter-btn active" data-filter="all">📚 全部</button>
+      <button class="series-filter-btn" data-filter="N4">N4</button>
+      <button class="series-filter-btn" data-filter="N3">N3</button>
+      <button class="series-filter-btn" data-filter="N2">N2</button>
+    </div>
+
+    <div id="series-grid" class="series-grid"></div>
+  </main>
+
+  <script src="../js/progress.js"></script>
+  <script src="unit-data.js"></script>
+  <script src="series.js"></script>
+</body>
+</html>

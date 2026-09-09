@@ -1,0 +1,299 @@
+@import url('../N3/文章9/lesson.css');
+
+.zelda-source-card {
+  background: linear-gradient(135deg, #F5F3FF, #FFFFFF);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.zelda-source-card strong {
+  color: #6D28D9;
+}
+
+.zelda-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}
+
+.zelda-source-links a,
+.zelda-unit-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #6D28D9;
+  background: white;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.zelda-source-links a:hover,
+.zelda-unit-nav a:hover {
+  background: #7C3AED;
+  color: white;
+}
+
+.zelda-unit-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.zelda-unit-nav a:last-child {
+  margin-left: auto;
+}
+
+.zelda-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.8rem 0 0;
+}
+
+.zelda-goal {
+  display: inline-flex;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  background: #F5F3FF;
+  color: #6D28D9;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.zelda-passage {
+  background: #FFFBF7;
+  border: 2px dashed #C4B5FD;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.zelda-passage-title {
+  color: #7C3AED;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-align: center;
+  border-bottom: 2px dotted #DDD6FE;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.zelda-section {
+  margin-top: 2rem;
+}
+
+.zelda-section > h2 {
+  color: var(--deep-sakura);
+  margin-bottom: 1rem;
+}
+
+.zelda-vocab-grid,
+.zelda-grammar-grid,
+.zelda-particle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.zelda-vocab-card,
+.zelda-grammar-card,
+.zelda-particle-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 133, 161, 0.16);
+}
+
+.zelda-vocab-word {
+  color: #7C3AED;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.zelda-reading {
+  color: var(--deep-sakura);
+  font-size: 0.85rem;
+  margin-left: 0.35rem;
+}
+
+.zelda-vocab-meaning,
+.zelda-grammar-meaning {
+  color: var(--text-dark);
+  margin: 0.35rem 0;
+  font-weight: 700;
+}
+
+.zelda-vocab-type {
+  display: inline-flex;
+  margin: 0.2rem 0 0.25rem;
+  color: #6D28D9;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.zelda-particle-type {
+  display: inline-flex;
+  margin: 0.2rem 0 0.45rem;
+  color: #B45309;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.zelda-particle-usage {
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.zelda-conjugation-wrapper {
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.zelda-conjugation-wrapper .conjugation-table {
+  min-width: 560px;
+}
+
+.zelda-examples {
+  margin-top: 0.85rem;
+  border-top: 1px solid #EDE9FE;
+  padding-top: 0.7rem;
+}
+
+.zelda-examples-title {
+  color: #7C3AED;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.zelda-example-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #E5E7EB;
+}
+
+.zelda-example-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.zelda-example-jp {
+  color: var(--text-dark);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.zelda-example-jp .audio-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-left: 0.2rem;
+  font-size: 0.72rem;
+  vertical-align: middle;
+}
+
+.zelda-example-cn {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.zelda-example {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.zelda-grammar-pattern {
+  color: #B45309;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.zelda-culture-note {
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  line-height: 1.75;
+}
+
+.zelda-quiz-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.zelda-quiz-grid .quiz-question-block {
+  margin: 0;
+}
+
+.zelda-quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+}
+
+.zelda-quiz-options .quiz-opt-btn {
+  border: 1px solid #C4B5FD;
+  background: #FAF5FF;
+  color: #4C1D95;
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.zelda-quiz-options .quiz-opt-btn:hover {
+  background: #EDE9FE;
+}
+
+.zelda-completion {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.zelda-completion button {
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  color: white;
+  padding: 0.75rem 1.2rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.22);
+}
+
+.zelda-completion button.is-learned {
+  background: linear-gradient(135deg, #059669, #10B981);
+}
+
+.zelda-footer {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1rem 1rem 3rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .zelda-source-links a,
+  .zelda-unit-nav a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .zelda-unit-nav a:last-child {
+    margin-left: 0;
+  }
+}
