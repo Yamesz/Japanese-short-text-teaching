@@ -482,6 +482,176 @@ const ZELDA40_GRAMMAR_EXTRA_EXAMPLES = {
   '〜てみてください': [{ jp: 'この料理を食べてみてください。', cn: '請試著吃吃看這道料理。' }]
 };
 
+// The short meaning in unit-data.js is kept for the compact card heading.
+// These notes provide the fuller classroom explanation shown below it.
+const ZELDA40_GRAMMAR_GUIDE = {
+  '〜以来': {
+    connection: '名詞＋以来／動詞て形＋以来',
+    explanation: '表示從某個時間點或事件發生之後，一直延續到現在（或後續某段期間）的狀態。中文常翻成「自從……以來」。',
+    tip: '後項常和「続く（持續）」「現在まで（直到現在）」等延續概念一起使用；「発売以来」就是「自發售以來」。'
+  },
+  '〜おかげです': {
+    connection: '名詞＋のおかげで／普通形＋おかげで（な形容詞＋な＋おかげで）',
+    explanation: '表示某人或某件事帶來好的結果，說話者把這個結果歸功於前項，意思是「多虧……」「幸虧……」。',
+    tip: '後項通常是正面結果；若要表達造成負面結果的原因，則使用「〜のせいで」會更自然。'
+  },
+  '〜をもとにした': {
+    connection: '名詞＋をもとに（して）＋名詞',
+    explanation: '表示以某種資料、故事、經驗或想法作為基礎，製作或發展出後面的作品、計畫或內容。',
+    tip: '「もと」是「基礎、依據」的意思；放在名詞前時常用「〜をもとにした＋名詞」，例如「実話をもとにした映画」。'
+  },
+  '〜ていただければ': {
+    connection: '動詞て形＋いただければ（幸いです／助かります）',
+    explanation: '是客氣地請對方做某事的條件表現，語氣接近「如果您能……的話」。其中「いただく」帶有謙讓、感謝對方協助的語氣。',
+    tip: '比「〜てもらえれば」更禮貌，常和「助かります」「幸いです」一起使用，適合請求或正式說明。'
+  },
+  '〜をテーマにした': {
+    connection: '名詞＋をテーマにした＋名詞',
+    explanation: '表示把前面的內容設定為主題，並以此為中心製作展覽、活動、作品或文章，意思是「以……為主題的」。',
+    tip: '「〜をテーマにする」是「把……當作主題」；修飾後面的名詞時，會變成「〜をテーマにした＋名詞」。'
+  },
+  '〜に合わせて': {
+    connection: '名詞＋に合わせて／動詞辞書形＋のに合わせて',
+    explanation: '表示以某個時間、節奏、對象或條件作為基準，配合它來調整行動或內容，意思是「配合……」「跟著……」。',
+    tip: '句型重點是「Aに合わせてB」＝「配合A來做B」；不要和表示適合、符合的「〜に合っている」混淆。'
+  },
+  '〜によって': {
+    connection: '名詞＋によって',
+    explanation: '本系列中主要表示方法或手段，相當於「透過……」「藉由……」。同一文法也能表示被動句中的動作者，必須依上下文判斷。',
+    tip: '「音楽によって」是「透過音樂」；在「この作品は作者によって作られた」中，則是「由作者所製作」。'
+  },
+  '〜を皮切りに': {
+    connection: '名詞＋を皮切りに（して）',
+    explanation: '表示以某一場活動、地點或事件作為一連串行動的起點，之後還會按照順序繼續進行，意思是「以……為開端」。',
+    tip: '常用於巡演、發售、活動等有後續安排的場合；它不只是單純說「第一次」，而是暗示後面還有一連串展開。'
+  },
+  '〜につながる': {
+    connection: '名詞＋につながる／普通形＋につながる',
+    explanation: '表示某件事連結到後面的結果、發展或可能性，意思是「導向……」「有助於……」「和……連結」。',
+    tip: '除了實際的連接，也常用於抽象的因果關係，例如經驗能「につながる」到未來的成長；自動詞「つながる」不要和他動詞「つなぐ」混淆。'
+  },
+  '〜となる': {
+    connection: '名詞＋となる／名詞＋となった',
+    explanation: '是較正式、偏書面的「〜になる」，表示成為某種狀態、結果或正式定位，也可以表示「作為……」。',
+    tip: '新聞、公告、說明文中很常見；日常會話通常直接使用「〜になる」，所以「〜となる」會帶有正式感。'
+  },
+  '〜ながらも': {
+    connection: '動詞ます形去ます＋ながらも／い形容詞＋ながらも／名詞・な形容詞＋でありながらも',
+    explanation: '表示前後內容相反，意思是「雖然A，但是B」「儘管A仍然B」，用來提出讓步條件。',
+    tip: '這裡的「ながらも」不是「一邊……一邊……」的同時動作，而是讓步用法；前後主語通常相同。'
+  },
+  'AのではなくB': {
+    connection: 'Aのではなく、B（名詞／な形容詞可用「なのではなく」）',
+    explanation: '先否定A，再明確指出真正的內容是B，意思是「不是A，而是B」，常用來修正理解或強調對比。',
+    tip: '動詞普通形接「のではなく」；這裡的「の」把前面的動作名詞化，和句尾表示推測或說明的「のではない」功能不同。'
+  },
+  '〜ようになりました': {
+    connection: '動詞辞書形／可能形＋ようになりました；動詞ない形＋ようになりました',
+    explanation: '表示能力、習慣或狀態經過變化後，變成「開始能……」「變得會……」；接否定形時則是「變得不再……」。',
+    tip: '重點是「和以前不同」的變化，不是一次性的動作；例如「読めるようになりました」是能力提升後變得會讀。'
+  },
+  '〜しか〜ない': {
+    connection: '名詞＋しか＋否定形（ない／ません／ありません）',
+    explanation: '表示數量或範圍受到限制，意思是「只有……」「僅僅……」，語氣比單純的「だけ」更強調少或不足。',
+    tip: '「しか」後面必須接否定形式；「一時間しかありません」是「只有一小時」，不能接肯定形。'
+  },
+  '〜ておこう': {
+    connection: '動詞て形＋おこう（「〜ておく」的意志形）',
+    explanation: '表示為了接下來的事情，先做某個準備或處理，意思是「先做……吧」「先……以備之後使用」。',
+    tip: '禮貌說法是「〜ておきます」；口語常縮短成「〜とこう」。它帶有事前準備的意識，不只是單純的「做」。'
+  },
+  '〜のような': {
+    connection: '名詞＋のような＋名詞',
+    explanation: '用來把一個事物比喻成另一個事物，表示「像……一樣的……」，並修飾後面的名詞。',
+    tip: '「〜のように」修飾動詞或形容詞，「〜のようだ」則放在句尾做判斷；三者意思相近，但位置不同。'
+  },
+  '〜ときは': {
+    connection: '動詞普通形／い形容詞＋とき（は）；名詞／な形容詞＋なとき（は）',
+    explanation: '表示某個動作、狀態發生的時間或情境，意思是「在……的時候」「當……時」。',
+    tip: '時態會影響先後關係：「行くとき」有出發前的感覺，「行ったとき」則是去了之後；名詞、な形容詞前要加「な」。'
+  },
+  '動詞て形＋いく': {
+    connection: '動詞て形＋いく',
+    explanation: '除了表示帶著某物離開，也常表示從現在開始，某個變化或行動會朝未來持續發展；本篇採用後者。',
+    tip: '可和「これから」「今後も」等未來時間詞一起使用；相對地，「〜てくる」常表示變化朝說話者所在的現在靠近。'
+  },
+  '〜てみる': {
+    connection: '動詞て形＋みる',
+    explanation: '表示實際嘗試做某件事，想看看結果或感受如何，意思是「試著……看看」。',
+    tip: '「〜てみたい」是「想試試看」，「〜てみてください」是請對方試試看；核心都是先實際做一次。'
+  },
+  '〜のか': {
+    connection: '普通形＋のか／疑問詞＋のか',
+    explanation: '把疑問內容放進句子中，表示「是否……」「究竟……」「要如何……」等間接疑問或思考的內容。',
+    tip: '常和「分かる、知る、考える、聞く」等動詞搭配；它不是直接問句，而是把問題當作句子的一部分。'
+  },
+  '〜につれて': {
+    connection: '名詞＋につれて／動詞辞書形＋につれて',
+    explanation: '表示前項逐漸變化時，後項也跟著發生相應變化，意思是「隨著……」。前後通常都是連續、漸進的變化。',
+    tip: '不能用來表示一次性的單獨事件；語氣和較正式的「〜に伴って」相近，但「につれて」很適合描述自然推移。'
+  },
+  '〜によると': {
+    connection: '名詞＋によると',
+    explanation: '指出資訊的來源或依據，意思是「根據……」「按照……的消息」，後面接從該來源得知的內容。',
+    tip: '常和「〜そうだ」「〜ということだ」「〜らしい」搭配；這裡的「によると」是資訊來源，不是「透過」的「によって」。'
+  },
+  '〜たり〜たりする': {
+    connection: '動詞た形＋り、動詞た形＋りする',
+    explanation: '列舉幾個具有代表性的動作，表示「做做……、……之類的事」，不代表只有列出的動作，也不一定按照先後順序。',
+    tip: '每個動詞使用た形再加「り」，句尾的「する」負責表達時態；和「〜て、〜て」單純連接動作的語感不同。'
+  },
+  '〜ようになっています': {
+    connection: '動詞辞書形／ない形＋ようになっている',
+    explanation: '表示某個功能、規則或系統被設計、安排成某種狀態，意思是「被設定成會……」「目前形成……的機制」。',
+    tip: '常用於遊戲、機器、制度的說明；「〜ようになりました」偏向人的能力或狀態改變，「〜ようになっています」偏向既定設計或運作方式。'
+  },
+  '動詞辞書形＋ことで': {
+    connection: '動詞辞書形＋ことで',
+    explanation: '把一個動作當作方法或手段，表示「藉由做……而……」，後面通常接由此產生的結果或效果。',
+    tip: '前面使用動詞辭書形，不是て形；它把「做某事」當成一個方法來說明，語氣比單純列出兩個動作更有因果關係。'
+  },
+  '〜はもちろん、〜も': {
+    connection: '名詞＋はもちろん、名詞＋も／普通形＋のはもちろん、……も',
+    explanation: '表示前項當然成立，除此之外後項也成立，意思是「……當然不用說，……也……」，用來擴大強調範圍。',
+    tip: '後項通常是說話者想補充強調的內容；不要只翻成普通的「A和B」，要保留「A本來就不用說，B也很重要」的語氣。'
+  },
+  '〜など': {
+    connection: '名詞＋や名詞＋など／名詞＋など',
+    explanation: '列出一部分代表例子，表示「……等等」「像……之類」，暗示還有其他同類項目沒有全部列出。',
+    tip: '「や」和「など」都能表示非完整列舉；「と」通常是完整列舉。放在句子中時，後面仍要依功能接「を、が、が好き」等成分。'
+  },
+  '〜に沿って': {
+    connection: '名詞＋に沿って／名詞＋に沿った＋名詞',
+    explanation: '表示沿著某條路線，或按照既定的計畫、方針、流程來進行，意思是「沿著……」「按照……」。',
+    tip: '後面的行動通常會遵循前項提供的方向或規範；「計画に沿って」不是單純參考，而是按計畫推進。'
+  },
+  '〜を手掛かりに': {
+    connection: '名詞＋を手掛かりに（して）',
+    explanation: '表示利用某個線索、提示或證據去尋找、推理或理解另一件事，意思是「以……為線索」。',
+    tip: '「手掛かり」是解謎時使用的線索；和「〜をきっかけに（以……為契機）」不同，後者是開始行動的契機，不一定是尋找答案的線索。'
+  },
+  '〜たり〜たりできます': {
+    connection: '動詞た形＋り、動詞た形＋り＋できます／できる',
+    explanation: '在「〜たり〜たりする」的列舉中加入可能形，表示「可以做……，也可以做……」，用來介紹多種可用功能或選項。',
+    tip: '「できます」放在最後，表示前面列出的整組活動都能做到；它不是依序完成，而是列出可選的代表活動。'
+  },
+  '〜ば': {
+    connection: '動詞仮定形＋ば／い形容詞去い＋ければ／名詞・な形容詞＋なら（ば）',
+    explanation: '表示假設條件，意思是「如果……就……」，常用來說明只要滿足前項，後項就會發生或成立。',
+    tip: '動詞要先變成假定形，例如「押す→押せば」；和「〜たら」相比，「〜ば」常帶有一般條件、規則或自然結果的語感。'
+  },
+  '〜を含めると': {
+    connection: '名詞＋を含めると',
+    explanation: '表示把前項也算進去後，再計算整體的數量或範圍，意思是「包含……來看」「把……算進去的話」。',
+    tip: '「含める」是他動詞，明確表示把某項納入計算；相反地，「含めずに」就是不包含、不列入。'
+  },
+  '〜てみてください': {
+    connection: '動詞て形＋みてください',
+    explanation: '是禮貌而柔和地請對方實際嘗試某個動作，意思是「請試著……看看」。',
+    tip: '由「〜てみる」加上「ください」組成；比直接的命令語氣柔和，教學、說明和提供建議時很常使用。'
+  }
+};
+
 // Optional supporting lessons. A section is rendered only when the article
 // has suitable teaching material, so short articles are not padded artificially.
 const ZELDA40_SUPPORTING_DATA = {
@@ -1091,11 +1261,10 @@ function renderZelda40ExampleList(examples) {
 
   return `
     <div class="zelda-examples">
-      <div class="zelda-examples-title">例句</div>
       ${validExamples.map((example, index) => `
-        <div class="zelda-example-item">
-          <div class="zelda-example-jp">${index + 1}. ${zelda40Escape(example.jp)} <button class="audio-btn" type="button" data-speak="${zelda40Escape(example.jp)}">🔊</button></div>
-          <div class="zelda-example-cn">${zelda40Escape(example.cn)}</div>
+        <div class="example-box">
+          <div class="example-jp">例句${index + 1}：${zelda40Escape(example.jp)} <button class="audio-btn" type="button" data-speak="${zelda40Escape(example.jp)}">🔊</button></div>
+          <div class="example-cn">（${zelda40Escape(example.cn)}）</div>
         </div>
       `).join('')}
     </div>
@@ -1141,11 +1310,34 @@ function renderZelda40Particles(items) {
   `).join('');
 }
 
+function renderZelda40GrammarGuide(pattern) {
+  const guide = ZELDA40_GRAMMAR_GUIDE[pattern];
+  if (!guide) return '';
+
+  return `
+    <div class="zelda-grammar-guide">
+      <div class="zelda-grammar-guide-row">
+        <span class="zelda-grammar-guide-label">接續方式</span>
+        <span>${zelda40Escape(guide.connection)}</span>
+      </div>
+      <div class="zelda-grammar-guide-row">
+        <span class="zelda-grammar-guide-label">文法說明</span>
+        <span>${zelda40Escape(guide.explanation)}</span>
+      </div>
+      <div class="zelda-grammar-guide-row">
+        <span class="zelda-grammar-guide-label">さくら先生提示</span>
+        <span>${zelda40Escape(guide.tip)}</span>
+      </div>
+    </div>
+  `;
+}
+
 function renderZelda40Grammar(items) {
   return items.map(item => `
     <article class="zelda-grammar-card">
       <div class="zelda-grammar-pattern">${zelda40Escape(item.pattern)}</div>
       <div class="zelda-grammar-meaning">${zelda40Escape(item.meaning)}</div>
+      ${renderZelda40GrammarGuide(item.pattern)}
       ${renderZelda40Examples(item, ZELDA40_GRAMMAR_EXTRA_EXAMPLES[item.pattern] || [])}
     </article>
   `).join('');
@@ -1210,6 +1402,7 @@ function renderZelda40Unit() {
   window.SENTENCES = unit.sentences;
   window.ZELDA40_CURRENT_UNIT = unit;
   document.title = `第${unit.no}篇：${unit.title} | さくら先生の日本語教室`;
+  const verbVocabulary = unit.vocabulary.filter(item => ZELDA40_VERB_FORMS[item.word]);
 
   root.innerHTML = `
     <header class="lesson-header">
@@ -1288,8 +1481,8 @@ function renderZelda40Unit() {
       </div>
 
       <section class="zelda-section" id="verb-vault-section">
-        <h2>🏃 動詞與單字寶庫</h2>
-        <div class="zelda-vocab-grid">${renderZelda40Vocabulary(unit.vocabulary, unit.id)}</div>
+        <h2>🏃 動詞寶庫</h2>
+        <div class="zelda-vocab-grid">${renderZelda40Vocabulary(verbVocabulary, unit.id)}</div>
       </section>
 
       ${renderZelda40SupportingSections(unit.id)}
