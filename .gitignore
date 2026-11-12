@@ -1,1 +1,5 @@
-/.agents
+/.agents/*
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/japanese-teaching-website-generator/
+!/.agents/skills/japanese-source-series-generator/

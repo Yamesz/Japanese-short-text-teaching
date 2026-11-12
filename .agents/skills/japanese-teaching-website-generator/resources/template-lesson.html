@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <title>{{TITLE}} | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body data-level="{{LEVEL}}">
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">🌸</span> さくら先生の日本語教室
+    </a>
+    <a href="../../index.html" class="back-btn">← 返回主頁入口</a>
+  </nav>
+
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <h1 style="color: var(--deep-sakura);">{{ARTICLE_TITLE}}</h1>
+      <p>{{LEARNING_GOALS}}</p>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem;">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" aria-labelledby="passage-title">
+        <div class="short-text-title-row">
+          <h3 id="passage-title">📜 日語短文</h3>
+          <label class="lang-toggle-wrapper">
+            <span class="lang-toggle-label">🌐 中日雙語</span>
+            <span class="lang-toggle">
+              <input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯">
+              <span class="toggle-track"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="short-text-controls-row">
+          <div class="speed-control" aria-label="朗讀語速">
+            <button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button>
+            <button class="speed-btn" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button>
+          </div>
+          <div class="karaoke-controls">
+            <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+            <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
+          </div>
+        </div>
+
+        <div class="karaoke-status idle" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span class="status-text">準備就緒</span>
+        </div>
+        <div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+
+        <div class="manuscript-card" style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.8rem;">
+          {{KARAOKE_LINES}}
+        </div>
+      </section>
+
+      <section aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title" class="section-title">📖 逐句朗讀與解析</h2>
+        <div class="sentence-list">
+          {{SENTENCE_CARDS}}
+        </div>
+      </section>
+    </div>
+
+    <section id="vocabulary-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">📚 精選單字</h2>
+      <div class="card-grid">{{VOCABULARY_CARDS}}</div>
+    </section>
+
+    <section id="verb-classroom-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">🏃 動詞教室</h2>
+      <div class="card-grid">{{VERB_CARDS}}</div>
+    </section>
+
+    <section id="particle-classroom-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">🧩 助詞教室</h2>
+      <div class="card-grid">{{PARTICLE_CARDS}}</div>
+    </section>
+
+    <section id="grammar-classroom-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">📝 さくら先生的精選文法教室</h2>
+      <div class="card-grid">{{GRAMMAR_CARDS}}</div>
+    </section>
+
+    <!-- Optional sections go after the four required teaching units above; remove each whole section when irrelevant. -->
+    <section id="adjective-classroom-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">✨ 形容詞補充</h2>
+      <div class="card-grid">{{ADJECTIVE_CARDS}}</div>
+    </section>
+
+    <section id="culture-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">🌸 文化小知識</h2>
+      {{CULTURE_NOTE}}
+    </section>
+
+    <!-- Optional: include a quiz only when useful; otherwise remove this entire section. -->
+    <section class="lesson-quiz-container" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">📝 隨堂小測驗</h2>
+      {{QUIZ_BLOCKS}}
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite">
+        <h3>🎉 測驗結果</h3>
+        <div class="quiz-score-number"></div>
+        <div class="quiz-score-msg"></div>
+      </div>
+    </section>
+
+    <button id="mark-learned-btn" class="mark-learned-btn"
+      onclick="toggleArticleLearned('{{ARTICLE_ID}}')">
+      ✅ 標記為已學習
+    </button>
+  </main>
+
+  <div class="karaoke-progress-container" aria-hidden="true">
+    <div class="karaoke-progress-bar"></div>
+  </div>
+
+  <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/lesson-renderer.js"></script>
+  <script src="lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N5 適讀日語短文：在圖書館借書、查字典並學習，練習場所助詞、動詞修飾名詞與願望表現。">
+  <title>文章24：図書館（としょかん） | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+
+<body data-article-id="article-24" data-level="N5" onload="initArticleLearnedState('article-24')">
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn">← 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章24：図書館（としょかん）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：認識圖書館常見詞彙，練習「へ／で」、「動詞原形＋名詞」與「～たいです」。適讀程度：日語初學者（約 N5）。
+      </p>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem;">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" style="position: static; text-align: left;" aria-labelledby="passage-title">
+        <div class="short-text-title-row">
+          <h2 id="passage-title" style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">📜 日語短文</h2>
+          <label class="lang-toggle-wrapper">
+            <span class="lang-toggle-label">🌐 中日雙語</span>
+            <span class="lang-toggle">
+              <input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯">
+              <span class="toggle-track"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="short-text-controls-row">
+          <div class="speed-control" aria-label="朗讀語速">
+            <button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button>
+            <button class="speed-btn active" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button>
+          </div>
+          <div class="karaoke-controls">
+            <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+            <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
+          </div>
+        </div>
+
+        <div class="karaoke-status idle" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span class="status-text">準備就緒</span>
+        </div>
+        <div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+
+        <div id="lesson-passage"
+          style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.2rem; margin-top: 0.5rem;">
+        </div>
+
+        <div class="sensei-note-box">
+          <b>🌸 さくら先生導讀點撥：</b><br>
+          主角回顧昨天在圖書館做的事，最後用「～たいです」表達還想再去的心情。讀的時候可以留意地點助詞「へ」和動作發生地點的「で」。
+        </div>
+      </section>
+
+      <section aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title" class="section-title" style="margin-top: 0;">📖 逐句朗讀與解析</h2>
+        <div id="lesson-breakdown" class="sentence-list"></div>
+      </section>
+    </div>
+
+    <section id="vocabulary-section" style="margin-top: 3rem;" aria-labelledby="vocabulary-title">
+      <h2 id="vocabulary-title" class="section-title">📚 精選單字</h2>
+      <div class="card-grid">
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>図書館<rt>としょかん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('としょかん')">🔊</button></div><div class="vocab-meaning">名詞：圖書館。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>本<rt>ほん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('ほん')">🔊</button></div><div class="vocab-meaning">名詞：書、本子。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>場所<rt>ばしょ</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('ばしょ')">🔊</button></div><div class="vocab-meaning">名詞：場所、地點。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>日本語<rt>にほんご</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('にほんご')">🔊</button></div><div class="vocab-meaning">名詞：日文、日語。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>言葉<rt>ことば</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('ことば')">🔊</button></div><div class="vocab-meaning">名詞：單字、詞語、話語。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>辞書<rt>じしょ</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('じしょ')">🔊</button></div><div class="vocab-meaning">名詞：字典。辞書で調べる＝用字典查詢。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>静<rt>しず</rt></ruby>か</div><button class="audio-btn" type="button" onclick="speakJapanese('しずか')">🔊</button></div><div class="vocab-meaning">な形容詞：安靜。修飾名詞時用「静かな場所」。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>有意義<rt>ゆういぎ</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('ゆういぎ')">🔊</button></div><div class="vocab-meaning">な形容詞：有意義、很有收穫。常見搭配：有意義な時間。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>時間<rt>じかん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('じかん')">🔊</button></div><div class="vocab-meaning">名詞：時間。二時間＝兩個小時。</div></div>
+      </div>
+    </section>
+
+    <section id="verb-classroom-section" style="margin-top: 3rem;" aria-labelledby="verb-classroom-title">
+      <h2 id="verb-classroom-title" class="section-title">🏃 動詞教室</h2>
+      <p style="color: var(--text-muted); margin: -0.5rem 0 1.2rem;">展開活用表，複習辭書形、ます形、過去式、て形與ない形。</p>
+      <div class="card-grid">
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>行<rt>い</rt></ruby>く</div><button class="audio-btn" type="button" onclick="speakJapanese('いく')">🔊</button></div>
+          <div class="vocab-romaji">第一類動詞：去</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_1')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_1" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>行く</td><td>行きます</td><td>行きました</td><td>行って</td><td>行かない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：図書館へ行きました。<button class="audio-btn" type="button" onclick="speakJapanese('としょかんへいきました')">🔊</button></div><div class="example-cn">去了圖書館。</div></div>
+          <div class="vocab-meaning">注意：行く的て形是「行って」，不是「行いて」。</div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>借<rt>か</rt></ruby>りる</div><button class="audio-btn" type="button" onclick="speakJapanese('かりる')">🔊</button></div>
+          <div class="vocab-romaji">第二類動詞：借入</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_2')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_2" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>借りる</td><td>借ります</td><td>借りました</td><td>借りて</td><td>借りない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：本を借りました。<button class="audio-btn" type="button" onclick="speakJapanese('ほんをかりました')">🔊</button></div><div class="example-cn">借了書。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>勉強<rt>べんきょう</rt></ruby>する</div><button class="audio-btn" type="button" onclick="speakJapanese('べんきょうする')">🔊</button></div>
+          <div class="vocab-romaji">第三類動詞：讀書、學習</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_3')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_3" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>勉強する</td><td>勉強します</td><td>勉強しました</td><td>勉強して</td><td>勉強しない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：二時間勉強しました。<button class="audio-btn" type="button" onclick="speakJapanese('にじかんべんきょうしました')">🔊</button></div><div class="example-cn">讀了兩個小時的書。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>読<rt>よ</rt></ruby>む</div><button class="audio-btn" type="button" onclick="speakJapanese('よむ')">🔊</button></div>
+          <div class="vocab-romaji">第一類動詞：讀、閱讀</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_4')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_4" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>読む</td><td>読みます</td><td>読みました</td><td>読んで</td><td>読まない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：日本語の本も読みました。<button class="audio-btn" type="button" onclick="speakJapanese('にほんごのほんもよみました')">🔊</button></div><div class="example-cn">也讀了日文書。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>調<rt>しら</rt></ruby>べる</div><button class="audio-btn" type="button" onclick="speakJapanese('しらべる')">🔊</button></div>
+          <div class="vocab-romaji">第二類動詞：調查、查詢</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_5')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_5" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>調べる</td><td>調べます</td><td>調べました</td><td>調べて</td><td>調べない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：辞書で調べました。<button class="audio-btn" type="button" onclick="speakJapanese('じしょでしらべました')">🔊</button></div><div class="example-cn">用字典查了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>返<rt>かえ</rt></ruby>す</div><button class="audio-btn" type="button" onclick="speakJapanese('かえす')">🔊</button></div>
+          <div class="vocab-romaji">第一類動詞：歸還</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_6')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_6" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>返す</td><td>返します</td><td>返しました</td><td>返して</td><td>返さない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：本を返す日です。<button class="audio-btn" type="button" onclick="speakJapanese('ほんをかえすひです')">🔊</button></div><div class="example-cn">是還書的日子。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #4A90E2;">
+          <div class="vocab-header"><div class="vocab-word"><ruby>確認<rt>かくにん</rt></ruby>する</div><button class="audio-btn" type="button" onclick="speakJapanese('かくにんする')">🔊</button></div>
+          <div class="vocab-romaji">第三類動詞：確認</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v24_7')">📊 展開活用變化表</button>
+          <div id="conjugation-v24_7" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>確認する</td><td>確認します</td><td>確認しました</td><td>確認して</td><td>確認しない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">本文：日を確認しました。<button class="audio-btn" type="button" onclick="speakJapanese('ひをかくにんしました')">🔊</button></div><div class="example-cn">確認了日期。</div></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="particle-classroom-section" style="margin-top: 3rem;" aria-labelledby="particle-classroom-title">
+      <h2 id="particle-classroom-title" class="section-title">🧩 助詞教室</h2>
+      <div class="card-grid">        <div class="grammar-card">
+          <div class="grammar-pattern">🧭 へ（目的地）／で（動作地點）</div>
+          <div class="grammar-usage">
+            <b>用法：</b>「へ」表示移動的方向或目的地；「で」標示動作發生的場所。<br>
+            <b>本文：</b>図書館<strong>へ</strong>行きました（去了圖書館）；場所<strong>で</strong>勉強しました（在某個地方讀書）。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">学校へ行きます。<button class="audio-btn" type="button" onclick="speakJapanese('がっこうへいきます')">🔊</button></div>
+            <div class="example-cn">（去學校。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">➕ 助詞「も」（也）</div>
+          <div class="grammar-usage">
+            <b>用法：</b>「も」表示「也、同樣」，用來補充另一個符合的對象。本文用「も」帶出「日文書也讀了」。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">水も飲みました。<button class="audio-btn" type="button" onclick="speakJapanese('みずものみました')">🔊</button></div>
+            <div class="example-cn">（水也喝了。）</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section style="margin-top: 3rem;" aria-labelledby="grammar-title">
+      <h2 id="grammar-title" class="section-title">📝 さくら先生的精選文法教室</h2>
+      <div class="card-grid">
+        <div class="grammar-card">
+          <div class="grammar-pattern">📖 動詞辭書形＋名詞／な形容詞＋な＋名詞</div>
+          <div class="grammar-usage">
+            <b>用法：</b>動詞辭書形可以放在名詞前說明用途或動作，例如「返す日」是「要還書的日子」；な形容詞接名詞時要加「な」，如「静かな場所」。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">本を読む時間です。<button class="audio-btn" type="button" onclick="speakJapanese('ほんをよむじかんです')">🔊</button></div>
+            <div class="example-cn">（是讀書的時間。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">⏱ 時間長度：數量＋時間</div>
+          <div class="grammar-usage">
+            <b>用法：</b>表示做一件事花了多久，可在動詞前直接放「數量＋時間」，這裡不加「に」。例如「二時間勉強しました」＝讀了兩個小時的書。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">一時間本を読みました。<button class="audio-btn" type="button" onclick="speakJapanese('いちじかんほんをよみました')">🔊</button></div>
+            <div class="example-cn">（讀了一個小時的書。）</div>
+          </div>
+        </div>
+
+        <div class="grammar-card">
+          <div class="grammar-pattern">💭 動詞ます形去掉「ます」＋たいです（想做）</div>
+          <div class="grammar-usage">
+            <b>用法：</b>表示說話者想做某事。行きます去掉「ます」後接「たいです」，成為「行きたいです」。
+          </div>
+          <div class="example-box">
+            <div class="example-jp">新しい本を借りたいです。<button class="audio-btn" type="button" onclick="speakJapanese('あたらしいほんをかりたいです')">🔊</button></div>
+            <div class="example-cn">（我想借新書。）</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-quiz-container" style="margin-top: 3rem;" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">📝 文章24 隨堂小測驗（共 3 題）</h2>
+
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「靜かな場所で勉強しました」中的「で」表示什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '正解！「で」表示動作發生的場所。')">A. 動作發生的場所</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '這裡的「で」不是移動目的地，而是讀書的地點。')">B. 移動目的地</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '「で」在這裡不是時間長度喔。')">C. 時間長度</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「本を返す日」中的「返す」為什麼用原形？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '答對了！「返す」放在名詞「日」前，說明是要還書的日子。')">A. 放在名詞「日」前修飾它</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '過去式是「返しました」；本文的「返す」用來修飾後面的「日」。')">B. 因為句子是過去式</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '表示想做某事要用「返したい」喔。')">C. 因為「返す」表示想要</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：「我想去圖書館」要怎麼說？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '正解！「行きます」去掉「ます」後接「たいです」。')">A. 図書館へ行きたいです。</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '這句是「去了圖書館」，不是「想去」。')">B. 図書館へ行きました。</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '這句是「去圖書館」，沒有表達想做的意思。')">C. 図書館へ行きます。</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
+      </div>
+    </section>
+
+    <aside class="sensei-note-box" aria-label="教材來源">
+      教材來源：依據使用者提供的〈図書館（としょかん）〉短文圖片整理。原始圖片檔案未經修改。
+    </aside>
+
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-24')">
+      ✅ 標記為已學習
+    </button>
+  </main>
+
+  <div class="karaoke-progress-container" aria-hidden="true">
+    <div class="karaoke-progress-bar"></div>
+  </div>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室－文章24 獨立單元網頁 © 2026. <a href="../../index.html">返回主頁目錄</a></p>
+  </footer>
+
+  <!-- Source material: 741120802_122125582551247051_5754007242552402182_n.jpg, supplied by the user. -->
+  <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/lesson-renderer.js"></script>
+  <script src="lesson.js"></script>
+</body>
+
+</html>
