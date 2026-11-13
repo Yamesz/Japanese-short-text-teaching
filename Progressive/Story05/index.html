@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>階梯閱讀05：見つけた鍵（找到的鑰匙） | さくら先生の日本語教室</title>
+  <meta name="description" content="同一則在車站撿到鑰匙的故事，對照 N5、N4、N3 的表達。">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body onload="initArticleLearnedState('progressive-05')">
+  <header class="lesson-header">
+    <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+      <a href="../../index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> 回主頁入口目錄</a>
+      <h1 style="color:var(--deep-sakura);font-size:2rem;margin-top:.5rem;">🌸 階梯閱讀05：見つけた鍵（找到的鑰匙）</h1>
+      <p style="color:var(--text-muted);font-size:1.05rem;margin-top:.3rem;">學習目標：閱讀在車站撿到鑰匙的故事，對照 N5 到 N3 的表達方式。</p>
+    </div>
+  </header>
+  <main style="max-width:1200px;margin:0 auto;padding:0 1.5rem 4rem;">
+    <div class="level-switcher-container">
+      <div class="level-switcher-title">🎯 選擇難度視角</div>
+      <div class="level-switcher">
+        <button class="level-btn active" data-level="n5" onclick="switchLevel('n5')">N5 基礎版</button>
+        <button class="level-btn" data-level="n4" onclick="switchLevel('n4')">N4 進階版</button>
+        <button class="level-btn" data-level="n3" onclick="switchLevel('n3')">N3 完整版</button>
+      </div>
+    </div>
+    <div id="levels-root"></div>
+
+    <section class="lesson-quiz-container" style="margin-top:3rem;" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">📝 階梯閱讀 隨堂小測驗（全 3 題）</h2>
+      <div id="quiz-block-q1" class="quiz-question-block"><div class="quiz-question-text">題目 1（N5）：主角在車站發現了什麼？</div><div class="quiz-options-row">
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 0, '答對了！「鍵を見つけました」表示發現了一把鑰匙。')">A. 鑰匙</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 0, '「鍵」是鑰匙；雨傘是「傘」。')">B. 雨傘</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 0, '文中發現的是「鍵」，也就是鑰匙。')">C. 手機</button>
+      </div><div id="quiz-fb-q1" class="quiz-feedback"></div></div>
+      <div id="quiz-block-q2" class="quiz-question-block"><div class="quiz-question-text">題目 2（N4）：「駅員さんに届けることにしました」是什麼意思？</div><div class="quiz-options-row">
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 1, '「届ける」表示送交，這裡不是帶回家。')">A. 決定把鑰匙帶回家</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 1, '答對了！「ことにしました」表示自己決定交給站務員。')">B. 決定把鑰匙交給站務員</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 1, '「ことにしました」表示做出決定，句子沒有說要放回長椅。')">C. 決定把鑰匙放回長椅</button>
+      </div><div id="quiz-fb-q2" class="quiz-feedback"></div></div>
+      <div id="quiz-block-q3" class="quiz-question-block"><div class="quiz-question-text">題目 3（N3）：「落としたばかりかもしれない」是什麼意思？</div><div class="quiz-options-row">
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 1, '「ばかり」表示剛發生，並非很久以前。')">A. 一定很久以前掉的</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 1, '答對了！「ばかり」表示才剛發生，「かもしれない」表示可能。')">B. 可能才剛掉的</button>
+        <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 1, '「かもしれない」表示推測，不是絕對不會。')">C. 絕對不會掉</button>
+      </div><div id="quiz-fb-q3" class="quiz-feedback"></div></div>
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite"><h3>🎉 測驗完成結果</h3><div class="quiz-score-number"></div><div class="quiz-score-msg"></div></div>
+    </section>
+
+    <section style="text-align:center;margin-top:2.5rem;">
+      <button id="mark-learned-btn" class="action-btn" onclick="toggleArticleLearned('progressive-05')">✅ 標記為已學習</button>
+    </section>
+  </main>
+  <div class="karaoke-progress-container"><div class="karaoke-progress-bar"></div></div>
+  <footer style="text-align:center;padding:2rem;color:var(--text-muted);">🌸 さくら先生の日本語教室 - 階梯閱讀單元 &copy; 2026</footer>
+    <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/lesson-renderer.js"></script>
+  <script src="lesson.js"></script>
+</body>
+</html>
