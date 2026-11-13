@@ -87,18 +87,7 @@
       <div class="card-grid">{{GRAMMAR_CARDS}}</div>
     </section>
 
-    <!-- Optional sections go after the four required teaching units above; remove each whole section when irrelevant. -->
-    <section id="adjective-classroom-section" class="lesson-section" style="margin-top: 3rem;">
-      <h2 class="section-title">✨ 形容詞補充</h2>
-      <div class="card-grid">{{ADJECTIVE_CARDS}}</div>
-    </section>
-
-    <section id="culture-section" class="lesson-section" style="margin-top: 3rem;">
-      <h2 class="section-title">🌸 文化小知識</h2>
-      {{CULTURE_NOTE}}
-    </section>
-
-    <!-- Optional: include a quiz only when useful; otherwise remove this entire section. -->
+    <!-- Required: quiz follows the four teaching units. -->
     <section class="lesson-quiz-container" aria-labelledby="quiz-title">
       <h2 id="quiz-title" class="section-title">📝 隨堂小測驗</h2>
       {{QUIZ_BLOCKS}}
@@ -107,6 +96,17 @@
         <div class="quiz-score-number"></div>
         <div class="quiz-score-msg"></div>
       </div>
+    </section>
+
+    <!-- Optional sections go after the five required teaching units; remove each whole section when irrelevant. -->
+    <section id="adjective-classroom-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">✨ 形容詞補充</h2>
+      <div class="card-grid">{{ADJECTIVE_CARDS}}</div>
+    </section>
+
+    <section id="culture-section" class="lesson-section" style="margin-top: 3rem;">
+      <h2 class="section-title">🌸 文化小知識</h2>
+      {{CULTURE_NOTE}}
     </section>
 
     <button id="mark-learned-btn" class="mark-learned-btn"

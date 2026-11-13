@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N4 適讀日語短文〈留守の間に〉，學習「間／間に」、樣態、動作開始與同時動作等表現。">
+  <title>文章27：留守の間に | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+
+<body data-article-id="article-27" data-level="N4" onload="initArticleLearnedState('article-27')">
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn">← 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章27：留守の間に（主人不在時的小秘密）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：分辨「～間」與「～間に」，並理解「～と」、「～そうに」、「～始める」及「～ながら」。適讀程度：N4 初中級。
+      </p>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem;">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" style="position: static; text-align: left;" aria-labelledby="passage-title">
+        <div class="short-text-title-row">
+          <h2 id="passage-title" style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">📜 日語短文</h2>
+          <label class="lang-toggle-wrapper">
+            <span class="lang-toggle-label">🌐 中日雙語</span>
+            <span class="lang-toggle">
+              <input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯">
+              <span class="toggle-track"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="short-text-controls-row">
+          <div class="speed-control" aria-label="朗讀語速">
+            <button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button>
+            <button class="speed-btn active" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button>
+          </div>
+          <div class="karaoke-controls">
+            <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+            <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
+          </div>
+        </div>
+
+        <div class="karaoke-status idle" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span class="status-text">準備就緒</span>
+        </div>
+        <div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+        <div id="lesson-passage"
+          style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.2rem; margin-top: 0.5rem;"></div>
+
+        <div class="sensei-note-box">
+          <b>🌸 さくら先生導讀點撥：</b><br>
+          健太原以為桃子獨自在家睡覺，直到發現隔壁的貓也來作伴。故事稍作精簡，保留「間／間に」的對比，以及樣態、開始與同時動作等 N4 重點。
+        </div>
+      </section>
+
+      <section aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title" class="section-title" style="margin-top: 0;">📖 逐句朗讀與解析</h2>
+        <div id="lesson-breakdown" class="sentence-list"></div>
+      </section>
+    </div>
+
+    <section id="vocabulary-section" style="margin-top: 3rem;" aria-labelledby="vocabulary-title">
+      <h2 id="vocabulary-title" class="section-title">📚 精選單字</h2>
+      <div class="card-grid">
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>会社員<rt>かいしゃいん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('かいしゃいん')">🔊</button></div><div class="vocab-meaning">名詞：公司職員、上班族。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>留守番<rt>るすばん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('るすばん')">🔊</button></div><div class="vocab-meaning">名詞／する動詞：看家、獨自在家看守家中。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">クッション</div><button class="audio-btn" type="button" onclick="speakJapanese('クッション')">🔊</button></div><div class="vocab-meaning">名詞：靠墊、抱枕。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>昼休<rt>ひるやす</rt></ruby>み</div><button class="audio-btn" type="button" onclick="speakJapanese('ひるやすみ')">🔊</button></div><div class="vocab-meaning">名詞：午休、午間休息時間。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>気持<rt>きも</rt></ruby>ちよさそう</div><button class="audio-btn" type="button" onclick="speakJapanese('きもちよさそう')">🔊</button></div><div class="vocab-meaning">樣態：看起來很舒服、似乎很舒適。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>隣<rt>となり</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('となり')">🔊</button></div><div class="vocab-meaning">名詞：旁邊、隔壁；常指緊鄰的位置或住家。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>二匹<rt>にひき</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('にひき')">🔊</button></div><div class="vocab-meaning">數量詞：兩隻（小型動物）。「匹」的讀音會依數字改變。</div></div>
+      </div>
+    </section>
+
+    <section id="verb-classroom-section" style="margin-top: 3rem;" aria-labelledby="verb-classroom-title">
+      <h2 id="verb-classroom-title" class="section-title">🏃 動詞教室</h2>
+      <p style="color: var(--text-muted); margin: -0.5rem 0 1.2rem;">以下精選本文重點動詞；每張卡附讀音、類別、中文意思、活用表與本文例句。</p>
+      <div class="card-grid">
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">すみます（<ruby>住<rt>す</rt></ruby>みます／<ruby>住<rt>す</rt></ruby>む）</div><button class="audio-btn" type="button" onclick="speakJapanese('すみます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：su-mi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：居住、住在。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_sumu')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_sumu" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>住む</td><td>住みます</td><td>住みました</td><td>住んで</td><td>住まない</td></tr></table></div>
+        <div class="example-box"><div class="example-jp">ケンタは犬と住んでいます。<button class="audio-btn" type="button" onclick="speakJapanese('ケンタはいぬとすんでいます')">🔊</button></div><div class="example-cn">健太和狗一起住。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">あけます（<ruby>空<rt>あ</rt></ruby>けます／<ruby>空<rt>あ</rt></ruby>ける）</div><button class="audio-btn" type="button" onclick="speakJapanese('あけます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：a-ke-ma-su｜第二類動詞</div><div class="vocab-meaning">意思：空出；使空著。本文「家を空ける」指離家、不在家。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_akeru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_akeru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>空ける</td><td>空けます</td><td>空けました</td><td>空けて</td><td>空けない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">仕事で家を空けています。<button class="audio-btn" type="button" onclick="speakJapanese('しごとでいえをあけています')">🔊</button></div><div class="example-cn">因工作而不在家。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">きになります（<ruby>気<rt>き</rt></ruby>になります／気になる）</div><button class="audio-btn" type="button" onclick="speakJapanese('きになります')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ki-ni-na-ri-ma-su｜第一類動詞（「なる」）</div><div class="vocab-meaning">意思：在意、掛心。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_kininaru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_kininaru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>気になる</td><td>気になります</td><td>気になりました</td><td>気になって</td><td>気にならない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">クッションのことが気になりました。<button class="audio-btn" type="button" onclick="speakJapanese('クッションのことがきになりました')">🔊</button></div><div class="example-cn">我開始在意靠墊的事。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">かいます（<ruby>買<rt>か</rt></ruby>います／<ruby>買<rt>か</rt></ruby>う）</div><button class="audio-btn" type="button" onclick="speakJapanese('かいます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ka-i-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：買、購買。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_kau')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_kau" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>買う</td><td>買います</td><td>買いました</td><td>買って</td><td>買わない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">小さなカメラを買いました。<button class="audio-btn" type="button" onclick="speakJapanese('ちいさなカメラをかいました')">🔊</button></div><div class="example-cn">買了一台小相機。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">おきます（<ruby>置<rt>お</rt></ruby>きます／<ruby>置<rt>お</rt></ruby>く）</div><button class="audio-btn" type="button" onclick="speakJapanese('おきます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：o-ki-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：放置、擺放。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_oku')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_oku" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>置く</td><td>置きます</td><td>置きました</td><td>置いて</td><td>置かない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">カメラを部屋に置きました。<button class="audio-btn" type="button" onclick="speakJapanese('カメラをへやにおきました')">🔊</button></div><div class="example-cn">把相機放在房間裡。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">かくにんします（<ruby>確認<rt>かくにん</rt></ruby>します／確認する）</div><button class="audio-btn" type="button" onclick="speakJapanese('かくにんします')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ka-ku-ni-n-shi-ma-su｜第三類動詞</div><div class="vocab-meaning">意思：確認、查閱。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_kakuninsuru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_kakuninsuru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>確認する</td><td>確認します</td><td>確認しました</td><td>確認して</td><td>確認しない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">スマホでカメラを確認しました。<button class="audio-btn" type="button" onclick="speakJapanese('スマホでカメラをかくにんしました')">🔊</button></div><div class="example-cn">用手機查看了相機畫面。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">ねます（<ruby>寝<rt>ね</rt></ruby>ます／<ruby>寝<rt>ね</rt></ruby>る）</div><button class="audio-btn" type="button" onclick="speakJapanese('ねます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ne-ma-su｜第二類動詞</div><div class="vocab-meaning">意思：睡覺。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_neru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_neru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>寝る</td><td>寝ます</td><td>寝ました</td><td>寝て</td><td>寝ない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">モモはソファーで寝ていました。<button class="audio-btn" type="button" onclick="speakJapanese('モモはソファーでねていました')">🔊</button></div><div class="example-cn">桃子當時正在沙發上睡覺。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">きます（<ruby>来<rt>き</rt></ruby>ます／<ruby>来<rt>く</rt></ruby>る）</div><button class="audio-btn" type="button" onclick="speakJapanese('きます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ki-ma-su｜第三類動詞</div><div class="vocab-meaning">意思：來。本文「入ってくる」表示進到屋內來。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_kuru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_kuru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>来る</td><td>来ます</td><td>来ました</td><td>来て</td><td>来ない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">猫が窓から入ってきました。<button class="audio-btn" type="button" onclick="speakJapanese('ねこがまどからはいってきました')">🔊</button></div><div class="example-cn">貓從窗戶進來了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">おちます（<ruby>落<rt>お</rt></ruby>ちます／<ruby>落<rt>お</rt></ruby>ちる）</div><button class="audio-btn" type="button" onclick="speakJapanese('おちます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：o-chi-ma-su｜第二類動詞</div><div class="vocab-meaning">意思：掉落、落下（物品自己掉下來）。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_ochiru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_ochiru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>落ちる</td><td>落ちます</td><td>落ちました</td><td>落ちて</td><td>落ちない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">クッションが床に落ちています。<button class="audio-btn" type="button" onclick="speakJapanese('クッションがゆかにおちています')">🔊</button></div><div class="example-cn">靠墊掉在地板上。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">おとします（<ruby>落<rt>お</rt></ruby>とします／<ruby>落<rt>お</rt></ruby>とす）</div><button class="audio-btn" type="button" onclick="speakJapanese('おとします')">🔊</button></div>
+          <div class="vocab-romaji">讀音：o-to-shi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：弄掉、使物品掉落（有施力者）。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_otosu')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_otosu" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>落とす</td><td>落とします</td><td>落としました</td><td>落として</td><td>落とさない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">猫がクッションを床に落としました。<button class="audio-btn" type="button" onclick="speakJapanese('ねこがクッションをゆかにおとしました')">🔊</button></div><div class="example-cn">貓把靠墊弄到了地板上。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">すわります（<ruby>座<rt>すわ</rt></ruby>ります／<ruby>座<rt>すわ</rt></ruby>る）</div><button class="audio-btn" type="button" onclick="speakJapanese('すわります')">🔊</button></div>
+          <div class="vocab-romaji">讀音：su-wa-ri-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：坐下、就座。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_suwaru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_suwaru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>座る</td><td>座ります</td><td>座りました</td><td>座って</td><td>座らない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">猫はモモの隣に座りました。<button class="audio-btn" type="button" onclick="speakJapanese('ねこはモモのとなりにすわりました')">🔊</button></div><div class="example-cn">貓坐在桃子旁邊。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">くっつきます（くっつく）</div><button class="audio-btn" type="button" onclick="speakJapanese('くっつきます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ku-tsu-ki-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：貼在一起、靠在一起。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_kuttsuku')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_kuttsuku" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>くっつく</td><td>くっつきます</td><td>くっつきました</td><td>くっついて</td><td>くっつかない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">二匹はくっついて寝ました。<button class="audio-btn" type="button" onclick="speakJapanese('にひきはくっついてねました')">🔊</button></div><div class="example-cn">兩隻動物靠在一起睡了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">ねはじめます（<ruby>寝<rt>ね</rt></ruby><ruby>始<rt>はじ</rt></ruby>めます／寝始める）</div><button class="audio-btn" type="button" onclick="speakJapanese('ねはじめます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ne-ha-ji-me-ma-su｜第二類複合動詞</div><div class="vocab-meaning">意思：開始睡覺。「寝る」的ます形詞幹＋「始める」。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_nehajimeru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_nehajimeru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>寝始める</td><td>寝始めます</td><td>寝始めました</td><td>寝始めて</td><td>寝始めない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">二匹は一緒に寝始めました。<button class="audio-btn" type="button" onclick="speakJapanese('にひきはいっしょにねはじめました')">🔊</button></div><div class="example-cn">兩隻動物一起開始睡覺。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">かたづけます（<ruby>片付<rt>かたづ</rt></ruby>けます／片付ける）</div><button class="audio-btn" type="button" onclick="speakJapanese('かたづけます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ka-ta-zu-ke-ma-su｜第二類動詞</div><div class="vocab-meaning">意思：收拾、整理。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_katazukeru')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_katazukeru" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>片付ける</td><td>片付けます</td><td>片付けました</td><td>片付けて</td><td>片付けない</td></tr></table></div>
+        <div class="example-box"><div class="example-jp">ケンタはクッションを片付けました。<button class="audio-btn" type="button" onclick="speakJapanese('ケンタはクッションをかたづけました')">🔊</button></div><div class="example-cn">健太把靠墊收拾好了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">ふります（<ruby>振<rt>ふ</rt></ruby>ります／<ruby>振<rt>ふ</rt></ruby>る）</div><button class="audio-btn" type="button" onclick="speakJapanese('ふります')">🔊</button></div>
+          <div class="vocab-romaji">讀音：fu-ri-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：揮動、搖動。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v27_furu')">📊 展開活用變化表</button>
+          <div id="conjugation-v27_furu" class="conjugation-table-wrapper"><table class="conjugation-table"><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr><tr><td>振る</td><td>振ります</td><td>振りました</td><td>振って</td><td>振らない</td></tr></table></div>
+          <div class="example-box"><div class="example-jp">モモはしっぽを振りました。<button class="audio-btn" type="button" onclick="speakJapanese('モモはしっぽをふりました')">🔊</button></div><div class="example-cn">桃子搖了搖尾巴。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="particle-classroom-section" style="margin-top: 3rem;" aria-labelledby="particle-classroom-title">
+      <h2 id="particle-classroom-title" class="section-title">🧩 助詞教室</h2>
+      <div class="card-grid">
+        <div class="grammar-card">
+          <div class="grammar-pattern">「に」：時間或動作的落點</div>
+          <div class="grammar-usage">「昼休みの間に」的「に」標示事情發生的時間範圍；「部屋に置く」、「隣に座る」的「に」則指出放置或就座的位置。</div>
+          <div class="example-box"><div class="example-jp">休み時間に本を読みました。<button class="audio-btn" type="button" onclick="speakJapanese('やすみじかんにほんをよみました')">🔊</button></div><div class="example-cn">休息時間讀了書。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「で」：使用的工具或方法</div>
+          <div class="grammar-usage">「仕事で家を空ける」中的「で」表示工作這個原因或情況；「スマホでカメラを確認する」中的「で」則表示使用的工具。</div>
+          <div class="example-box"><div class="example-jp">スマホで写真を見ました。<button class="audio-btn" type="button" onclick="speakJapanese('スマホでしゃしんをみました')">🔊</button></div><div class="example-cn">用手機看了照片。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「を」：動作的直接對象</div>
+          <div class="grammar-usage">「カメラを確認する」、「クッションを片付ける」中的「を」標示確認或收拾的對象。</div>
+          <div class="example-box"><div class="example-jp">部屋を片付けました。<button class="audio-btn" type="button" onclick="speakJapanese('へやをかたづけました')">🔊</button></div><div class="example-cn">整理了房間。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="grammar-section" style="margin-top: 3rem;" aria-labelledby="grammar-title">
+      <h2 id="grammar-title" class="section-title">📝 さくら先生的精選文法教室</h2>
+      <div class="card-grid">
+        <div class="grammar-card">
+          <div class="grammar-pattern">～間：在某段期間持續</div>
+          <div class="grammar-usage">接在動詞ている形或名詞＋「の」後，表示整段期間。「仕事で家を空けている間」是健太不在家的這段時間，桃子都在看家。</div>
+          <div class="example-box"><div class="example-jp">母が料理をしている間、私は宿題をします。<button class="audio-btn" type="button" onclick="speakJapanese('ははがりょうりをしているあいだ、わたしはしゅくだいをします')">🔊</button></div><div class="example-cn">媽媽做菜的期間，我會寫作業。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">～間に：在某段期間之內發生</div>
+          <div class="grammar-usage">接在動詞ている形或名詞＋「の」後；「間に」表示某件事在這段期間內發生，通常著重一次或有界限的事件。本文「仕事をしている間に友達ができた」就是在工作期間交到了朋友。</div>
+          <div class="example-box"><div class="example-jp">昼休みの間にメールを返しました。<button class="audio-btn" type="button" onclick="speakJapanese('ひるやすみのあいだにメールをかえしました')">🔊</button></div><div class="example-cn">在午休期間回覆了郵件。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">～と：一……就……；發現後項</div>
+          <div class="grammar-usage">動詞辭書形＋「と」可表示前項一發生，就自然出現後項。本文「カメラを確認すると、モモは寝ていた」帶有查看後發現情況的語氣。</div>
+          <div class="example-box"><div class="example-jp">窓を開けると、猫がいました。<button class="audio-btn" type="button" onclick="speakJapanese('まどをあけるとねこがいました')">🔊</button></div><div class="example-cn">一打開窗戶，就看見有隻貓。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">～そうに：看起來……地</div>
+          <div class="grammar-usage">表示從外觀推測狀態，修飾動詞時用「そうに」。「気持ちよさそうに寝ていた」是看起來睡得很舒服；「うれしそうに」是看起來很高興地。</div>
+          <div class="example-box"><div class="example-jp">子どもは楽しそうに遊んでいます。<button class="audio-btn" type="button" onclick="speakJapanese('こどもはたのしそうにあそんでいます')">🔊</button></div><div class="example-cn">小朋友看起來玩得很開心。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">動詞ます形詞幹＋始める：開始……</div>
+          <div class="grammar-usage">把動詞ます形去掉「ます」，再接「始める」，表示某個動作開始。「寝始めた」是「開始睡覺」。</div>
+          <div class="example-box"><div class="example-jp">赤ちゃんは泣き始めました。<button class="audio-btn" type="button" onclick="speakJapanese('あかちゃんはなきはじめました')">🔊</button></div><div class="example-cn">嬰兒開始哭了。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">動詞ます形詞幹＋ながら：一邊……一邊……</div>
+          <div class="grammar-usage">表示同一個人同時進行兩個動作。「片付けながら笑った」中，健太一邊收拾靠墊、一邊笑。</div>
+          <div class="example-box"><div class="example-jp">音楽を聞きながら勉強します。<button class="audio-btn" type="button" onclick="speakJapanese('おんがくをききながらべんきょうします')">🔊</button></div><div class="example-cn">一邊聽音樂，一邊讀書。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-quiz-container" style="margin-top: 3rem;" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">📝 文章27 隨堂小測驗（共 3 題）</h2>
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「仕事をしている間に友達ができた」中的「間に」表示什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 1, '「間」著重整段期間；「間に」表示事情在期間之內發生。')">A. 交朋友這件事持續了整段工作時間</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 1, '答對了！交到朋友這件事發生在工作期間內。')">B. 在工作期間內交到了朋友</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 1, '「間に」不是「工作結束以後」的意思。')">C. 工作結束以後才交朋友</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「気持ちよさそうに寝ていた」最接近哪個意思？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 0, '正確！「そう」表示從樣子推測牠睡得很舒服。')">A. 看起來睡得很舒服</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 0, '句子是從外觀看起來舒服，不是說牠故意睡覺。')">B. 為了舒服而睡覺</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 0, '「そう」在這裡不是傳聞的「聽說」。')">C. 聽說牠睡著了</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：「片付けながら笑った」表示什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 2, '「ながら」表示兩個動作同時進行。')">A. 笑完以後才收拾</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 2, '「ながら」不是表示兩人一起做同一件事。')">B. 健太和桃子一起收拾</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 2, '答對了！健太一邊收拾，一邊笑。')">C. 一邊收拾，一邊笑</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
+      </div>
+    </section>
+
+    <aside class="sensei-note-box" aria-label="教材來源">
+      教材來源：依據使用者提供的〈留守の間に〉短文整理，合併部分重複描述並保留原文 N4 難度與主要句型。
+    </aside>
+
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-27')">
+      ✅ 標記為已學習
+    </button>
+  </main>
+
+  <div class="karaoke-progress-container" aria-hidden="true">
+    <div class="karaoke-progress-bar"></div>
+  </div>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室－文章27 獨立單元網頁 © 2026. <a href="../../index.html">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/lesson-renderer.js"></script>
+  <script src="lesson.js"></script>
+</body>
+
+</html>
