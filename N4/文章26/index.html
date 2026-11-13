@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N4 適讀日語短文〈引っ越しのケーキ〉，學習間接疑問、授受表現、條件句、ばかり與使役表現。">
+  <title>文章26：引っ越しのケーキ | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+
+<body data-article-id="article-26" data-level="N4" onload="initArticleLearnedState('article-26')">
+  <header class="lesson-header">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <a href="../../index.html" class="back-btn">← 回主頁入口目錄</a>
+      <h1 style="color: var(--deep-sakura); font-size: 2rem; margin-top: 0.5rem;">
+        🌸 文章26：引っ越しのケーキ（為新室友準備的蛋糕）
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.3rem;">
+        學習目標：理解「～かどうか」、「～てあげる／くれる」、「意向形＋と思う」、「～てみたら」、「～ばかり」及使役表現，並比較「～と／～てから」的時間關係。適讀程度：N4 初中級。
+      </p>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem;">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" style="position: static; text-align: left;" aria-labelledby="passage-title">
+        <div class="short-text-title-row">
+          <h2 id="passage-title" style="color: var(--deep-sakura); font-size: 1.3rem; margin: 0;">📜 日語短文</h2>
+          <label class="lang-toggle-wrapper">
+            <span class="lang-toggle-label">🌐 中日雙語</span>
+            <span class="lang-toggle">
+              <input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯">
+              <span class="toggle-track"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="short-text-controls-row">
+          <div class="speed-control" aria-label="朗讀語速">
+            <button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button>
+            <button class="speed-btn active" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button>
+          </div>
+          <div class="karaoke-controls">
+            <button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button>
+            <button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button>
+          </div>
+        </div>
+
+        <div class="karaoke-status idle" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span class="status-text">準備就緒</span>
+        </div>
+        <div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+        <div id="lesson-passage"
+          style="background: #FFFBF7; border: 2px dashed #FFB7C5; border-radius: 16px; padding: 1.2rem; margin-top: 0.5rem;"></div>
+
+        <div class="sensei-note-box">
+          <b>🌸 さくら先生導讀點撥：</b><br>
+          哈娜想送新室友蛋糕，卻在意對方是否喜歡甜食；故事以「專家意見」作結，形成反轉。本文保留間接疑問、授受與使役等重要表現，只合併部分重複對話。
+        </div>
+      </section>
+
+      <section aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title" class="section-title" style="margin-top: 0;">📖 逐句朗讀與解析</h2>
+        <div id="lesson-breakdown" class="sentence-list"></div>
+      </section>
+    </div>
+
+    <section id="vocabulary-section" style="margin-top: 3rem;" aria-labelledby="vocabulary-title">
+      <h2 id="vocabulary-title" class="section-title">📚 精選單字</h2>
+      <div class="card-grid">
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">フラット</div><button class="audio-btn" type="button" onclick="speakJapanese('フラット')">🔊</button></div><div class="vocab-meaning">名詞：公寓。英式英語常用來稱呼公寓住宅。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">ルームメイト</div><button class="audio-btn" type="button" onclick="speakJapanese('ルームメイト')">🔊</button></div><div class="vocab-meaning">名詞：室友、同住者。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>し</div><button class="audio-btn" type="button" onclick="speakJapanese('ひっこし')">🔊</button></div><div class="vocab-meaning">名詞：搬家、遷居。動詞是「引っ越す」。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>甘<rt>あま</rt></ruby>いもの</div><button class="audio-btn" type="button" onclick="speakJapanese('あまいもの')">🔊</button></div><div class="vocab-meaning">甜食、甜的東西。「もの」可泛指事物。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">サプライズ</div><button class="audio-btn" type="button" onclick="speakJapanese('サプライズ')">🔊</button></div><div class="vocab-meaning">名詞：驚喜；也可作「驚喜活動」解。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>電話番号<rt>でんわばんごう</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('でんわばんごう')">🔊</button></div><div class="vocab-meaning">名詞：電話號碼。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>安心<rt>あんしん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('あんしん')">🔊</button></div><div class="vocab-meaning">名詞／する動詞：放心、安心。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">チョコレートケーキ</div><button class="audio-btn" type="button" onclick="speakJapanese('チョコレートケーキ')">🔊</button></div><div class="vocab-meaning">名詞：巧克力蛋糕。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">ケーキ<ruby>屋<rt>や</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('ケーキや')">🔊</button></div><div class="vocab-meaning">名詞：蛋糕店。「～屋」表示販售某類商品的店家。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>困<rt>こま</rt></ruby>った<ruby>顔<rt>かお</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('こまったかお')">🔊</button></div><div class="vocab-meaning">表情：為難的表情、困擾的神情。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word">プロ</div><button class="audio-btn" type="button" onclick="speakJapanese('プロ')">🔊</button></div><div class="vocab-meaning">名詞：專業人士、行家。</div></div>
+        <div class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>意見<rt>いけん</rt></ruby></div><button class="audio-btn" type="button" onclick="speakJapanese('いけん')">🔊</button></div><div class="vocab-meaning">名詞：意見、看法。</div></div>
+      </div>
+    </section>
+
+    <section id="verb-classroom-section" style="margin-top: 3rem;" aria-labelledby="verb-classroom-title">
+      <h2 id="verb-classroom-title" class="section-title">🏃 動詞教室</h2>
+      <p style="color: var(--text-muted); margin: -0.5rem 0 1.2rem;">以下精選本文重點動詞；每張卡整理讀音、動詞類別與中文意思，並可展開活用表複習辭書形、ます形、過去式、て形和ない形。</p>
+      <div class="card-grid">
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">ひっこします（引っ越します／引っ越す）</div><button class="audio-btn" type="button" onclick="speakJapanese('ひっこします')">🔊</button></div>
+          <div class="vocab-romaji">讀音：hi-k-ko-shi-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：搬家、遷居。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_hikkosu')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_hikkosu" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>引っ越す</td><td>引っ越します</td><td>引っ越しました</td><td>引っ越して</td><td>引っ越さない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">新しいルームメイトが引っ越してきました。<button class="audio-btn" type="button" onclick="speakJapanese('あたらしいルームメイトがひっこしてきました')">🔊</button></div><div class="example-cn">新室友搬了進來。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">やきます（焼きます／焼く）</div><button class="audio-btn" type="button" onclick="speakJapanese('やきます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ya-ki-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：烤、烘焙。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_yaku')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_yaku" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>焼く</td><td>焼きます</td><td>焼きました</td><td>焼いて</td><td>焼かない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">ケーキを焼いてあげようと思いました。<button class="audio-btn" type="button" onclick="speakJapanese('ケーキをやいてあげようとおもいました')">🔊</button></div><div class="example-cn">我想為他烤蛋糕。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">おもいます（思います／思う）</div><button class="audio-btn" type="button" onclick="speakJapanese('おもいます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：o-mo-i-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：想、認為。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_omou')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_omou" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>思う</td><td>思います</td><td>思いました</td><td>思って</td><td>思わない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">ケーキを作ろうと思います。<button class="audio-btn" type="button" onclick="speakJapanese('ケーキをつくろうとおもいます')">🔊</button></div><div class="example-cn">我打算做蛋糕。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">ききます（聞きます／聞く）</div><button class="audio-btn" type="button" onclick="speakJapanese('ききます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ki-ki-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：聽；詢問。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_kiku')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_kiku" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>聞く</td><td>聞きます</td><td>聞きました</td><td>聞いて</td><td>聞かない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">お姉さんに聞いてみたらどうですか。<button class="audio-btn" type="button" onclick="speakJapanese('おねえさんにきいてみたらどうですか')">🔊</button></div><div class="example-cn">要不要試著問問姊姊？</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">つくります（作ります／作る）</div><button class="audio-btn" type="button" onclick="speakJapanese('つくります')">🔊</button></div>
+          <div class="vocab-romaji">讀音：tsu-ku-ri-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：做、製作。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_tsukuru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_tsukuru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>作る</td><td>作ります</td><td>作りました</td><td>作って</td><td>作らない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">大きなチョコレートケーキを作りました。<button class="audio-btn" type="button" onclick="speakJapanese('おおきなチョコレートケーキをつくりました')">🔊</button></div><div class="example-cn">做了一個大巧克力蛋糕。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">かえります（帰ります／帰る）</div><button class="audio-btn" type="button" onclick="speakJapanese('かえります')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ka-e-ri-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：回去、回家。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_kaeru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_kaeru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>帰る</td><td>帰ります</td><td>帰りました</td><td>帰って</td><td>帰らない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">夜、トムが帰ってきました。<button class="audio-btn" type="button" onclick="speakJapanese('よる、トムがかえってきました')">🔊</button></div><div class="example-cn">晚上，湯姆回來了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">はたらきます（働きます／働く）</div><button class="audio-btn" type="button" onclick="speakJapanese('はたらきます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ha-ta-ra-ki-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：工作、勞動。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_hataraku')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_hataraku" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>働く</td><td>働きます</td><td>働きました</td><td>働いて</td><td>働かない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">トムはケーキ屋で働いています。<button class="audio-btn" type="button" onclick="speakJapanese('トムはケーキやではたらいています')">🔊</button></div><div class="example-cn">湯姆在蛋糕店工作。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">よろこびます（喜びます／喜ぶ）</div><button class="audio-btn" type="button" onclick="speakJapanese('よろこびます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：yo-ro-ko-bi-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：高興、喜悅。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_yorokobu')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_yorokobu" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>喜ぶ</td><td>喜びます</td><td>喜びました</td><td>喜んで</td><td>喜ばない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">友達はプレゼントをもらって喜びました。<button class="audio-btn" type="button" onclick="speakJapanese('ともだちはプレゼントをもらってよろこびました')">🔊</button></div><div class="example-cn">朋友收到禮物後很高興。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">わたします（渡します／渡す）</div><button class="audio-btn" type="button" onclick="speakJapanese('わたします')">🔊</button></div>
+          <div class="vocab-romaji">讀音：wa-ta-shi-ma-su｜第一類動詞</div>
+          <div class="vocab-meaning">意思：遞給、交付。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_watasu')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_watasu" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>渡す</td><td>渡します</td><td>渡しました</td><td>渡して</td><td>渡さない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">ハナはナイフをトムに渡しました。<button class="audio-btn" type="button" onclick="speakJapanese('ハナはナイフをトムにわたしました')">🔊</button></div><div class="example-cn">哈娜把刀子遞給了湯姆。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">おしえます（教えます／教える）</div><button class="audio-btn" type="button" onclick="speakJapanese('おしえます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：o-shi-e-ma-su｜第二類動詞</div>
+          <div class="vocab-meaning">意思：教、告訴。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_oshieru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_oshieru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>教える</td><td>教えます</td><td>教えました</td><td>教えて</td><td>教えない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">サラは電話番号を教えてくれました。<button class="audio-btn" type="button" onclick="speakJapanese('サラはでんわばんごうをおしえてくれました')">🔊</button></div><div class="example-cn">莎拉把電話號碼告訴了我。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">つづけます（続けます／続ける）</div><button class="audio-btn" type="button" onclick="speakJapanese('つづけます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：tsu-zu-ke-ma-su｜第二類動詞</div>
+          <div class="vocab-meaning">意思：繼續、接著做。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_tsuzukeru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_tsuzukeru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>続ける</td><td>続けます</td><td>続けました</td><td>続けて</td><td>続けない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">トムは話を続けました。<button class="audio-btn" type="button" onclick="speakJapanese('トムははなしをつづけました')">🔊</button></div><div class="example-cn">湯姆繼續說了下去。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">かんがえます（考えます／考える）</div><button class="audio-btn" type="button" onclick="speakJapanese('かんがえます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ka-n-ga-e-ma-su｜第二類動詞</div>
+          <div class="vocab-meaning">意思：思考、考慮。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_kangaeru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_kangaeru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>考える</td><td>考えます</td><td>考えました</td><td>考えて</td><td>考えない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">少し考えてから、答えました。<button class="audio-btn" type="button" onclick="speakJapanese('すこしかんがえてからこたえました')">🔊</button></div><div class="example-cn">稍微想了一下之後回答了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">きかせます（聞かせます／聞かせる）</div><button class="audio-btn" type="button" onclick="speakJapanese('きかせます')">🔊</button></div>
+          <div class="vocab-romaji">讀音：ki-ka-se-ma-su｜第二類動詞・使役形</div>
+          <div class="vocab-meaning">意思：讓人聽；把想法說給人聽。本文「意見を聞かせて」是請對方告訴自己看法。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_kikaseru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_kikaseru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>聞かせる</td><td>聞かせます</td><td>聞かせました</td><td>聞かせて</td><td>聞かせない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">プロの意見を聞かせてください。<button class="audio-btn" type="button" onclick="speakJapanese('プロのいけんをきかせてください')">🔊</button></div><div class="example-cn">請告訴我專家的意見。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">あんしんします（安心します／安心する）</div><button class="audio-btn" type="button" onclick="speakJapanese('あんしんします')">🔊</button></div>
+          <div class="vocab-romaji">讀音：a-n-shi-n-shi-ma-su｜第三類動詞</div>
+          <div class="vocab-meaning">意思：放心、安心。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_anshinsuru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_anshinsuru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>安心する</td><td>安心します</td><td>安心しました</td><td>安心して</td><td>安心しない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">返事を聞いて安心しました。<button class="audio-btn" type="button" onclick="speakJapanese('へんじをきいてあんしんしました')">🔊</button></div><div class="example-cn">聽到回覆後放心了。</div></div>
+        </div>
+
+        <div class="vocab-card" style="border-top: 4px solid #FF85A1;">
+          <div class="vocab-header"><div class="vocab-word">でんわします（電話します／電話する）</div><button class="audio-btn" type="button" onclick="speakJapanese('でんわします')">🔊</button></div>
+          <div class="vocab-romaji">讀音：de-n-wa-shi-ma-su｜第三類動詞</div>
+          <div class="vocab-meaning">意思：打電話。</div>
+          <button class="conjugation-toggle" onclick="toggleConjugation('v26_denwasuru')">📊 展開活用變化表</button>
+          <div id="conjugation-v26_denwasuru" class="conjugation-table-wrapper"><table class="conjugation-table">
+            <tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr>
+            <tr><td>電話する</td><td>電話します</td><td>電話しました</td><td>電話して</td><td>電話しない</td></tr>
+          </table></div>
+          <div class="example-box"><div class="example-jp">友達に電話しました。<button class="audio-btn" type="button" onclick="speakJapanese('ともだちにでんわしました')">🔊</button></div><div class="example-cn">打電話給朋友了。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="particle-classroom-section" style="margin-top: 3rem;" aria-labelledby="particle-classroom-title">
+      <h2 id="particle-classroom-title" class="section-title">🧩 助詞教室</h2>
+      <div class="card-grid">
+        <div class="grammar-card">
+          <div class="grammar-pattern">「に」：動作對象或接受者</div>
+          <div class="grammar-usage">「トムにケーキを焼いてあげる」中的「に」指出受惠對象；「ナイフをトムに渡す」的「に」指出接收物品的人。</div>
+          <div class="example-box"><div class="example-jp">妹にプレゼントをあげました。<button class="audio-btn" type="button" onclick="speakJapanese('いもうとにプレゼントをあげました')">🔊</button></div><div class="example-cn">送了禮物給妹妹。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「で」：方法或動作場所</div>
+          <div class="grammar-usage">「電話で」表示使用電話這種方法；「ケーキ屋で働く」的「で」表示工作的場所。</div>
+          <div class="example-box"><div class="example-jp">友達に電話で聞きました。<button class="audio-btn" type="button" onclick="speakJapanese('ともだちにでんわでききました')">🔊</button></div><div class="example-cn">用電話詢問了朋友。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「を」：動作直接作用的對象</div>
+          <div class="grammar-usage">「ケーキを焼く」、「電話番号を教える」中的名詞是動作直接作用的對象。</div>
+          <div class="example-box"><div class="example-jp">ケーキを作りました。<button class="audio-btn" type="button" onclick="speakJapanese('ケーキをつくりました')">🔊</button></div><div class="example-cn">做了蛋糕。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「が」：喜好表現的對象</div>
+          <div class="grammar-usage">「好き」前面通常用「が」標示喜歡的對象，所以說「甘いものが好き」。放進間接疑問中則是「甘いものが好きかどうか」。</div>
+          <div class="example-box"><div class="example-jp">トムはケーキが好きです。<button class="audio-btn" type="button" onclick="speakJapanese('トムはケーキがすきです')">🔊</button></div><div class="example-cn">湯姆喜歡蛋糕。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「と」：引用說話內容</div>
+          <div class="grammar-usage">引用說話、想法或答案時，用「と」標示引用內容，例如「『ようこそ！』と言った」。</div>
+          <div class="example-box"><div class="example-jp">「ありがとう」と言いました。<button class="audio-btn" type="button" onclick="speakJapanese('ありがとうといいました')">🔊</button></div><div class="example-cn">說了「謝謝」。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="grammar-classroom-section" style="margin-top: 3rem;" aria-labelledby="grammar-title">
+      <h2 id="grammar-title" class="section-title">📝 さくら先生的精選文法教室</h2>
+      <div class="card-grid">
+        <div class="grammar-card">
+          <div class="grammar-pattern">～かどうか：是否……</div>
+          <div class="grammar-usage"><b>用法：</b>把是非疑問句放進句子中，表示「是否……」。常接在「分かる、聞く、知っている」等表達之後。本文用兩次「かどうか」詢問湯姆是否喜歡、是否會吃甜食。</div>
+          <div class="example-box"><div class="example-jp">彼が来るかどうか分かりません。<button class="audio-btn" type="button" onclick="speakJapanese('かれがくるかどうかわかりません')">🔊</button></div><div class="example-cn">不知道他會不會來。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">～てあげる／～てくれる：為誰做某事</div>
+          <div class="grammar-usage"><b>視角：</b>「焼いてあげる」表示哈娜為湯姆烤蛋糕；「教えてくれる」表示莎拉為哈娜提供資訊。使用時要留意誰是受惠者，對長輩或不熟的人說「～てあげる」有時會顯得居高臨下。</div>
+          <div class="example-box"><div class="example-jp">友達が道を教えてくれました。<button class="audio-btn" type="button" onclick="speakJapanese('ともだちがみちをおしえてくれました')">🔊</button></div><div class="example-cn">朋友告訴了我路怎麼走。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">意向形＋と思う：打算做……</div>
+          <div class="grammar-usage"><b>用法：</b>意向形加上「と思う」表達說話者的想法或打算。本文「焼いてあげようと思った」是「想著要為他烤蛋糕」；其中「焼いてあげる」的「てあげる」再變成意向形「てあげよう」。</div>
+          <div class="example-box"><div class="example-jp">週末に映画を見ようと思います。<button class="audio-btn" type="button" onclick="speakJapanese('しゅうまつにえいがをみようとおもいます')">🔊</button></div><div class="example-cn">我打算週末看電影。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">～てみたら？：要不要試著……？</div>
+          <div class="grammar-usage"><b>用法：</b>「動詞て形＋みる」表示試著做某事；「～たら？」在口語中可用來提出建議。本文的「聞いてみたら？」是在建議哈娜試著問問姊姊。</div>
+          <div class="example-box"><div class="example-jp">店員さんに聞いてみたら？<button class="audio-btn" type="button" onclick="speakJapanese('てんいんさんにきいてみたら')">🔊</button></div><div class="example-cn">要不要試著問問店員？</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「～たら」：假設條件與口語提案</div>
+          <div class="grammar-usage"><b>用法：</b>「動詞た形＋ら」可表示「如果……就……」。本文「直接聞いたら」是假設直接問的情況；「聞いてみたら？」則是「要不要試著問問看？」的口語提案。</div>
+          <div class="example-box"><div class="example-jp">時間があったら、手伝います。<button class="audio-btn" type="button" onclick="speakJapanese('じかんがあったらてつだいます')">🔊</button></div><div class="example-cn">如果有時間，我會幫忙。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">「～と」／「～てから」：事件先後</div>
+          <div class="grammar-usage"><b>差異：</b>「帰ってくると」表示湯姆一回來，哈娜就發現桌上有蛋糕；「考えてから」則明確表示先想過，再把刀子遞給他。</div>
+          <div class="example-box"><div class="example-jp">家に帰ると、手紙がありました。<button class="audio-btn" type="button" onclick="speakJapanese('いえにかえるとてがみがありました')">🔊</button></div><div class="example-cn">一回到家，就看到有一封信。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">～ばかり：盡是……、光是……</div>
+          <div class="grammar-usage"><b>用法：</b>名詞＋「ばかり」表示眼前幾乎都是該事物，有時帶有「只有這些」的語氣。本文的「ケーキばかり見ている」表示每天工作時看到的盡是蛋糕。</div>
+          <div class="example-box"><div class="example-jp">弟はゲームばかりしています。<button class="audio-btn" type="button" onclick="speakJapanese('おとうとはゲームばかりしています')">🔊</button></div><div class="example-cn">弟弟老是在玩遊戲。</div></div>
+        </div>
+        <div class="grammar-card">
+          <div class="grammar-pattern">使役形「聞かせる」：讓人聽／說給人聽</div>
+          <div class="grammar-usage"><b>本文：</b>「プロの意見を聞かせて」是「讓我聽聽專家的意見」，用使役形「聞かせる」委婉地請對方說出看法。口語中常用「意見を聞かせて」表示「告訴我你的意見」。</div>
+          <div class="example-box"><div class="example-jp">あなたの考えを聞かせてください。<button class="audio-btn" type="button" onclick="speakJapanese('あなたのかんがえをきかせてください')">🔊</button></div><div class="example-cn">請告訴我你的想法。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-quiz-container" style="margin-top: 3rem;" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">📝 文章26 隨堂小測驗（共 3 題）</h2>
+      <div id="quiz-block-q1" class="quiz-question-block">
+        <div class="quiz-question-text">題目 1：「甘いものが好きかどうか分からない」中的「かどうか」表示什麼？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 0, 1, '「かどうか」表示是否，將是非疑問放入句中。')">A. 因為喜歡甜食</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 1, 1, '答對了！「かどうか」表示是否。')">B. 是否喜歡甜食</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q1', 2, 1, '「ばかり」才有盡是、光是的意思。')">C. 只喜歡甜食</button>
+        </div>
+        <div id="quiz-fb-q1" class="quiz-feedback"></div>
+      </div>
+
+      <div id="quiz-block-q2" class="quiz-question-block">
+        <div class="quiz-question-text">題目 2：「電話番号を教えてくれた」中的「くれた」表示誰受惠？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 0, 2, '「くれる」表示別人為說話者一方做事；這裡是莎拉把號碼告訴哈娜。')">A. 莎拉的姊姊</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 1, 2, '莎拉是做事的人，受惠者是哈娜。')">B. 湯姆</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q2', 2, 2, '正確！莎拉把號碼告訴哈娜，哈娜是受惠者。')">C. 哈娜</button>
+        </div>
+        <div id="quiz-fb-q2" class="quiz-feedback"></div>
+      </div>
+
+      <div id="quiz-block-q3" class="quiz-question-block">
+        <div class="quiz-question-text">題目 3：「毎日ケーキばかり見ている」最接近哪個意思？</div>
+        <div class="quiz-options-row">
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 0, 0, '答對了！「ばかり」表示眼前盡是蛋糕。')">A. 每天看到的盡是蛋糕</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 1, 0, '「ばかり」不是表示偶爾喔。')">B. 偶爾看到蛋糕</button>
+          <button class="quiz-opt-btn" onclick="checkQuizQuestion('q3', 2, 0, '句子沒有說每天都吃蛋糕。')">C. 每天都吃蛋糕</button>
+        </div>
+        <div id="quiz-fb-q3" class="quiz-feedback"></div>
+      </div>
+
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite">
+        <h3 style="color: var(--deep-sakura); margin-bottom: 0.5rem;">🎉 測驗完成結果</h3>
+        <div class="quiz-score-number">100 分</div>
+        <div class="quiz-score-msg" style="color: var(--text-dark); font-weight: bold; margin-top: 0.5rem;"></div>
+      </div>
+    </section>
+
+    <aside class="sensei-note-box" aria-label="教材來源">
+      教材來源：依據使用者提供的〈引っ越しのケーキ〉短文整理，合併部分重複敘述並保留原文語法難度。
+    </aside>
+
+    <button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-26')">
+      ✅ 標記為已學習
+    </button>
+  </main>
+
+  <div class="karaoke-progress-container" aria-hidden="true">
+    <div class="karaoke-progress-bar"></div>
+  </div>
+
+  <footer>
+    <p>🌸 さくら先生の日本語教室－文章26 獨立單元網頁 © 2026. <a href="../../index.html">返回主頁目錄</a></p>
+  </footer>
+
+  <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/lesson-renderer.js"></script>
+  <script src="lesson.js"></script>
+</body>
+
+</html>
