@@ -239,6 +239,29 @@ async function main() {
         failures.push(`文章${article} 例句朗讀：${error.message}`);
       }
 
+      try {
+        for (const section of ['vocabulary', 'verb-classroom']) {
+          const cards = page.locator(`#${section}-section .vocab-card`);
+          for (let index = 0; index < await cards.count(); index++) {
+            const card = cards.nth(index);
+            const speaker = card.locator('.vocab-header .audio-btn');
+            assert.equal(await speaker.count(), 1, `${section} 第 ${index + 1} 張卡缺少詞條發音按鈕`);
+            assert.ok(await card.locator('.vocab-romaji').count(), `${section} 第 ${index + 1} 張卡缺少讀音`);
+            assert.ok(await speaker.getAttribute('aria-label'), '詞條發音按鈕應有無障礙標籤');
+            const text = await speaker.getAttribute('data-speak-text');
+            const inline = await speaker.getAttribute('onclick');
+            const expected = text || inline?.match(/speakJapanese\(['"]([^'"]+)['"]\)/)?.[1];
+            assert.ok(expected, '詞條發音必須指定日文讀音');
+            const before = await page.evaluate(() => window.__spokenJapanese.length);
+            await speaker.click();
+            await page.waitForFunction(count => window.__spokenJapanese.length === count + 1, before);
+            assert.equal(await page.evaluate(() => window.__spokenJapanese.at(-1).text), expected);
+          }
+        }
+      } catch (error) {
+        failures.push(`文章${article} 詞條發音：${error.message}`);
+      }
+
       let playbackStage = 'start';
       try {
         const play = page.locator('#karaoke-play-btn');
@@ -278,7 +301,7 @@ async function main() {
     failures.forEach(failure => console.error(`- ${failure}`));
     process.exitCode = 1;
   } else {
-    console.log('PASS：文章29–33的控制列、活用表、例句朗讀與播放停止互動皆正常。');
+    console.log(`PASS：文章${LESSONS.join('、')}的控制列、活用表、詞條與例句朗讀、播放停止互動皆正常。`);
   }
 }
 

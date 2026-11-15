@@ -49,12 +49,17 @@ description: 建立或維護「さくら先生」日語學習網站，新增 N5�
 
 每個單元至少要有一項直接連結本文的教學內容，不留空區塊或占位文字。詞彙與動詞區分工：精選單字以非動詞詞彙或慣用表現為主；動詞的主要解說集中在動詞教室，避免重複展開。其他單元（例如形容詞補充、文化小知識）依文章內容選擇加入，並放在上述五個必備單元之後。
 
-## 例句朗讀、活用表與播放器（必備）
+## 詞條與例句朗讀、活用表與播放器（必備）
 
-- 精選單字、動詞、助詞、文法教室中的每個日文例句都要能單句朗讀，並附繁中翻譯。使用 `button.audio-btn` 搭配 `speakJapanese()` 或 `data-speak-text`；資料型教材可呼叫 `LessonRenderer.bindSpeechButtons()`，讓 `.doc-lesson .example-box .example-jp` 自動補上缺少的朗讀按鈕。確認按鈕讀出的文字不含按鈕圖示，且同一例句只觸發一次。
-- 動詞活用表沿用 `N5/文章1/index.html` 的介面：以 `button.conjugation-toggle` 呼叫 `toggleConjugation(id)`，控制帶唯一 ID 的 `.conjugation-table-wrapper`。不可直接把會被全站 CSS 隱藏的 `.conjugation-table-wrapper` 套在原生 `<details>` 上；若改用 `<details>`，必須另外定義可見狀態並實際展開確認表格有高度。
-- 全篇朗讀與停止控制沿用 `N5/文章1/index.html` 的 `.short-text-controls-row`／`.karaoke-controls` 結構和同級樣式。桌機控制列保持水平排列；手機將語速與播放控制上下排列，但播放和停止按鈕仍在同一列、不拉伸滿版、不互相重疊。
-- 新增上述互動時，逐一確認所有教學區的例句都有朗讀按鈕、每張動詞卡都能展開活用表，以及朗讀／停止控制在桌機和手機都沒有跑版。不能只確認控制項出現在 DOM 中。
+以 `N5/文章1/index.html` 為介面參考，依下列分工實作：
+
+- **詞條發音**：精選單字與動詞教室的每張卡，在 `.vocab-header` 提供獨立的詞條朗讀按鈕，並以 `.vocab-romaji` 顯示羅馬字讀音；保留假名、繁中釋義，動詞另標類別。動詞預設朗讀ます形，標題並列辭書形時，須清楚標示按鈕朗讀的形式。
+- **例句朗讀**：單字、動詞、助詞、文法教室的每個日文例句，另附單句朗讀按鈕與繁中翻譯。資料型教材可呼叫 `LessonRenderer.bindSpeechButtons()`，自動補齊 `.doc-lesson .example-box .example-jp` 的按鈕；例句按鈕不能取代詞條按鈕。
+- **共用朗讀規格**：上述按鈕使用 `button.audio-btn`，附 `aria-label`，透過 `speakJapanese()` 或 `data-speak-text` 傳入指定詞條或例句的純日文。排除中文、羅馬字、按鈕圖示、括號中的重複形式及 ruby 附加讀音；一次點擊只觸發一次朗讀。
+- **動詞活用表**：以 `button.conjugation-toggle` 呼叫 `toggleConjugation(id)`，控制帶唯一 ID 的 `.conjugation-table-wrapper`。若改用原生 `<details>`，須另外定義可見狀態，避免被全站 CSS 隱藏。
+- **全篇播放器**：沿用 `.short-text-controls-row`／`.karaoke-controls` 結構和同級樣式。桌機控制列水平排列；手機將語速與播放控制上下排列，但播放與停止按鈕仍維持同列、不拉伸滿版、不重疊。
+
+驗收須實際操作詞條與例句朗讀、展開活用表，並檢視桌機及手機版面，不能只確認 DOM 中有控制項。詳細檢查方式見 [lesson-validation.md](references/lesson-validation.md)。
 
 ## 隨堂小測驗
 

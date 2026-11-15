@@ -10,6 +10,7 @@
 - 資料型頁面若提供 `LESSON_DATA`，在載入 lesson.js 時立即設定 `window.LESSON_DATA = LESSON_DATA`，讓 `lesson-renderer.js` 的 legacy 自動轉換辨識到它。頂層 `const LESSON_DATA` 不等於 window 屬性。每個朗讀按鈕只綁定一次，實測一次點擊只送出一個 utterance。
 - 沿用同類頁的逐句解析：日文 Ruby、羅馬字、中文與逐句發音須與同一份本文資料對應。保留 `jp` 純文字供 TTS，`display` 才放 ruby；不要以含 rt 讀音的 textContent 作為朗讀文字。
 - `.audio-btn` 是圖示按鈕；補上 aria-label，避免把「例句朗讀」等長文字擠進固定寬度的圓形按鈕。若要文字按鈕，使用適合文字的樣式。
+- 分開驗收「詞條發音」與「例句朗讀」：逐張檢查精選單字與動詞卡的 `.vocab-header .audio-btn`、假名及 `.vocab-romaji`，並實際點擊每顆詞條按鈕，確認一次只送出一個 utterance，內容為該詞條指定形式的純日文讀音；不要只測 `.example-jp` 內的例句按鈕。
 - 單字、動詞、助詞、文法教室的每個 `.example-jp` 都要有可操作的朗讀按鈕，且實際送進 `speakJapanese()` 的文字需等於日文例句。資料型 `.doc-lesson` 可由 `LessonRenderer.bindSpeechButtons()` 補按鈕，但仍要確認四個教學區都涵蓋、沒有重複綁定。
 - 動詞活用表若沿用文章 1 的按鈕介面，點擊後確認 `.conjugation-table-wrapper` 加上可見狀態且表格高度大於零。若採用原生 `<details>`，不要讓全站 `.conjugation-table-wrapper { display:none }` 隱藏整個 details；需驗證摘要可見、點開後表格可見。
 - 比照 `N5/文章1` 檢查朗讀控制：桌機 `.short-text-controls-row` 為水平排列；手機語速控制移到播放列上方，但「全篇朗讀」和「停止」維持同一列且都在容器內。避免 `flex: 1 1 auto` 將按鈕拉寬到造成換行或跑版。
