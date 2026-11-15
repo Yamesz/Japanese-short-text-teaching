@@ -1,0 +1,43 @@
+/* Layout refinements shared by the five doc-based lessons. */
+.doc-lesson .lesson-shell { max-width:1200px; margin:0 auto; padding:0 24px; }
+.doc-lesson main.lesson-shell { padding-bottom:48px; }
+.doc-lesson h1 { color:var(--deep-sakura); font-size:clamp(1.6rem, 4vw, 2.2rem); line-height:1.6; }
+.doc-lesson h2 { font-size:1.35rem; }
+.doc-lesson h3 { margin-bottom:12px; line-height:1.9; }
+.doc-lesson p { line-height:1.9; margin:8px 0; }
+.doc-lesson .lesson-goals { color:var(--text-muted); }
+.doc-lesson .lesson-layout > * { min-width:0; }
+.doc-lesson .image-viewer-card { position:static; text-align:left; align-self:start; }
+.doc-lesson .short-text-title-row { align-items:flex-start; gap:12px; flex-wrap:wrap; }
+.doc-lesson .translation-label { display:inline-flex; align-items:center; gap:8px; white-space:nowrap; cursor:pointer; }
+.doc-lesson .speed-control { align-self:flex-start; }
+.doc-lesson .speed-btn { white-space:nowrap; min-height:40px; }
+.doc-lesson .karaoke-controls .action-btn { white-space:nowrap; min-height:44px; flex:0 0 auto; }
+.doc-lesson .manuscript-card { margin-top:16px; background:#fffbf7; border:1px dashed var(--soft-pink); border-radius:12px; padding:12px; }
+.doc-lesson .karaoke-cn { display:none; max-height:none; }
+.doc-lesson .karaoke-cn.show { display:block; max-height:none; }
+.doc-lesson .karaoke-line.active { background:#ffe0e8; }
+.doc-lesson .lesson-section { margin-top:40px; scroll-margin-top:24px; }
+.doc-lesson .card-grid { grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); }
+.doc-lesson .card-grid > * { min-width:0; }
+.doc-lesson .sentence-romaji { overflow-wrap:anywhere; }
+.doc-lesson .audio-btn { flex-shrink:0; width:40px; height:40px; }
+.doc-lesson .example-jp .audio-btn { width:30px; height:30px; font-size:.8rem; }
+.doc-lesson details { margin:16px 0; }
+.doc-lesson details.conjugation-table-wrapper { display:block; }
+.doc-lesson summary { cursor:pointer; color:var(--deep-sakura); font-weight:700; padding:8px 0; }
+.doc-lesson table { width:100%; border-collapse:collapse; }
+.doc-lesson caption { text-align:left; padding:8px 0; }
+.doc-lesson th,.doc-lesson td { padding:8px; text-align:left; border-bottom:1px solid var(--soft-pink); }
+.doc-lesson .quiz-options-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr)); }
+.doc-lesson .quiz-opt-btn { min-height:44px; overflow-wrap:anywhere; }
+.doc-lesson .lesson-footer { margin-top:24px; text-align:center; }
+.doc-lesson :is(button,a,summary,input):focus-visible { outline:3px solid #a23562; outline-offset:3px; }
+@media(max-width:600px) {
+  .doc-lesson .lesson-shell { padding-inline:16px; }
+  .doc-lesson .image-viewer-card,.doc-lesson .sentence-card,.doc-lesson .quiz-question-block { padding:16px; }
+  .doc-lesson .manuscript-card { padding:4px; }
+  .doc-lesson .karaoke-line { padding:10px 6px; }
+  .doc-lesson .karaoke-line.active { transform:none; }
+  .doc-lesson .sentence-jp { font-size:1.1rem; line-height:2.3; }
+}

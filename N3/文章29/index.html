@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N3 適讀日語短文〈ゴミの日〉，學習剛發生的事情、預期與現實的落差，以及生活中的實用表達。">
+  <title>文章29：ゴミの日 | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body class="doc-lesson" data-article-id="article-29" data-level="N3" onload="initArticleLearnedState('article-29')">
+  <header class="lesson-header">
+    <div class="lesson-shell">
+      <a href="../../index.html" class="back-btn">← 回主頁入口目錄</a>
+      <h1>🌸 文章29：ゴミの日（倒垃圾的日子）</h1>
+      <p class="lesson-goals">學習目標：理解「〜たばかり」「しか〜ない」「〜はずなのに」和「〜ておく」。適讀程度：N3。</p>
+    </div>
+  </header>
+
+  <main class="lesson-shell">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" aria-labelledby="passage-title">
+        <div class="short-text-title-row">
+          <h2 id="passage-title">📜 日語短文</h2>
+          <label class="translation-label"><span>🌐 顯示中文翻譯</span><span class="lang-toggle"><input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯"><span class="toggle-track"></span></span></label>
+        </div>
+        <div class="short-text-controls-row">
+          <div class="speed-control" aria-label="朗讀語速"><button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button><button class="speed-btn active" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button></div>
+          <div class="karaoke-controls"><button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button><button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button></div>
+        </div>
+        <div class="karaoke-status idle" role="status" aria-live="polite"><span class="status-dot"></span><span class="status-text">準備就緒</span></div>
+        <div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+        <div id="lesson-passage" class="manuscript-card" lang="ja"></div>
+        <div class="sensei-note-box"><strong>🌸 さくら先生導讀點撥：</strong><br>安娜才剛搬到新地方，沿用搬家時拿到的舊資訊去丟垃圾，卻遇到規則已經更改。婆婆的提醒和手寫留言，讓她逐漸感受到新城鎮的人情味。文中的「はずなのに」呈現預期落空，「しか〜ない」則描述只完成一部分的狀態。</div>
+      </section>
+      <section aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title" class="section-title">📖 逐句朗讀與解析</h2>
+        <div id="lesson-breakdown" class="sentence-list"></div>
+      </section>
+    </div>
+
+    <section id="vocabulary-section" class="lesson-section" aria-labelledby="vocabulary-title">
+      <h2 id="vocabulary-title" class="section-title">📚 精選單字</h2>
+      <div class="card-grid">
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>近道<rt>ちかみち</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀近道" onclick="speakJapanese('ちかみち')">🔊</button></div><div class="vocab-meaning">名詞：捷徑、近路。本文指通往車站比較近的路。</div><div class="example-box"><div class="example-jp">駅までの近道を教えてください。</div><div class="example-cn">請告訴我到車站的捷徑。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>燃<rt>も</rt></ruby>えるゴミ</div><button class="audio-btn" type="button" aria-label="朗讀燃えるゴミ" onclick="speakJapanese('もえるごみ')">🔊</button></div><div class="vocab-meaning">名詞：可燃垃圾。日本各地的垃圾分類與收集日期可能不同。</div><div class="example-box"><div class="example-jp">燃えるゴミは水曜日に出します。</div><div class="example-cn">可燃垃圾星期三拿出去丟。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">ゴミ<ruby>置<rt>お</rt></ruby>き<ruby>場<rt>ば</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀ゴミ置き場" onclick="speakJapanese('ごみおきば')">🔊</button></div><div class="vocab-meaning">名詞：垃圾集中處、垃圾投放區。</div><div class="example-box"><div class="example-jp">ゴミ置き場には何もありません。</div><div class="example-cn">垃圾集中處什麼也沒有。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>色分<rt>いろわ</rt></ruby>け</div><button class="audio-btn" type="button" aria-label="朗讀色分け" onclick="speakJapanese('いろわけ')">🔊</button></div><div class="vocab-meaning">名詞：按顏色區分、分類標色。常見形式是「色分けする」。</div><div class="example-box"><div class="example-jp">曜日ごとに色分けしてあります。</div><div class="example-cn">已經按星期分別標上顏色。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>不動産屋<rt>ふどうさんや</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀不動産屋" onclick="speakJapanese('ふどうさんや')">🔊</button></div><div class="vocab-meaning">名詞：房仲、房地產仲介店。「〜屋」常表示某種店家或從事某種工作的店。</div><div class="example-box"><div class="example-jp">不動産屋で町の地図をもらいました。</div><div class="example-cn">我在房仲那裡拿了城鎮地圖。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>暮<rt>く</rt></ruby>らしやすい</div><button class="audio-btn" type="button" aria-label="朗讀暮らしやすい" onclick="speakJapanese('くらしやすい')">🔊</button></div><div class="vocab-meaning">い形容詞：容易生活、住起來方便。「動詞ます形去ます＋やすい」表示容易做某事。</div><div class="example-box"><div class="example-jp">この町は静かで暮らしやすいです。</div><div class="example-cn">這個城鎮很安靜，住起來很舒服。</div></div></article>
+      </div>
+    </section>
+
+    <section id="verb-classroom-section" class="lesson-section" aria-labelledby="verb-classroom-title">
+      <h2 id="verb-classroom-title" class="section-title">🏃 動詞教室</h2>
+      <div class="card-grid">
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">ひっこします（<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>します／引っ越す）</div><button class="audio-btn" type="button" aria-label="朗讀引っ越します" onclick="speakJapanese('ひっこします')">🔊</button></div><div class="vocab-romaji">讀音：hi-k-ko-shi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：搬家、遷居。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>引っ越す的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>引っ越す</td><td>引っ越します</td><td>引っ越しました</td><td>引っ越して</td><td>引っ越さない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">先週、この町に引っ越してきました。</div><div class="example-cn">我上週才搬來這個城鎮。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">だします（<ruby>出<rt>だ</rt></ruby>します／出す）</div><button class="audio-btn" type="button" aria-label="朗讀出します" onclick="speakJapanese('だします')">🔊</button></div><div class="vocab-romaji">讀音：da-shi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：拿出、提出；本文「ゴミを出す」指把垃圾拿出去丟。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>出す的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>出す</td><td>出します</td><td>出しました</td><td>出して</td><td>出さない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">朝、ゴミを出しました。</div><div class="example-cn">早上我把垃圾拿出去丟了。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">かわります（<ruby>変<rt>か</rt></ruby>わります／変わる）</div><button class="audio-btn" type="button" aria-label="朗讀変わります" onclick="speakJapanese('かわります')">🔊</button></div><div class="vocab-romaji">讀音：ka-wa-ri-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：改變、變更；「AからBに変わる」表示從 A 改成 B。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>変わる的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>変わる</td><td>変わります</td><td>変わりました</td><td>変わって</td><td>変わらない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">ゴミの日は先月から水曜日に変わりました。</div><div class="example-cn">垃圾收集日從上個月起改成星期三。</div></div></article>
+        <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">はります（<ruby>貼<rt>は</rt></ruby>ります／貼る）</div><button class="audio-btn" type="button" aria-label="朗讀貼ります" onclick="speakJapanese('はります')">🔊</button></div><div class="vocab-romaji">讀音：ha-ri-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：貼上、張貼。「紙を冷蔵庫に貼る」表示把紙貼在冰箱上。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>貼る的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>貼る</td><td>貼ります</td><td>貼りました</td><td>貼って</td><td>貼らない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">町の予定表を冷蔵庫に貼っておきます。</div><div class="example-cn">我會先把城鎮行事表貼在冰箱上。</div></div></article>
+      </div>
+    </section>
+
+    <section id="particle-section" class="lesson-section" aria-labelledby="particle-title">
+      <h2 id="particle-title" class="section-title">🧩 助詞教室</h2>
+      <div class="card-grid">
+        <article class="vocab-card"><h3>に：移動的目的地、到達點</h3><p>「この町に引っ越してきた」的「に」標示搬家的目的地；「冷蔵庫に貼る」則標示張貼的位置。</p><div class="example-box"><div class="example-jp">町に引っ越して、紙を冷蔵庫に貼りました。</div><div class="example-cn">搬到城鎮後，把紙貼在冰箱上。</div></div></article>
+        <article class="vocab-card"><h3>まで：移動或範圍的終點</h3><p>「駅までの近道」中的「まで」表示路線的終點是車站。留言中的「三階の山田まで」則表示要找山田為止，也就是請找三樓的山田。</p><div class="example-box"><div class="example-jp">ここから駅まで歩きます。</div><div class="example-cn">我從這裡走到車站。</div></div></article>
+        <article class="vocab-card"><h3>には：に＋は，帶出對比</h3><p>「ゴミ置き場には袋が一つもなかった」用「に」指出袋子所在的位置，再加「は」凸顯這個場所作為話題；句中也帶有「預期會有，結果卻沒有」的對比。</p><div class="example-box"><div class="example-jp">冷蔵庫には町の予定表があります。</div><div class="example-cn">冰箱上有城鎮的行事表。</div></div></article>
+      </div>
+    </section>
+
+    <section id="grammar-section" class="lesson-section" aria-labelledby="grammar-title">
+      <h2 id="grammar-title" class="section-title">🌸 さくら先生的精選文法教室</h2>
+      <div class="card-grid">
+        <article class="vocab-card"><h3>1. 動詞た形＋ばかり：剛做完不久</h3><p>表示說話者認為某件事剛發生不久，時間感受帶有主觀性。可以用「動詞てくる」表示移動到目前所在處。</p><div class="example-box"><div class="example-jp">この町に引っ越してきたばかりです。</div><div class="example-cn">我才剛搬來這個城鎮。</div></div></article>
+        <article class="vocab-card"><h3>2. 名詞＋しか＋否定：只有……</h3><p>「しか」後面要接否定形式，表示數量或範圍有限。本文的「半分しか開けていなかった」不是「只開了半邊門」，而是「紙箱只拆開一半」。</p><div class="example-box"><div class="example-jp">段ボールは半分しか開けていません。</div><div class="example-cn">紙箱只拆開了一半。</div></div></article>
+        <article class="vocab-card"><h3>3. 普通形＋はずなのに：明明應該……卻……</h3><p>「はず」表示根據資訊作出的預期；接「なのに」時，後面的事實與預期不同，帶有意外或不解的語氣。「月曜日のはずなのに」即是「明明應該是星期一，卻……」。</p><div class="example-box"><div class="example-jp">月曜日のはずなのに、ゴミが一つもありません。</div><div class="example-cn">明明應該是星期一，卻一個垃圾袋也沒有。</div></div></article>
+        <article class="vocab-card"><h3>4. 動詞て形＋おく：事先做好並維持狀態</h3><p>「貼っておく」表示先把紙貼好，之後讓它維持貼著的狀態。「〜ておく」常縮約成「〜とく」，但書面教材通常保留完整形式。</p><div class="example-box"><div class="example-jp">忘れないように、予定表を貼っておきます。</div><div class="example-cn">為了不忘記，我會先把行事表貼好。</div></div></article>
+      </div>
+    </section>
+
+    <section id="quiz-section" class="lesson-section lesson-quiz-container" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">📝 隨堂小測驗</h2>
+      <div id="quiz-block-q29_1" class="quiz-question-block"><p class="quiz-question-text">題目 1：「段ボールは半分しか開けていない」表示什麼？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_1',0,1,'「しか〜ない」表示僅有某個數量或範圍。')">A. 紙箱一個也沒有打開</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_1',1,1,'答對了！しか後面接否定，表示只拆開一半。')">B. 紙箱只拆開一半</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_1',2,1,'句子沒有表示全部拆開。')">C. 所有紙箱都拆開了</button></div><div id="quiz-fb-q29_1" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-block-q29_2" class="quiz-question-block"><p class="quiz-question-text">題目 2：「月曜日のはずなのに、袋がない」表達什麼？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_2',0,2,'「はずなのに」連接預期和不符合預期的事實。')">A. 因為不是星期一，所以沒有垃圾袋</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_2',1,2,'這句話不是在說垃圾袋已經被拿走。')">B. 垃圾袋已經被拿去回收</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_2',2,2,'正確！安娜以為星期一會收垃圾，現場卻沒有袋子。')">C. 明明應該是星期一，卻沒有垃圾袋</button></div><div id="quiz-fb-q29_2" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-block-q29_3" class="quiz-question-block"><p class="quiz-question-text">題目 3：婆婆建議把垃圾日行事表貼在冰箱上。「貼っておく」最符合哪個意思？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_3',0,0,'答對了！貼好後讓行事表留在冰箱上，方便之後查看。')">A. 先貼好，之後維持貼著</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_3',1,0,'「ておく」不是表示把東西從冰箱撕下來。')">B. 從冰箱上撕下來</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q29_3',2,0,'這裡不是「正在撕」的意思。')">C. 正在撕紙</button></div><div id="quiz-fb-q29_3" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite"><h3>🎉 測驗完成結果</h3><div class="quiz-score-number"></div><div class="quiz-score-msg"></div></div>
+    </section>
+
+    <aside class="sensei-note-box" aria-label="教材來源">教材來源：依據使用者提供的〈ゴミの日〉整理，略去部分重複描述，保留原文 N3 難度、故事轉折與核心句型。</aside>
+    <div class="lesson-footer"><button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-29')">✅ 標記為已學習</button></div>
+  </main>
+
+  <div class="karaoke-progress-container" aria-hidden="true"><div class="karaoke-progress-bar"></div></div>
+  <footer><p>🌸 さくら先生の日本語教室－文章29 獨立單元網頁 © 2026. <a href="../../index.html">返回主頁目錄</a></p></footer>
+  <script src="../../js/audio.js"></script>
+  <script src="../../js/karaoke.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/lesson-renderer.js"></script>
+  <script src="lesson.js"></script>
+</body>
+</html>

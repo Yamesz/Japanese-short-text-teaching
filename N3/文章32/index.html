@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N3 適讀日語短文〈夜十時の音〉，學習推測、程度、動作先後與樣態表達。">
+  <title>文章32：夜十時の音 | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body class="doc-lesson" data-article-id="article-32" data-level="N3" onload="initArticleLearnedState('article-32')">
+  <header class="lesson-header"><div class="lesson-shell">
+    <a href="../../index.html" class="back-btn">← 回主頁入口目錄</a>
+    <h1>🌸 文章32：夜十時の音（晚上十點的聲音）</h1>
+    <p class="lesson-goals">學習目標：掌握「〜に違いない」「〜ほど」「〜てから」與「〜そうに」。適讀程度：N3。</p>
+  </div></header>
+  <main class="lesson-shell">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" aria-labelledby="passage-title">
+        <div class="short-text-title-row"><h2 id="passage-title">📜 日語短文</h2><label class="translation-label"><span>🌐 顯示中文翻譯</span><span class="lang-toggle"><input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯"><span class="toggle-track"></span></span></label></div>
+        <div class="short-text-controls-row"><div class="speed-control" aria-label="朗讀語速"><button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button><button class="speed-btn active" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button></div><div class="karaoke-controls"><button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button><button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button></div></div>
+        <div class="karaoke-status idle" role="status" aria-live="polite"><span class="status-dot"></span><span class="status-text">準備就緒</span></div><div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+        <div id="lesson-passage" class="manuscript-card" lang="ja"></div>
+        <div class="sensei-note-box"><strong>🌸 さくら先生導讀點撥：</strong><br>琳起初把規律的敲擊聲猜成料理或某種練習，後來才知道鄰居每晚都在練習手打蕎麥麵，因為過世的先生很喜歡。了解聲音背後的故事後，琳不再覺得吵；鄰居送來的蕎麥麵也讓這段相遇多了一份溫暖。</div>
+      </section>
+      <section aria-labelledby="breakdown-title"><h2 id="breakdown-title" class="section-title">📖 逐句朗讀與解析</h2><div id="lesson-breakdown" class="sentence-list"></div></section>
+    </div>
+
+    <section id="vocabulary-section" class="lesson-section" aria-labelledby="vocabulary-title"><h2 id="vocabulary-title" class="section-title">📚 精選單字</h2><div class="card-grid">
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>隣<rt>となり</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀隣" onclick="speakJapanese('となり')">🔊</button></div><div class="vocab-meaning">名詞：旁邊、隔壁。通常指緊鄰的位置或住家。</div><div class="example-box"><div class="example-jp">隣の部屋から音が聞こえました。</div><div class="example-cn">我聽見隔壁房間傳來聲音。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>練習<rt>れんしゅう</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀練習" onclick="speakJapanese('れんしゅう')">🔊</button></div><div class="vocab-meaning">名詞／する動詞：練習。為了熟練某種技能而反覆進行。</div><div class="example-box"><div class="example-jp">毎晩そば打ちの練習をしています。</div><div class="example-cn">我每晚都在練習打蕎麥麵。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">そば<ruby>打<rt>う</rt></ruby>ち</div><button class="audio-btn" type="button" aria-label="朗讀そば打ち" onclick="speakJapanese('そばうち')">🔊</button></div><div class="vocab-meaning">名詞：手打蕎麥麵；指揉合、延展蕎麥麵糰並切成麵條的過程。</div><div class="example-box"><div class="example-jp">そば打ちを一から習いました。</div><div class="example-cn">我從頭開始學習手打蕎麥麵。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>主人<rt>しゅじん</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀主人" onclick="speakJapanese('しゅじん')">🔊</button></div><div class="vocab-meaning">名詞：自己的丈夫。談到別人的丈夫時常用「ご主人」。</div><div class="example-box"><div class="example-jp">主人が好きだった料理を作ります。</div><div class="example-cn">我會做丈夫以前喜歡的料理。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>袋<rt>ふくろ</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀袋" onclick="speakJapanese('ふくろ')">🔊</button></div><div class="vocab-meaning">名詞：袋子。可搭配「袋に入れる」「袋を開ける」等說法。</div><div class="example-box"><div class="example-jp">ドアの前に小さな袋がありました。</div><div class="example-cn">門前有一個小袋子。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>太<rt>ふと</rt></ruby>さ</div><button class="audio-btn" type="button" aria-label="朗讀太さ" onclick="speakJapanese('ふとさ')">🔊</button></div><div class="vocab-meaning">名詞：粗細、粗度。由い形容詞「太い」加上「さ」構成，表示性質或程度。</div><div class="example-box"><div class="example-jp">麺の太さが少しずつ違います。</div><div class="example-cn">麵條的粗細各有不同。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>下手<rt>へた</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀下手" onclick="speakJapanese('へた')">🔊</button></div><div class="vocab-meaning">な形容詞：不擅長、技術還不熟練。常用「〜が下手」或「下手ですが」。</div><div class="example-box"><div class="example-jp">まだ下手ですが、毎日練習しています。</div><div class="example-cn">我還不太擅長，但每天都在練習。</div></div></article>
+    </div></section>
+
+    <section id="verb-classroom-section" class="lesson-section" aria-labelledby="verb-classroom-title"><h2 id="verb-classroom-title" class="section-title">🏃 動詞教室</h2><div class="card-grid">
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">きこえます（<ruby>聞<rt>き</rt></ruby>こえます／聞こえる）</div><button class="audio-btn" type="button" aria-label="朗讀聞こえます" onclick="speakJapanese('きこえます')">🔊</button></div><div class="vocab-romaji">讀音：ki-ko-e-ma-su｜第二類動詞</div><div class="vocab-meaning">意思：聽得見、傳入耳中。屬於自然聽見，不強調刻意聆聽；刻意聽用「聞く」。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>聞こえる的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>聞こえる</td><td>聞こえます</td><td>聞こえました</td><td>聞こえて</td><td>聞こえない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">隣の部屋から音が聞こえます。</div><div class="example-cn">我聽得到隔壁房間傳來聲音。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">つづきます（<ruby>続<rt>つづ</rt></ruby>きます／続く）</div><button class="audio-btn" type="button" aria-label="朗讀続きます" onclick="speakJapanese('つづきます')">🔊</button></div><div class="vocab-romaji">讀音：tsu-zu-ki-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：持續、繼續。表示某種狀態或現象延續。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>続く的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>続く</td><td>続きます</td><td>続きました</td><td>続いて</td><td>続かない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">雨は三十分ほど続きました。</div><div class="example-cn">雨持續了約三十分鐘。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">まよいます（<ruby>迷<rt>まよ</rt></ruby>います／迷う）</div><button class="audio-btn" type="button" aria-label="朗讀迷います" onclick="speakJapanese('まよいます')">🔊</button></div><div class="vocab-romaji">讀音：ma-yo-i-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：猶豫、拿不定主意；也可以表示迷路。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>迷う的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>迷う</td><td>迷います</td><td>迷いました</td><td>迷って</td><td>迷わない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">聞くかどうか少し迷いました。</div><div class="example-cn">我猶豫了一下要不要問。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">うちます（<ruby>打<rt>う</rt></ruby>ちます／打つ）</div><button class="audio-btn" type="button" aria-label="朗讀打ちます" onclick="speakJapanese('うちます')">🔊</button></div><div class="vocab-romaji">讀音：u-chi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：打、敲；「そばを打つ」是製作手打蕎麥麵的固定說法。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>打つ的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>打つ</td><td>打ちます</td><td>打ちました</td><td>打って</td><td>打たない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">祖母に習って、家でそばを打っています。</div><div class="example-cn">我向祖母學習，在家裡打蕎麥麵。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">よろこびます（<ruby>喜<rt>よろこ</rt></ruby>びます／喜ぶ）</div><button class="audio-btn" type="button" aria-label="朗讀喜びます" onclick="speakJapanese('よろこびます')">🔊</button></div><div class="vocab-romaji">讀音：yo-ro-ko-bi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：高興、歡喜。常以「人が喜ぶ」表示某人感到高興。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>喜ぶ的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>喜ぶ</td><td>喜びます</td><td>喜びました</td><td>喜んで</td><td>喜ばない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">母は手紙をもらって喜びました。</div><div class="example-cn">媽媽收到信後很高興。</div></div></article>
+    </div></section>
+
+    <section id="particle-section" class="lesson-section" aria-labelledby="particle-title"><h2 id="particle-title" class="section-title">🧩 助詞教室</h2><div class="card-grid">
+      <article class="vocab-card"><h3>から：聲音或移動的來源</h3><p>「隣の部屋から音が聞こえる」用「から」指出聲音傳來的來源，也可用在移動的起點。</p><div class="example-box"><div class="example-jp">台所からいい匂いがします。</div><div class="example-cn">廚房傳來很香的味道。</div></div></article>
+      <article class="vocab-card"><h3>に：到達時間、動作對象</h3><p>「十時ちょうどに始まる」用「に」標示動作發生的確切時間；「女性に会う」中的「に」則標示見面對象。</p><div class="example-box"><div class="example-jp">七時に先生に会います。</div><div class="example-cn">我七點和老師見面。</div></div></article>
+      <article class="vocab-card"><h3>ほど：大約的時間或程度</h3><p>「三十分ほど」表示大約三十分鐘；「驚くほどおいしい」則表示好吃到令人驚訝的程度。</p><div class="example-box"><div class="example-jp">駅まで十分ほどかかります。</div><div class="example-cn">到車站大約要十分鐘。</div></div></article>
+    </div></section>
+
+    <section id="grammar-section" class="lesson-section" aria-labelledby="grammar-title"><h2 id="grammar-title" class="section-title">🌸 さくら先生的精選文法教室</h2><div class="card-grid">
+      <article class="vocab-card"><h3>1. 普通形＋に違いない：一定……、肯定……</h3><p>表示說話者對推測有很高把握，常根據線索得出結論。本文先推測隔壁在練習，結尾再推想過世的先生一定也很高興。</p><div class="example-box"><div class="example-jp">毎日練習しているから、上手になったに違いありません。</div><div class="example-cn">因為每天練習，一定變得更熟練了。</div></div></article>
+      <article class="vocab-card"><h3>2. 數量詞＋ほど：大約……</h3><p>接在數量或時間後，表示大概的程度；也能接在動詞或句子後，強調某種程度之深。「三十分ほど」就是大約三十分鐘。</p><div class="example-box"><div class="example-jp">ここから駅まで、歩いて十五分ほどです。</div><div class="example-cn">從這裡走到車站大約十五分鐘。</div></div></article>
+      <article class="vocab-card"><h3>3. 動詞て形＋から：做完……之後</h3><p>表示先完成前一個動作，再進行後面的動作。本文「少し迷ってから聞いた」是猶豫之後才發問。</p><div class="example-box"><div class="example-jp">よく考えてから、返事をします。</div><div class="example-cn">仔細想過之後再回覆。</div></div></article>
+      <article class="vocab-card"><h3>4. い形容詞去い／な形容詞＋そうに：看起來……地</h3><p>「恥ずかしそうに笑う」描述從表情或動作看起來很不好意思。注意這裡是樣態，不是「聽說」的傳聞用法。</p><div class="example-box"><div class="example-jp">子どもはうれしそうに話していました。</div><div class="example-cn">孩子看起來很開心地說著話。</div></div></article>
+      <article class="vocab-card"><h3>5. 動詞ている：持續中的動作或習慣</h3><p>依上下文可表示此刻正在進行，也可表示一段時間持續的習慣。「毎晩少しずつ練習している」是每天晚上持續練習。</p><div class="example-box"><div class="example-jp">祖父は毎朝公園を歩いています。</div><div class="example-cn">祖父每天早上都會在公園散步。</div></div></article>
+    </div></section>
+
+    <section id="quiz-section" class="lesson-section lesson-quiz-container" aria-labelledby="quiz-title"><h2 id="quiz-title" class="section-title">📝 隨堂小測驗</h2>
+      <div id="quiz-block-q32_1" class="quiz-question-block"><p class="quiz-question-text">題目 1：隔壁的聲音其實來自什麼？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_1',0,2,'女士每天練習手打蕎麥麵，敲打的聲音傳到隔壁。')">A. 鄰居在學打鼓</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_1',1,2,'琳起初以為是做菜聲，但真正原因是練習打蕎麥麵。')">B. 鄰居每天晚上做菜</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_1',2,2,'答對了！女士為了過世的先生，每晚練習手打蕎麥麵。')">C. 鄰居在練習手打蕎麥麵</button></div><div id="quiz-fb-q32_1" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-block-q32_2" class="quiz-question-block"><p class="quiz-question-text">題目 2：「三十分ほど続く」中的「ほど」表示什麼？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_2',0,1,'此處的「ほど」接時間數量，表示大約三十分鐘。')">A. 至少持續三十分鐘</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_2',1,1,'正確！這裡是大約的時間長度。')">B. 大約持續三十分鐘</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_2',2,1,'文中沒有表示聲音剛好在三十分鐘內消失。')">C. 聲音在三十分鐘前開始</button></div><div id="quiz-fb-q32_2" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-block-q32_3" class="quiz-question-block"><p class="quiz-question-text">題目 3：琳認為過世的先生也一定很高興，她用了哪個表達？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_3',0,0,'答對了！「〜に違いない」表示說話者很有把握的推測。')">A. 喜んだに違いない</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_3',1,0,'「喜んだかもしれない」表示可能如此，語氣較不確定。')">B. 喜んだかもしれない</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q32_3',2,0,'「喜ぶことにした」是決定要高興，與故事意思不同。')">C. 喜ぶことにした</button></div><div id="quiz-fb-q32_3" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite"><h3>🎉 測驗完成結果</h3><div class="quiz-score-number"></div><div class="quiz-score-msg"></div></div>
+    </section>
+
+    <aside class="sensei-note-box" aria-label="教材來源">教材來源：依據使用者提供的〈夜十時の音〉整理，合併部分重複描述，保留誤會、理解與分享蕎麥麵的情節及 N3 句型。</aside>
+    <div class="lesson-footer"><button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-32')">✅ 標記為已學習</button></div>
+  </main>
+  <div class="karaoke-progress-container" aria-hidden="true"><div class="karaoke-progress-bar"></div></div>
+  <footer><p>🌸 さくら先生の日本語教室－文章32 獨立單元網頁 © 2026. <a href="../../index.html">返回主頁目錄</a></p></footer>
+  <script src="../../js/audio.js"></script><script src="../../js/karaoke.js"></script><script src="../../js/quiz.js"></script><script src="../../js/progress.js"></script><script src="../../js/ui.js"></script><script src="../../js/lesson-renderer.js"></script><script src="lesson.js"></script>
+</body>
+</html>

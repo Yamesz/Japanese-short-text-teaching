@@ -48,6 +48,7 @@ function syncSpeedControlButtons() {
     button.dataset.rate = config[buttonMode];
     button.dataset.speedMode = buttonMode;
     button.classList.toggle('active', buttonMode === mode);
+    button.setAttribute('aria-pressed', String(buttonMode === mode));
   });
 }
 
@@ -95,6 +96,9 @@ function speakJapanese(text) {
     alert('您的瀏覽器不支援語音功能');
     return;
   }
+  // A one-shot utterance owns the same speech queue as article playback.
+  // Stop its UI/state as well as the browser queue before taking over.
+  if (typeof stopArticleAudio === 'function') stopArticleAudio();
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'ja-JP';

@@ -25,7 +25,7 @@
 
 ### Progressive 階梯故事
 
-路徑為 Progressive/StoryNN。每篇故事可切換多個級數版本，使用 Story 分類和 progressive-* 進度 ID。切換後需確認朗讀句子、解析內容、語速與翻譯顯示都對應目前級數。
+路徑為 Progressive/StoryNN。每篇故事可切換多個級數版本，使用 Story 分類和 progressive-\* 進度 ID。切換後需確認朗讀句子、解析內容、語速與翻譯顯示都對應目前級數。
 
 ### 來源型系列
 

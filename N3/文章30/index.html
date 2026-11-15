@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N3 適讀日語短文〈コインランドリーの忘れ物〉，學習「わけではない」、「ついでに」及「かどうか」等表達。">
+  <title>文章30：コインランドリーの忘れ物 | さくら先生の日本語教室</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body class="doc-lesson" data-article-id="article-30" data-level="N3" onload="initArticleLearnedState('article-30')">
+  <header class="lesson-header">
+    <div class="lesson-shell">
+      <a href="../../index.html" class="back-btn">← 回主頁入口目錄</a>
+      <h1>🌸 文章30：コインランドリーの忘れ物（自助洗衣店的遺失物）</h1>
+      <p class="lesson-goals">學習目標：掌握「〜わけではない」「〜ついでに」「〜かどうか」與「〜ことにする」。適讀程度：N3。</p>
+    </div>
+  </header>
+
+  <main class="lesson-shell">
+    <div class="lesson-layout">
+      <section class="image-viewer-card" aria-labelledby="passage-title">
+        <div class="short-text-title-row"><h2 id="passage-title">📜 日語短文</h2><label class="translation-label"><span>🌐 顯示中文翻譯</span><span class="lang-toggle"><input type="checkbox" onchange="toggleTranslation(this)" aria-label="顯示中文翻譯"><span class="toggle-track"></span></span></label></div>
+        <div class="short-text-controls-row"><div class="speed-control" aria-label="朗讀語速"><button class="speed-btn" data-rate="0.5" onclick="setSpeechRate(0.5, this)">🐢 慢速</button><button class="speed-btn active" data-rate="1" onclick="setSpeechRate(1, this)">🏃 普通</button></div><div class="karaoke-controls"><button class="action-btn" id="karaoke-play-btn" onclick="playFullArticleAudio()">🔊 全篇朗讀</button><button class="action-btn" id="karaoke-stop-btn" onclick="stopArticleAudio()" disabled>⏹ 停止</button></div></div>
+        <div class="karaoke-status idle" role="status" aria-live="polite"><span class="status-dot"></span><span class="status-text">準備就緒</span></div><div class="pause-notice">暫停後無法繼續時，請停止並重新播放。</div>
+        <div id="lesson-passage" class="manuscript-card" lang="ja"></div>
+        <div class="sensei-note-box"><strong>🌸 さくら先生導讀點撥：</strong><br>瑪麗亞發現一條被遺忘的圍巾，原本想依照店內規定放進遺失物箱，卻在整理物品時讀到一封信。信中的說明讓她知道，圍巾是刻意留給需要的人。故事以她把圍巾圍上、望向窗外的畫面收尾，也留下她是否會使用它的想像空間。</div>
+      </section>
+      <section aria-labelledby="breakdown-title"><h2 id="breakdown-title" class="section-title">📖 逐句朗讀與解析</h2><div id="lesson-breakdown" class="sentence-list"></div></section>
+    </div>
+
+    <section id="vocabulary-section" class="lesson-section" aria-labelledby="vocabulary-title"><h2 id="vocabulary-title" class="section-title">📚 精選單字</h2><div class="card-grid">
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">コインランドリー</div><button class="audio-btn" type="button" aria-label="朗讀コインランドリー" onclick="speakJapanese('こいんらんどりー')">🔊</button></div><div class="vocab-meaning">名詞：自助洗衣店。店內通常設有投幣式洗衣機和烘衣機。</div><div class="example-box"><div class="example-jp">週末はコインランドリーを利用します。</div><div class="example-cn">週末我會使用自助洗衣店。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>大家<rt>おおや</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀大家" onclick="speakJapanese('おおや')">🔊</button></div><div class="vocab-meaning">名詞：房東。通常指出租房屋的人。</div><div class="example-box"><div class="example-jp">大家に電話して、修理を頼みました。</div><div class="example-cn">我打電話給房東，請他修理。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>乾燥機<rt>かんそうき</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀乾燥機" onclick="speakJapanese('かんそうき')">🔊</button></div><div class="vocab-meaning">名詞：烘衣機、乾燥機。</div><div class="example-box"><div class="example-jp">乾燥機の上に帽子が置いてあります。</div><div class="example-cn">烘衣機上放著一頂帽子。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>忘<rt>わす</rt></ruby>れ<ruby>物<rt>もの</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀忘れ物" onclick="speakJapanese('わすれもの')">🔊</button></div><div class="vocab-meaning">名詞：遺忘物、遺失物；因忘記帶走而留下的東西。</div><div class="example-box"><div class="example-jp">電車に傘の忘れ物がありました。</div><div class="example-cn">電車上有一把遺忘的傘。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>手袋<rt>てぶくろ</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀手袋" onclick="speakJapanese('てぶくろ')">🔊</button></div><div class="vocab-meaning">名詞：手套。字面上是「手的袋子」。</div><div class="example-box"><div class="example-jp">寒い日は手袋をします。</div><div class="example-cn">天冷的日子會戴手套。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>封筒<rt>ふうとう</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀封筒" onclick="speakJapanese('ふうとう')">🔊</button></div><div class="vocab-meaning">名詞：信封。可搭配「手紙を入れる」「宛名を書く」等說法。</div><div class="example-box"><div class="example-jp">封筒に住所を書きました。</div><div class="example-cn">我在信封上寫了地址。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>祖母<rt>そぼ</rt></ruby></div><button class="audio-btn" type="button" aria-label="朗讀祖母" onclick="speakJapanese('そぼ')">🔊</button></div><div class="vocab-meaning">名詞：祖母、奶奶或外婆。談自己的長輩時使用；稱呼別人的祖母常說「おばあさん」。</div><div class="example-box"><div class="example-jp">祖母が編んでくれたマフラーです。</div><div class="example-cn">這是祖母幫我織的圍巾。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word"><ruby>手書<rt>てが</rt></ruby>き</div><button class="audio-btn" type="button" aria-label="朗讀手書き" onclick="speakJapanese('てがき')">🔊</button></div><div class="vocab-meaning">名詞／な形容詞：手寫、親筆寫的。常見說法是「手書きのメッセージ」。</div><div class="example-box"><div class="example-jp">手書きのメッセージを読みました。</div><div class="example-cn">我讀了一段手寫訊息。</div></div></article>
+    </div></section>
+
+    <section id="verb-classroom-section" class="lesson-section" aria-labelledby="verb-classroom-title"><h2 id="verb-classroom-title" class="section-title">🏃 動詞教室</h2><div class="card-grid">
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">なおします（<ruby>直<rt>なお</rt></ruby>します／直す）</div><button class="audio-btn" type="button" aria-label="朗讀直します" onclick="speakJapanese('なおします')">🔊</button></div><div class="vocab-romaji">讀音：na-o-shi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：修理、修好；也可表示改正錯誤。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>直す的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>直す</td><td>直します</td><td>直しました</td><td>直して</td><td>直さない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">大家に頼んでも、まだ直してもらえません。</div><div class="example-cn">就算拜託房東，目前也還沒修好。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">おきます（<ruby>置<rt>お</rt></ruby>きます／置く）</div><button class="audio-btn" type="button" aria-label="朗讀置きます" onclick="speakJapanese('おきます')">🔊</button></div><div class="vocab-romaji">讀音：o-ki-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：放置、擺放。本文的「置いてある」表示放好後仍留在原處。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>置く的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>置く</td><td>置きます</td><td>置きました</td><td>置いて</td><td>置かない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">鍵は入口の箱に置いてあります。</div><div class="example-cn">鑰匙放在入口的盒子裡。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">まよいます（<ruby>迷<rt>まよ</rt></ruby>います／迷う）</div><button class="audio-btn" type="button" aria-label="朗讀迷います" onclick="speakJapanese('まよいます')">🔊</button></div><div class="vocab-romaji">讀音：ma-yo-i-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：猶豫、拿不定主意；也可以表示迷路。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>迷う的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>迷う</td><td>迷います</td><td>迷いました</td><td>迷って</td><td>迷わない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">手紙を開けるかどうか迷いました。</div><div class="example-cn">我猶豫著要不要打開信。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">あみます（<ruby>編<rt>あ</rt></ruby>みます／編む）</div><button class="audio-btn" type="button" aria-label="朗讀編みます" onclick="speakJapanese('あみます')">🔊</button></div><div class="vocab-romaji">讀音：a-mi-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：編織。可用於織毛線衣、圍巾等物品。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>編む的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>編む</td><td>編みます</td><td>編みました</td><td>編んで</td><td>編まない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">祖母は私にマフラーを編んでくれました。</div><div class="example-cn">祖母幫我織了一條圍巾。</div></div></article>
+      <article class="vocab-card"><div class="vocab-header"><div class="vocab-word">まきます（<ruby>巻<rt>ま</rt></ruby>きます／巻く）</div><button class="audio-btn" type="button" aria-label="朗讀巻きます" onclick="speakJapanese('まきます')">🔊</button></div><div class="vocab-romaji">讀音：ma-ki-ma-su｜第一類動詞</div><div class="vocab-meaning">意思：纏繞、圍上；「首に巻く」表示圍在脖子上。</div><details class="conjugation-table-wrapper"><summary>展開活用變化表</summary><table class="conjugation-table"><caption>巻く的常用活用</caption><thead><tr><th>辭書形</th><th>ます形</th><th>過去式</th><th>て形</th><th>ない形</th></tr></thead><tbody><tr><td>巻く</td><td>巻きます</td><td>巻きました</td><td>巻いて</td><td>巻かない</td></tr></tbody></table></details><div class="example-box"><div class="example-jp">寒いので、マフラーを首に巻きました。</div><div class="example-cn">因為很冷，我把圍巾圍在脖子上。</div></div></article>
+    </div></section>
+
+    <section id="particle-section" class="lesson-section" aria-labelledby="particle-title"><h2 id="particle-title" class="section-title">🧩 助詞教室</h2><div class="card-grid">
+      <article class="vocab-card"><h3>に：移動目的地、放置位置</h3><p>「コインランドリーに行く」的「に」標示移動目的地；「箱に入れる」和「首に巻く」中的「に」標示動作的落點。</p><div class="example-box"><div class="example-jp">マフラーを箱に入れました。</div><div class="example-cn">我把圍巾放進箱子裡。</div></div></article>
+      <article class="vocab-card"><h3>まで：時間或動作的終點</h3><p>「洗濯が終わるまで」表示持續到洗衣結束為止。前面可接表示時間的子句或名詞，說明動作持續到哪個時間點。</p><div class="example-box"><div class="example-jp">店が開くまで、ここで待ちます。</div><div class="example-cn">我會在這裡等到店開門。</div></div></article>
+      <article class="vocab-card"><h3>のほかに：除了……之外，還……</h3><p>「靴下や手袋のほかに、封筒も入っていた」先舉出襪子和手套，再用「のほかに」補充信封也是箱中物品。</p><div class="example-box"><div class="example-jp">財布のほかに、鍵も見つかりました。</div><div class="example-cn">除了錢包，還找到了鑰匙。</div></div></article>
+    </div></section>
+
+    <section id="grammar-section" class="lesson-section" aria-labelledby="grammar-title"><h2 id="grammar-title" class="section-title">🌸 さくら先生的精選文法教室</h2><div class="card-grid">
+      <article class="vocab-card"><h3>1. 普通形＋わけではない：並不是……</h3><p>用來否定某個推論或部分內容，語氣比直接說「不是」更有保留。本文說洗衣機不是不存在，而是機器故障。</p><div class="example-box"><div class="example-jp">忙しいからといって、会いたくないわけではありません。</div><div class="example-cn">雖然很忙，但並不是不想見面。</div></div></article>
+      <article class="vocab-card"><h3>2. 動詞辭書形／た形＋ついでに：做 A 時順便做 B</h3><p>「ついでに」表示利用做某事的機會，順便完成另一件事。本文先把圍巾放進箱子，再順便看看箱子裡有什麼。</p><div class="example-box"><div class="example-jp">買い物に行ったついでに、郵便局にも寄りました。</div><div class="example-cn">去買東西時，順道也去了郵局。</div></div></article>
+      <article class="vocab-card"><h3>3. 動詞普通形＋かどうか：是否……</h3><p>把「要不要做」或「是不是如此」變成句中內容。常接「分からない、確認する、迷う」等詞。「開けるかどうか迷う」就是猶豫要不要打開。</p><div class="example-box"><div class="example-jp">参加するかどうか、明日までに返事をください。</div><div class="example-cn">請在明天以前回覆是否參加。</div></div></article>
+      <article class="vocab-card"><h3>4. 動詞辭書形＋ことにする：決定要……</h3><p>表示說話者自己做出的決定。本文的「内容を確かめることにした」表示瑪麗亞最後決定查看信封內容。</p><div class="example-box"><div class="example-jp">雨が降りそうなので、今日は家で勉強することにしました。</div><div class="example-cn">因為好像快下雨了，我決定今天在家讀書。</div></div></article>
+      <article class="vocab-card"><h3>5. 〜てもらう：請別人為自己做事</h3><p>「大家に直してもらう」表示請房東修理。「直してもらえない」是可能形的否定，描述雖然提出請求，卻沒有得到修理協助。</p><div class="example-box"><div class="example-jp">店の人に使い方を説明してもらいました。</div><div class="example-cn">我請店員說明使用方法。</div></div></article>
+    </div></section>
+
+    <section id="quiz-section" class="lesson-section lesson-quiz-container" aria-labelledby="quiz-title"><h2 id="quiz-title" class="section-title">📝 隨堂小測驗</h2>
+      <div id="quiz-block-q30_1" class="quiz-question-block"><p class="quiz-question-text">題目 1：「洗濯機がないわけではない」最接近哪個意思？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_1',0,2,'「わけではない」否定的是「沒有洗衣機」這個推論。')">A. 房間裡完全沒有洗衣機</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_1',1,2,'原文接著說洗衣機壞了，代表房間裡有洗衣機。')">B. 洗衣機已經修好了</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_1',2,2,'答對了！不是沒有洗衣機，而是機器壞了。')">C. 不是沒有洗衣機，只是洗衣機壞了</button></div><div id="quiz-fb-q30_1" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-block-q30_2" class="quiz-question-block"><p class="quiz-question-text">題目 2：「そのついでに箱の中をのぞいた」表示什麼？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_2',0,1,'「ついでに」是利用原本正在做的事，順便再做一件事。')">A. 看箱子之前先離開洗衣店</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_2',1,1,'正確！她放好圍巾時，順便查看箱子裡面。')">B. 放好圍巾時，順便看看箱子裡面</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_2',2,1,'這個說法不表示她很久以後才查看箱子。')">C. 等洗衣結束後才查看箱子</button></div><div id="quiz-fb-q30_2" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-block-q30_3" class="quiz-question-block"><p class="quiz-question-text">題目 3：「封筒を開けるかどうか迷った」是什麼意思？</p><div class="quiz-options-row"><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_3',0,0,'答對了！「かどうか」表示是否，「迷う」是猶豫。')">A. 猶豫要不要打開信封</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_3',1,0,'句子表示她還在猶豫，並非已決定不打開。')">B. 決定不打開信封</button><button class="quiz-opt-btn" onclick="checkQuizQuestion('q30_3',2,0,'句子沒有說她不知道信封在哪裡。')">C. 不知道信封放在哪裡</button></div><div id="quiz-fb-q30_3" class="quiz-feedback" aria-live="polite"></div></div>
+      <div id="quiz-score-summary" class="quiz-score-summary" aria-live="polite"><h3>🎉 測驗完成結果</h3><div class="quiz-score-number"></div><div class="quiz-score-msg"></div></div>
+    </section>
+
+    <aside class="sensei-note-box" aria-label="教材來源">教材來源：依據使用者提供的〈コインランドリーの忘れ物〉整理，合併部分重複敘述，保留原文 N3 難度和故事收尾。</aside>
+    <div class="lesson-footer"><button id="mark-learned-btn" class="mark-learned-btn" onclick="toggleArticleLearned('article-30')">✅ 標記為已學習</button></div>
+  </main>
+  <div class="karaoke-progress-container" aria-hidden="true"><div class="karaoke-progress-bar"></div></div>
+  <footer><p>🌸 さくら先生の日本語教室－文章30 獨立單元網頁 © 2026. <a href="../../index.html">返回主頁目錄</a></p></footer>
+  <script src="../../js/audio.js"></script><script src="../../js/karaoke.js"></script><script src="../../js/quiz.js"></script><script src="../../js/progress.js"></script><script src="../../js/ui.js"></script><script src="../../js/lesson-renderer.js"></script><script src="lesson.js"></script>
+</body>
+</html>

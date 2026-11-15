@@ -26,7 +26,24 @@ window.LessonRenderer = {
   },
 
   bindSpeechButtons(root = document) {
+    // Keep every example in the document-based lessons directly readable.
+    root.querySelectorAll('.doc-lesson .example-box .example-jp').forEach(example => {
+      if (example.querySelector('.audio-btn, [data-speak-text]')) return;
+      const text = example.textContent.trim();
+      if (!text) return;
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'audio-btn';
+      button.setAttribute('aria-label', '朗讀日文例句');
+      button.dataset.speakText = text;
+      button.textContent = '🔊';
+      example.append(button);
+    });
+
     root.querySelectorAll('[data-speak-text]').forEach(button => {
+      if (button.dataset.speechBound === 'true') return;
+      button.dataset.speechBound = 'true';
       button.addEventListener('click', () => speakJapanese(button.dataset.speakText));
     });
   },

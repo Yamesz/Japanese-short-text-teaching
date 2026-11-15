@@ -15,6 +15,7 @@ class KaraokePlayer {
     this.synth = window.speechSynthesis;
     this.rate = typeof currentSpeechRate !== 'undefined' ? currentSpeechRate : 1.0;
     this.isChangingSpeed = false;
+    this.playbackGeneration = 0;
   }
 
   _getElements() {
@@ -32,13 +33,14 @@ class KaraokePlayer {
   play() {
     if (this.state === 'playing') return;
     if (this.state === 'paused') { this.resume(); return; }
+    this.playbackGeneration++;
     this.synth.cancel();
     this.state = 'playing';
     this.currentIndex = 0;
     this.clearHighlights();
     this._updateButtonStates();
-    this._playNext();
     this._showProgress(true);
+    this._playNext();
   }
 
   pause() {
@@ -60,8 +62,10 @@ class KaraokePlayer {
   }
 
   stop() {
-    this.synth.cancel();
+    // Ignore callbacks that a cancelled utterance may dispatch later.
+    this.playbackGeneration++;
     this.state = 'idle';
+    this.synth.cancel();
     this.currentIndex = -1;
     this.clearHighlights();
     this._updateProgress(-1);
@@ -76,12 +80,19 @@ class KaraokePlayer {
   }
 
   _playNext() {
+    const generation = this.playbackGeneration;
     if (this.currentIndex >= this.sentences.length) {
       this.state = 'idle';
       this._updateButtonStates();
       this._setStatus('idle', '朗讀完成！🎉');
       this._updateProgress(this.sentences.length - 1);
-      setTimeout(() => { this._showProgress(false); setTimeout(() => this.clearHighlights(), 800); }, 2000);
+      setTimeout(() => {
+        if (generation !== this.playbackGeneration || this.state !== 'idle') return;
+        this._showProgress(false);
+        setTimeout(() => {
+          if (generation === this.playbackGeneration && this.state === 'idle') this.clearHighlights();
+        }, 800);
+      }, 2000);
       return;
     }
     const jpText = this.sentences[this.currentIndex].jp || this.sentences[this.currentIndex];
@@ -91,20 +102,21 @@ class KaraokePlayer {
     if (typeof applyVoiceAndPitch === 'function') applyVoiceAndPitch(u);
     
     u.onstart = () => {
+      if (generation !== this.playbackGeneration) return;
       this._highlightLine(this.currentIndex);
       this._updateProgress(this.currentIndex);
       this._setStatus('playing', `朗讀第 ${this.currentIndex + 1} 句`);
     };
     
     u.onend = () => {
-      if (this.state === 'playing') {
+      if (generation === this.playbackGeneration && this.state === 'playing') {
         this._markDone(this.currentIndex);
         this.currentIndex++;
         this._playNext();
       }
     };
     
-    u.onerror = (ev) => { if (!this.isChangingSpeed && this.state === 'playing' && ev.error !== 'interrupted') this.stop(); };
+    u.onerror = (ev) => { if (generation === this.playbackGeneration && !this.isChangingSpeed && this.state === 'playing' && ev.error !== 'interrupted') this.stop(); };
     this.synth.speak(u);
   }
 
@@ -197,13 +209,15 @@ function stopArticleAudio() {
   else if (karaokePlayer) karaokePlayer.stop();
 }
 
+let translationVersion = 0;
 function toggleTranslation(checkbox) {
+  const version = ++translationVersion;
   let selector = '';
   if (typeof currentLevel !== 'undefined') selector = `#level-${currentLevel} `;
   const allCn = document.querySelectorAll(`${selector}.karaoke-cn`);
   if (checkbox.checked) {
-    allCn.forEach((el, i) => setTimeout(() => el.classList.add('show'), i * 40));
+    allCn.forEach((el, i) => setTimeout(() => { if (version === translationVersion) el.classList.add('show'); }, i * 40));
   } else {
-    allCn.forEach((el, i) => setTimeout(() => el.classList.remove('show'), i * 25));
+    allCn.forEach((el, i) => setTimeout(() => { if (version === translationVersion) el.classList.remove('show'); }, i * 25));
   }
 }
